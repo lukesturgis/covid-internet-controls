@@ -3,7 +3,7 @@ import pickle
 import socket
 from multiprocessing import Pool
 from tqdm import tqdm
-from utils.socket_utils import recvall
+from worker.utils.socket_utils import recvall
 
 log = logging.getLogger(__name__)
 
