@@ -1,4 +1,4 @@
-from utils.dns_lookup import dns_lookup
+from src.worker.utils.dns_lookup import dns_lookup
 
 
 def test_dns_lookup_valid():

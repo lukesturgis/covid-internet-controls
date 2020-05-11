@@ -1,4 +1,4 @@
-from utils.url_parse import get_domain_name_from_url, get_path_from_url
+from src.worker.utils.url_parse import get_domain_name_from_url, get_path_from_url
 
 
 def test_get_path_from_url():

@@ -2,11 +2,11 @@ import logging
 import pickle
 import socket
 
-from classes.process_pool import MyProcessPoolExecutor
-from classes.traceroute import Traceroute
-from utils.get_global_ip import get_global_ip
-from utils.redis_utils import send_results_to_redis
-from utils.socket_utils import recvall
+from src.worker.classes.process_pool import MyProcessPoolExecutor
+from src.worker.classes.traceroute import Traceroute
+from src.worker.utils.get_global_ip import get_global_ip
+from src.worker.utils.redis_utils import send_results_to_redis
+from src.worker.utils.socket_utils import recvall
 
 log = logging.getLogger(__name__)
 

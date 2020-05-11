@@ -1,7 +1,7 @@
 import pytest
 
-from config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT
-from utils.redis_utils import RedisConnection
+from src.worker.config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT
+from src.worker.utils.redis_utils import RedisConnection
 
 
 @pytest.fixture()

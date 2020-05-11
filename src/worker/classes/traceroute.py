@@ -12,10 +12,9 @@ from time import time
 
 from scapy.all import DNS, DNSQR, ICMP, IP, TCP, UDP, sr1
 
-from classes.hop import Hop
-
-from utils.request_webpage import request_webpage
-from utils.url_parse import get_domain_name_from_url, get_path_from_url
+from src.worker.classes.hop import Hop
+from src.worker.utils.request_webpage import request_webpage
+from src.worker.utils.url_parse import get_domain_name_from_url, get_path_from_url
 
 log = logging.getLogger(__name__)
 

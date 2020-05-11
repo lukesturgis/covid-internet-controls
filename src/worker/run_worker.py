@@ -11,8 +11,7 @@ from argparse import ArgumentParser
 
 import coloredlogs
 
-from classes.worker import Worker
-from utils.get_url_list import main as get_url_list
+from src.worker.classes.worker import Worker
 
 logging.getLogger("scapy").setLevel(logging.ERROR)
 logging.getLogger("requests").setLevel(logging.WARNING)
@@ -41,12 +40,6 @@ if __name__ == "__main__":
         default=42075,
         help="Port for this worker to listen on for remote connections.",
     )
-    parser.add_argument(
-        "--get-url-list",
-        type=str,
-        metavar="COUNTRY CODE",
-        help="Download a URL list for a given country code (ex: cn)",
-    )
 
     args = parser.parse_args()
 
@@ -55,10 +48,6 @@ if __name__ == "__main__":
         coloredlogs.install(
             level="DEBUG", fmt="%(asctime)s - %(levelname)s - %(message)s"
         )
-
-    if args.get_url_list:
-        get_url_list(args.get_url_list)
-        sys.exit(0)
 
     worker = Worker(address=args.addr, port=args.port)
     if worker.bind():

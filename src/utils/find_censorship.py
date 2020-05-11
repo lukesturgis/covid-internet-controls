@@ -8,7 +8,7 @@ from prettytable import PrettyTable
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-from utils.redis_utils import RedisConnection
+from src.worker.utils.redis_utils import RedisConnection
 
 load_dotenv()
 REDIS_HOST = os.getenv("REDIS_HOST")

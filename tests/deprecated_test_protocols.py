@@ -1,4 +1,4 @@
-from classes.traceroute import Traceroute
+from src.worker.classes.traceroute import Traceroute
 
 
 def test_icmp():

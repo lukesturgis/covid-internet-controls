@@ -3,12 +3,13 @@
 import argparse
 import logging
 import sys
-
 import time
+
 import coloredlogs
 import paramiko
 from scp import SCPClient
-from worker.utils.worker_utils import ping
+
+from src.utils.worker_utils import ping
 
 log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")

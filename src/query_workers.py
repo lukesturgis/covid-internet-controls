@@ -6,14 +6,13 @@ import sys
 
 import coloredlogs
 
-from utils.input_file_utils import read_txt_input_file
-from utils.worker_utils import (
+from src.utils.worker_utils import (
     get_all_workers_status,
     print_status_of_workers,
     send_targets_to_all_workers,
 )
+from src.worker.utils.input_file_utils import read_txt_input_file
 from workers import workers
-
 
 log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")

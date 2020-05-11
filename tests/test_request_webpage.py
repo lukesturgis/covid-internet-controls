@@ -1,4 +1,4 @@
-from utils.request_webpage import request_webpage
+from src.worker.utils.request_webpage import request_webpage
 
 
 def test_request_webpage_redirect():

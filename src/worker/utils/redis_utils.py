@@ -10,7 +10,7 @@ import os
 
 import redis
 
-from config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, ROOT_DIR
+from src.worker.config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, ROOT_DIR
 
 log = logging.getLogger(__name__)
 

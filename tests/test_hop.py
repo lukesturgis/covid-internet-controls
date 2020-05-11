@@ -1,4 +1,4 @@
-from classes.hop import Hop
+from src.worker.classes.hop import Hop
 
 
 def test_calculate_rtt():
