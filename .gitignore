@@ -6,4 +6,3 @@ env
 wtb.spec
 build
 .env
-wtb/workers.py

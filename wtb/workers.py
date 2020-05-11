@@ -1,0 +1,17 @@
+workers = [
+    {"ip_address": "95.141.43.68", "port": 42075, "country": "Italy"},
+    {"ip_address": "139.28.37.3", "port": 42075, "country": "Ukraine"},
+    {"ip_address": "185.123.101.36", "port": 42075, "country": "Turkey"},
+    {"ip_address": "46.4.164.170", "port": 42075, "country": "Germany"},
+    {"ip_address": "102.67.140.37", "port": 42075, "country": "South Africa"},
+    {"ip_address": "54.37.138.54", "port": 42075, "country": "Poland"},
+    {"ip_address": "45.136.56.45", "port": 42075, "country": "Kazakhstan"},
+    {"ip_address": "109.201.143.179", "port": 42075, "country": "Australia"},
+    {"ip_address": "150.95.190.42", "port": 42075, "country": "Japan"},
+    {"ip_address": "45.7.230.136", "port": 42075, "country": "Peru"},
+    {"ip_address": "103.140.45.134", "port": 42075, "country": "Korea"},
+    {"ip_address": "51.79.129.161", "port": 42075, "country": "Malaysia"},
+    {"ip_address": "138.118.174.43", "port": 42075, "country": "Brazil"},
+    {"ip_address": "41.223.52.107", "port": 42075, "country": "Egypt"},
+    {"ip_address": "94.156.174.142", "port": 42075, "country": "Bulgaria"},
+]
