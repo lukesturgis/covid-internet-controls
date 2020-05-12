@@ -1,4 +1,5 @@
-source:https://www.newsguardtech.com/coronavirus%20misinformation%20tracking%20center/
+Source:
+https://www.newsguardtech.com/coronavirus-misinformation-tracking-center/
 
 Countrywise list:
 
