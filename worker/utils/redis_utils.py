@@ -9,8 +9,9 @@ import logging
 import os
 
 import redis
+from dotenv import load_dotenv
 
-from src.worker.config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, ROOT_DIR
+load_dotenv()
 
 log = logging.getLogger(__name__)
 
@@ -19,16 +20,12 @@ class RedisConnection:
     def __init__(self, REDIS_HOST: str, REDIS_PORT: str, REDIS_PASSWORD: int):
         """ Instantiate a connection to the redis server. """
 
-        CERT_PATH = os.path.join(ROOT_DIR, "certs", "cert.pem")
-
         self.connection = None
         try:
             conn = redis.Redis(
                 host=REDIS_HOST,
                 port=REDIS_PORT,
                 password=REDIS_PASSWORD,
-                ssl=True,
-                ssl_ca_certs=CERT_PATH,
                 decode_responses=True,
             )
             conn.ping()
@@ -80,6 +77,10 @@ def send_results_to_redis(target: str, results: dict) -> None:
 
     log.info(f"Sending results to redis...\033[0m")
     log.debug(f"\n{json.dumps(results, indent=4)}")
+
+    REDIS_HOST = os.getenv("REDIS_HOST")
+    REDIS_PORT = os.getenv("REDIS_PORT")
+    REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
 
     connection = RedisConnection(REDIS_HOST, REDIS_PORT, REDIS_PASSWORD)
 
