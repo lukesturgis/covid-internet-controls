@@ -1,0 +1,5 @@
+coloredlogs==14.0
+fake-useragent==0.1.11
+python-dotenv==0.13.0
+redis==3.5.1
+requests==2.23.0

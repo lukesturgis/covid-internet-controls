@@ -9,7 +9,7 @@ import coloredlogs
 import paramiko
 from scp import SCPClient
 
-from src.utils.worker_utils import ping
+from query_workers import ping
 
 log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")
