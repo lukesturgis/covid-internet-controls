@@ -1,27 +1,48 @@
 #!/usr/bin/env python3
 
-"""
-Perform traceroutes against a given list of targets via TCP, UDP,
-HTTP, TCP, or HTTPS.
-"""
 
 import logging
 import sys
 from argparse import ArgumentParser
+from src.worker.utils.request_webpage import request_webpage
 
 import coloredlogs
+from flask import Flask, request, jsonify
 
-from src.worker.classes.worker import Worker
 
-logging.getLogger("scapy").setLevel(logging.ERROR)
-logging.getLogger("requests").setLevel(logging.WARNING)
+app = Flask(__name__)
 
 log = logging.getLogger(__name__)
+logging.getLogger("scapy").setLevel(logging.ERROR)
+logging.getLogger("requests").setLevel(logging.WARNING)
 coloredlogs.install(level="INFO", fmt="%(message)s")
 
 
+def make_response(status: str, data: str = ""):
+    """ Make a simple response. """
+
+    return jsonify({"status": status, "data": data})
+
+
+@app.route("/ping", methods=["GET"])
+def ping():
+    return make_response("success", "pong")
+
+
+@app.route("/new_target", methods=["POST"])
+def new_target():
+    try:
+        requested_target = request.form["target"]
+
+    except KeyError:
+        return make_response("error", "Invalid data format. Need target.")
+
+    data = request_webpage(requested_target)
+    return data
+
+
 if __name__ == "__main__":
-    parser = ArgumentParser("Listen for targets to perform traceroutes.")
+    parser = ArgumentParser("Listen for targets.")
 
     parser.add_argument(
         "-v",
@@ -49,15 +70,4 @@ if __name__ == "__main__":
             level="DEBUG", fmt="%(asctime)s - %(levelname)s - %(message)s"
         )
 
-    worker = Worker(address=args.addr, port=args.port)
-    if worker.bind():
-        log.info(f"Worker is bound on {args.addr}:{args.port}.")
-
-        try:
-            worker.keep_alive()
-
-        except KeyboardInterrupt:
-            worker.shutdown()
-
-    else:
-        log.error(f"Unable to bind worker on {args.port}.")
+    app.run(host=args.addr, port=args.port)
