@@ -28,7 +28,7 @@ def ping(worker: str) -> bool:
 
     else:
 
-        data = response.get_json()
+        data = response.json()
 
         try:
             if data["status"] == "success":
