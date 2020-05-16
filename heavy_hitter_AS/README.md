@@ -1,4 +1,4 @@
-# Enssencial files and folders required to run heavy hitter AS program:
+# Essential files and folders required to run heavy hitter AS program:
 1. countries/
 2. 20200501_as_rel.txt
 3. asrelationship.py
