@@ -13,7 +13,7 @@ class MyHTMLParser(HTMLParser):
         print("Data  :", data)
 
 
-f=codecs.open("test.html", 'r')
+f=codecs.open("countries/test.html", 'r')
 parser = MyHTMLParser()
 parser.feed(f.read())
 
