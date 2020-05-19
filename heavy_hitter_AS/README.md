@@ -1,7 +1,15 @@
-Just run heavy_hitter_list_of_all_AS_in_country_list.sh file. All ASes in the countries and Top 100 ASes file will be created.
+# Essential files and folders required to run heavy hitter AS program
+1. countries/
+2. 20200501_as_rel.txt
+3. asrelationship.py
+4. countries_list.txt
+5. heavy_hitter_list_of_all_AS_in_country_list.py
+6. heavy_hitter_list_of_all_AS_in_country_list.sh
 
-ToDo:
-1. Design data structure or database to store efficiently tree of p|c|-1.
-2. Once tree is designed from step 1 start performing deletion of customer ASes from top 100 list.
-3. Test if remaining heavy hitters can cover 90% of internet of country or not.
+# Run the process
+1. $./heavy_hitter_list_of_all_AS_in_country_list.sh
 
+Note: All the pattern (for AS number parsing) to include and exclude need to be added in shell script.
+
+# ToDo
+1. Fixing search of the child node. (DFS traversal algo in search method)
