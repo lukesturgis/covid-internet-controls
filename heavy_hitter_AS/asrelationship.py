@@ -75,6 +75,8 @@ with open("20200501_as_rel.txt") as fp:
 
     print(" there is relationship-> {}".format(graph.search_child(3,5)))
 
+#sys.exit(0)
+
 #heavy hitter with no parents
 countries_list = ["Turkey_top_AS_list.txt","Ukraine_top_AS_list.txt","australia_top_AS_list.txt","china_top_AS_list.txt",
 "colombia_top_AS_list.txt","egypt_top_AS_list.txt","germany_top_AS_list.txt",
