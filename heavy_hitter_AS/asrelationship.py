@@ -1,4 +1,4 @@
- 
+
 class AdjNode:
     def __init__(self, data):
         self.vertex = data
@@ -26,7 +26,21 @@ class Graph:
 	while temp:
            if temp.vertex == child:
 		return True
+	   if self.search_child_dfs(temp, child) == True:
+		return True
            temp = temp.next
+	   
+	return False
+
+    # search child
+    def search_child_dfs(self, parent, child ):
+	temp = self.graph[parent.vertex]
+	while temp:
+           if temp.vertex == child:
+		return True
+	   if self.search_child_dfs(temp, child) == True:
+		return True
+           temp = temp.next	   
 	return False
 
 
@@ -110,7 +124,7 @@ for country_top_AS_list in countries_list:
 					if graph.search_child(int(hhp),int(fac)):
 						child_count+=1
 
-	print("% of AS covered by heavy hitter ASes is {}".format(((heavy_hitter_list_len+child_count)*100)/full_as_list_len))	
+	print("% of AS covered by heavy hitter ASes is {}".format(((heavy_hitter_list_len+child_count)*100)/full_as_list_len))
 
 	country_index+=1
 
