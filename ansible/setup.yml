@@ -1,0 +1,56 @@
+- hosts: all
+  vars_files:
+    - .env
+
+  vars:
+    DEPLOY_PUBLIC_KEYS:
+      - id_rsa.pub
+
+  tasks:
+
+    # users
+    
+    - name: Change root password
+      user: name=root password="{{ ROOT_PASSWORD }}"
+
+    - name: Creates directory
+      file:
+        path: /root/.ssh
+        state: directory
+        mode: 0700
+
+    - name: Add authorized keys
+      copy:
+        src: authorized_keys
+        dest: /root/.ssh/authorized_keys
+        owner: worker
+        mode: "0644"
+
+    # apt
+
+    - name: Update APT package cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Upgrade APT to the latest packages
+      apt: upgrade=safe
+
+
+    # ssh
+    - name: Disallow password authentication
+      lineinfile:
+        dest=/etc/ssh/sshd_config
+        regexp="^PasswordAuthentication"
+        line="PasswordAuthentication no"
+        state=present
+
+    - name: Allow pubkey authentication
+      lineinfile:
+        dest=/etc/ssh/sshd_config
+        regexp="^PubkeyAuthentication"
+        line="PubkeyAuthentication yes"
+        state=present
+
+    - name: Restart SSH
+      service:
+        name: ssh
+        state: restarted
