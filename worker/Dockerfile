@@ -1,5 +1,8 @@
 FROM python:latest
 
+HEALTHCHECK --interval=5m --timeout=3s \
+    CMD curl -f http://localhost:42075/ping || exit 1
+
 COPY ./ /worker
 
 RUN pip install --no-cache-dir -r /worker/requirements.txt

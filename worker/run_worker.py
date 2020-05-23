@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-
 import logging
-import sys
 from argparse import ArgumentParser
 
 import coloredlogs

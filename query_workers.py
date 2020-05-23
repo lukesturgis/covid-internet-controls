@@ -2,7 +2,6 @@
 
 import argparse
 import logging
-import sys
 
 import coloredlogs
 import requests
