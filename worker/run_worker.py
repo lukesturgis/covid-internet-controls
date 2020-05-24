@@ -9,50 +9,33 @@ from fake_useragent import UserAgent
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
 log = logging.getLogger(__name__)
 logging.getLogger("scapy").setLevel(logging.ERROR)
 logging.getLogger("requests").setLevel(logging.WARNING)
 coloredlogs.install(level="INFO", fmt="%(message)s")
 
 
-def request_webpage(
-    target: str, timeout: int = 10, path: str = "/", use_tls: bool = False
-):
+def request_webpage(target: str, timeout: int = 10):
+    """ Request a given webpage, returning the received response. """
 
-    if use_tls and not target.startswith("https://"):
-        target = "https://" + target
-
-    else:
-        if not target.startswith("http://") and not target.startswith("https://"):
-            target = "http://" + target
+    if not target.startswith("http://") and not target.startswith("https://"):
+        target = f"http://{target}"
 
     headers = {"User-Agent": UserAgent().random}
 
-    data = {"success": False, "status_code": -1, "headers": "", "content": ""}
+    data = {"success": False}
 
     try:
         response = requests.get(
             target, headers=headers, timeout=timeout, allow_redirects=False
         )
 
-    except requests.ConnectionError as e:
-        content = e
-
     except requests.RequestException as e:
-        content = e
-
-    except Exception as e:
-        log.error(f"Unknown exception for {target}: {e}")
-        content = str(e)
+        error_message = f"Request exception for {target}: {str(e)}"
+        log.error(error_message)
+        data["data"] = error_message
 
     else:
-
-        headers = response.headers
-        data["headers"] = dict(headers)
-        data["status_code"] = response.status_code
-        data["success"] = True
-        data["path"] = path
 
         try:
             content = response.content.decode(response.encoding or "utf-8")
@@ -60,25 +43,32 @@ def request_webpage(
         except UnicodeDecodeError:
             content = response.text
 
-    finally:
-        data["content"] = content
+        data = {
+            "target": target,
+            "headers": dict(response.headers),
+            "status_code": response.status_code,
+            "success": True,
+            "content": content,
+        }
 
-    return data
+    finally:
+        return data
 
 
 def make_response(status: str, data: str = ""):
     """ Make a simple response. """
-
     return jsonify({"status": status, "data": data})
 
 
 @app.route("/ping", methods=["GET"])
 def ping():
+    """ Respond to a given ping request. """
     return make_response("success", "pong")
 
 
 @app.route("/new_target", methods=["POST"])
 def new_target():
+    """ Respond to a new target request. """
     try:
         requested_target = request.form["target"]
 
