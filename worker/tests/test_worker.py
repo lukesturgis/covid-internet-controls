@@ -69,13 +69,7 @@ def test_request_webpage_success():
     assert request_webpage(website)["status_code"] == 200
 
 
-def test_request_webpage_success_with_tls():
-    """ Test that an HTTPS request without adding a prefix works. """
-    website = "www.wikipedia.org"
-    assert request_webpage(website, use_tls=True)["status_code"] == 200
-
-
 def test_request_webpage_failure():
     """ Test that a non-existent website fails. """
     website = "aaaaaaaa"
-    assert request_webpage(website, timeout=1)["status_code"] == -1
+    assert request_webpage(website, timeout=1)["success"] is False
