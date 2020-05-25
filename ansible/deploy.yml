@@ -1,20 +1,64 @@
-- name: Onboard workers.
+- hosts: all
   gather_facts: false
-  hosts: all
+  vars_files:
+    - .env
+
   tasks:
+
+
+    # User configuration
+    - name: Change root password
+      user: name=root password="{{ ROOT_PASSWORD }}"
+
+    - name: Create .ssh directory
+      file:
+        path: /root/.ssh
+        state: directory
+        mode: 0700
+
+    - name: Add authorized keys
+      copy:
+        src: authorized_keys
+        dest: /root/.ssh/authorized_keys
+        owner: worker
+        mode: "0644"
+
+
+    # apt
+    - name: Update APT package cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Upgrade APT to the latest packages
+      apt: upgrade=safe
 
     - name: Install Docker
       apt:
-        name: docker.io
-        state: present
+      name: docker.io
+      state: present
 
+
+    # ssh
+    - name: Disallow password authentication
+      lineinfile:
+        dest=/etc/ssh/sshd_config
+        regexp="^PasswordAuthentication"
+        line="PasswordAuthentication no"
+        state=present
+
+    - name: Restart SSH
+      service:
+        name: ssh
+        state: restarted
+
+
+    # software installation & build
     - name: Clone Git repository
       git:
         repo: "https://github.com/lukesturgis/covid-internet-controls"
-        dest: /covid
+        dest: /src
 
     - name: Build Docker image
-      command: docker build -t worker /covid/worker
+      command: docker build -t worker /src/worker
 
     - name: Run Docker container
       docker_container:
