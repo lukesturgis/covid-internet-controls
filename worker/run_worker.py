@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import logging
-from argparse import ArgumentParser
 
-import coloredlogs
 import requests
 from fake_useragent import UserAgent
 from flask import Flask, jsonify, request
@@ -12,7 +10,6 @@ app = Flask(__name__)
 log = logging.getLogger(__name__)
 logging.getLogger("scapy").setLevel(logging.ERROR)
 logging.getLogger("requests").setLevel(logging.WARNING)
-coloredlogs.install(level="INFO", fmt="%(message)s")
 
 
 def request_webpage(target: str, timeout: int = 10):
@@ -22,7 +19,6 @@ def request_webpage(target: str, timeout: int = 10):
         target = f"http://{target}"
 
     headers = {"User-Agent": UserAgent().random}
-
     data = {"success": False}
 
     try:
@@ -75,37 +71,8 @@ def new_target():
     except KeyError:
         return make_response("error", "Invalid data format. Need target.")
 
-    data = request_webpage(requested_target)
-    return data
+    return request_webpage(requested_target)
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser("Listen for targets.")
-
-    parser.add_argument(
-        "-v",
-        "--verbose",
-        action="store_true",
-        default=False,
-        help="Enable verbose logging.",
-    )
-    parser.add_argument(
-        "-a", "--addr", default="0.0.0.0", help="Address to listen on for connections."
-    )
-    parser.add_argument(
-        "-p",
-        "--port",
-        type=int,
-        default=42075,
-        help="Port for this worker to listen on for remote connections.",
-    )
-
-    args = parser.parse_args()
-
-    # set log level to debug if verbose flag is passed
-    if args.verbose:
-        coloredlogs.install(
-            level="DEBUG", fmt="%(asctime)s - %(levelname)s - %(message)s"
-        )
-
-    app.run(host=args.addr, port=args.port)
+    app.run(host="0.0.0.0", port=42075)
