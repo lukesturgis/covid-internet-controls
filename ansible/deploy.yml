@@ -20,35 +20,19 @@
       copy:
         src: authorized_keys
         dest: /root/.ssh/authorized_keys
-        owner: worker
         mode: "0644"
 
 
     # apt
-    - name: Update APT package cache
-      apt: update_cache=yes cache_valid_time=3600
-
-    - name: Upgrade APT to the latest packages
-      apt: upgrade=safe
-
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+    
     - name: Install Docker
       apt:
-      name: docker.io
-      state: present
-
-
-    # ssh
-    - name: Disallow password authentication
-      lineinfile:
-        dest=/etc/ssh/sshd_config
-        regexp="^PasswordAuthentication"
-        line="PasswordAuthentication no"
-        state=present
-
-    - name: Restart SSH
-      service:
-        name: ssh
-        state: restarted
+        name: docker.io
+        state: present
 
 
     # software installation & build
