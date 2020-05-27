@@ -1,11 +1,11 @@
 - hosts: all
   gather_facts: false
+  strategy: free
   vars_files:
     - .env
 
   tasks:
 
-    # apt
     - name: Update apt
       apt:
         update_cache: yes
@@ -17,7 +17,6 @@
         state: present
 
 
-    # software installation & build
     - name: Clone Git repository
       git:
         repo: "https://github.com/lukesturgis/covid-internet-controls"
