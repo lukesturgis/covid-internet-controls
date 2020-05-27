@@ -6,7 +6,7 @@
   tasks:
 
     # apt
-    - name: Update and upgrade apt packages
+    - name: Update apt
       apt:
         update_cache: yes
     
@@ -27,17 +27,17 @@
 
 
     - name: Copy over .env file for worker
-        copy:
-          src: .worker.env
-          dest: /src/worker
-          mode: "0400"
+      copy:
+        src: .worker.env
+        dest: /src/worker
+        mode: "0400"
       
           
     - name: Build Docker image
       command: docker build -t worker /src/worker
       when: gitclone.changed
 
-      
+
     - name: Run Docker container
       docker_container:
         name: worker
