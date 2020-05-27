@@ -2,14 +2,20 @@
 
 import argparse
 import logging
+import os
+import sys
 
 import coloredlogs
 import requests
+from dotenv import load_dotenv
 
 from workers import workers
 
+load_dotenv()
 log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")
+
+REQUEST_KEY = os.getenv("REQUEST_KEY")
 
 
 def ping(worker: str) -> bool:
@@ -40,6 +46,14 @@ def ping(worker: str) -> bool:
         return pingable
 
 
+def send_target_to_workers(target, workers):
+    data = {"key": REQUEST_KEY, "target": target}
+    for worker in workers:
+        address = f"http://{worker['ip']}:42075/new_target"
+        response = requests.post(address, data=data)
+        log.debug(response)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -50,16 +64,14 @@ if __name__ == "__main__":
         help="Enable verbose logging.",
     )
     parser.add_argument(
-        "--send-targets",
-        action="store_true",
-        default=False,
-        help="Send targets to workers.",
+        "-t",
+        "--target",
+        type=str,
+        help="Send a target to a given worker (defaults to all workers).",
     )
-
-    input_method = parser.add_mutually_exclusive_group()
-    input_method.add_argument("-t", "--target", type=str, help="Individual target.")
-
-    parser.add_argument("--worker", type=str, help="Send targets to a specific worker.")
+    parser.add_argument(
+        "-w", "--worker", type=str, help="Send targets to a specific worker."
+    )
 
     args = parser.parse_args()
 
@@ -68,6 +80,25 @@ if __name__ == "__main__":
         coloredlogs.install(
             level="DEBUG", fmt="%(asctime)s - %(levelname)s - %(message)s"
         )
+
+    if args.target:
+        if args.worker:
+
+            target_worker = None
+            for worker in workers:
+                if worker["location"].lower() == args.worker.lower():
+                    target_worker = worker
+
+            if not target_worker:
+                log.error(f"Worker '{args.worker}' does not exist.")
+                sys.exit(1)
+
+            workers = [target_worker]
+        else:
+            workers = workers
+
+        log.info(f"Sending {args.target} to {workers}...")
+        send_target_to_workers(args.target, workers)
 
     for worker in workers:
         worker_url = f"{worker['ip_address']}:{worker['port']}"
