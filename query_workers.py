@@ -18,7 +18,7 @@ coloredlogs.install(level="INFO", fmt="%(message)s")
 REQUEST_KEY = os.getenv("REQUEST_KEY")
 
 
-def ping(worker: str) -> bool:
+def ping(worker: str):
     """ Ping a worker for connectivity. """
 
     log.debug(f"Pinging {worker}...")
@@ -26,7 +26,7 @@ def ping(worker: str) -> bool:
     pingable = False
 
     try:
-        response = requests.get(f"http://{worker}/ping", timeout=5)
+        response = requests.get(f"http://{worker}:42075/ping", timeout=5)
 
     except requests.ConnectionError as e:
         log.debug(f"Connecting to {worker} yielded: {e}")
@@ -51,6 +51,12 @@ def send_target_to_workers(target, workers):
     for worker in workers:
         address = f"http://{worker['ip']}:42075/new_target"
         response = requests.post(address, data=data)
+        print(response.json())
+        try:
+            print(f"{worker['location']:<20} {response.json()['status_code']}")
+        except KeyError:
+            print(f"{worker['location']:<20} ERROR")
+
         log.debug(response)
 
 
@@ -100,9 +106,8 @@ if __name__ == "__main__":
         log.info(f"Sending {args.target} to {workers}...")
         send_target_to_workers(args.target, workers)
 
-    for worker in workers:
-        worker_url = f"{worker['ip_address']}:{worker['port']}"
-        if ping(worker_url):
-            print(f"{worker['country']:<10} OK")
-        else:
-            print(f"{worker['country']:<10} OFFLINE")
+    # for worker in workers:
+    #    if ping(worker["ip"]):
+    #        print(f"{worker['location']:<10} OK")
+    #    else:
+    #        print(f"{worker['location']:<10} OFFLINE")

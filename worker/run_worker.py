@@ -17,12 +17,12 @@ load_dotenv()
 REQUEST_KEY = os.getenv("REQUEST_KEY")
 
 
-def verify_request(key: str):
-    """Verify a given request, ensuring the request key matches."""
+# def verify_request(key: str):
+#    """Verify a given request, ensuring the request key matches."""
 
-    if key != REQUEST_KEY:
-        return False
-    return True
+#    if key != REQUEST_KEY:
+#        return False
+#    return True
 
 
 def request_webpage(target: str, timeout: int = 10):
@@ -78,12 +78,12 @@ def ping():
 @app.route("/new_target", methods=["POST"])
 def new_target():
     """ Respond to a new target request. """
-    try:
-        if not verify_request(request.form["key"]):
-            return make_response("error", "Invalid key.")
+    #    try:
+    #        if not verify_request(request.form["key"]):
+    #            return make_response("error", "Invalid key.")
 
-    except KeyError:
-        return make_response("error", "Key parameter required.")
+    #    except KeyError:
+    #        return make_response("error", "Key parameter required.")
 
     try:
         requested_target = request.form["target"]
