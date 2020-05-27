@@ -24,6 +24,10 @@
         accept_hostkey: yes
       register: gitclone
 
+    - name: Remove/purge any old Docker containers
+      command: docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+      when: gitclone.changed
+      
 
     - name: Copy over .env file for worker
       copy:
