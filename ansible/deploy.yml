@@ -25,10 +25,10 @@
       register: gitclone
 
    
-    - name: Copy over .env file for worker
+    - name: Copy over worker environment file
       copy:
         src: .worker.env
-        dest: /src/worker
+        dest: /src/worker/.env
         mode: "0400"
       
           
