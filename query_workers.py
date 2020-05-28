@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
 import argparse
+import json
 import logging
 import os
 import sys
+from itertools import repeat
+from multiprocessing.pool import Pool
 
 import coloredlogs
 import requests
@@ -16,6 +19,11 @@ log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")
 
 REQUEST_KEY = os.getenv("REQUEST_KEY")
+
+RESET = "\033[0m"
+BOLD = "\033[1m"
+RED = "\033[31m"
+GREEN = "\033[32m"
 
 
 def ping(worker: str):
@@ -46,18 +54,62 @@ def ping(worker: str):
         return pingable
 
 
-def send_target_to_workers(target, workers):
-    data = {"key": REQUEST_KEY, "target": target}
-    for worker in workers:
-        address = f"http://{worker['ip']}:42075/new_target"
-        response = requests.post(address, data=data)
-        print(response.json())
-        try:
-            print(f"{worker['location']:<20} {response.json()['status_code']}")
-        except KeyError:
-            print(f"{worker['location']:<20} ERROR")
+def send_target_to_worker(worker: dict, target: str):
+    """ Send a target to a single worker. """
 
-        log.debug(response)
+    data = {"key": REQUEST_KEY, "target": target}
+    log.debug(f"Sending {target} to {worker['location']}...")
+    address = f"http://{worker['ip']}:42075/new_target"
+
+    try:
+        response = requests.post(address, data=data, timeout=10).json()
+
+    except requests.RequestException as e:
+        response = {"success": False, "data": str(e)}
+
+    log.debug(f"{json.dumps(response, indent=4)}")
+    response["worker"] = worker
+    return response
+
+
+def send_target_to_workers(target: str, workers: list):
+    """ Send a target to all workers in a multiprocessing pool. """
+
+    with Pool(processes=20) as pool:
+        results = list(
+            pool.starmap(send_target_to_worker, zip(workers, repeat(target)))
+        )
+
+        # put all results into respective lists so that we can print successes
+        # first, then the failures
+        successes = []
+        failures = []
+
+        for result in results:
+            status_line = f"{BOLD}{result['worker']['location']:<20}{RESET}"
+
+            if result["success"]:
+                successes.append(
+                    status_line + f"{GREEN}SUCCESS - {result['status_code']}{RESET}"
+                )
+
+            else:
+
+                # if we did not have success, verify that the worker
+                # is not just offline
+                if not ping(result["worker"]["ip"]):
+                    status_line += f"{RED}ERROR - Worker is offline{RESET}"
+
+                else:
+                    status_line += f"{RED}ERROR - {result['data']}{RESET}"
+
+                failures.append(status_line)
+
+        for success in successes:
+            print(success)
+
+        for failure in failures:
+            print(failure)
 
 
 if __name__ == "__main__":
@@ -88,6 +140,10 @@ if __name__ == "__main__":
         )
 
     if args.target:
+
+        # if sending targets, see if we are targeting a specific worker.
+        # if so, we need to parse the workers file for the corresponding
+        # server location to get its IP address
         if args.worker:
 
             target_worker = None
@@ -100,14 +156,18 @@ if __name__ == "__main__":
                 sys.exit(1)
 
             workers = [target_worker]
+
+        # otherwise, default to sending target to all workers
         else:
             workers = workers
 
-        log.info(f"Sending {args.target} to {workers}...")
         send_target_to_workers(args.target, workers)
 
-    # for worker in workers:
-    #    if ping(worker["ip"]):
-    #        print(f"{worker['location']:<10} OK")
-    #    else:
-    #        print(f"{worker['location']:<10} OFFLINE")
+    # if we are not sending targets, then just ping all workers
+    else:
+
+        for worker in workers:
+            if ping(worker["ip"]):
+                print(f"{worker['location']:<20} OK")
+            else:
+                print(f"{worker['location']:<20} OFFLINE")

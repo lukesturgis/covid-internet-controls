@@ -21,12 +21,12 @@ def test_get_request(worker):
     assert req.status_code == 405
 
 
-def test_invalid_key(worker):
-    """Test failure without the correct authentication key."""
-    data = {"key": "invalid"}
-    req = worker.post("/new_target", data=data)
-    assert req.get_json()["status"] == "error"
-    assert req.get_json()["data"] == "Invalid key."
+# def test_invalid_key(worker):
+#    """Test failure without the correct authentication key."""
+#    data = {"key": "invalid"}
+#    req = worker.post("/new_target", data=data)
+#    assert req.get_json()["status"] == "error"
+#    assert req.get_json()["data"] == "Invalid key."
 
 
 def test_invalid_request(worker):

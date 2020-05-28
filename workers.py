@@ -8,6 +8,6 @@ workers = [
     {"location": "Chongqing", "ip": "129.28.202.97"},
     {"location": "Hong_Kong", "ip": "124.156.101.160"},
     {"location": "South_Africa", "ip": "102.67.140.37"},
-    {"location": "Australia", "ip": " 109.201.143.179"},
+    {"location": "Australia", "ip": "109.201.143.179"},
     {"location": "Peru", "ip": "45.7.230.136"},
 ]
