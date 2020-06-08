@@ -9,6 +9,7 @@ from itertools import repeat
 from multiprocessing.pool import Pool
 
 import coloredlogs
+import mysql.connector
 import requests
 from dotenv import load_dotenv
 
@@ -19,6 +20,9 @@ log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")
 
 REQUEST_KEY = os.getenv("REQUEST_KEY")
+MYSQL_HOST = os.getenv("MYSQL_HOST")
+MYSQL_USER = os.getenv("MYSQL_USER")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
 
 RESET = "\033[0m"
 BOLD = "\033[1m"
@@ -58,7 +62,7 @@ def send_target_to_worker(worker: dict, target: str):
     """ Send a target to a single worker. """
 
     data = {"key": REQUEST_KEY, "target": target}
-    log.debug(f"Sending {target} to {worker['location']}...")
+    log.debug(f"Sending {target} to {worker['country_name']}...")
     address = f"http://{worker['ip']}:42075/new_target"
 
     try:
@@ -70,6 +74,53 @@ def send_target_to_worker(worker: dict, target: str):
     log.debug(f"{json.dumps(response, indent=4)}")
     response["worker"] = worker
     return response
+
+
+def setup_db():
+
+    conn = mysql.connector.connect(
+        host=MYSQL_HOST,
+        user=MYSQL_USER,
+        passwd=MYSQL_PASSWORD,
+        database="covid_internet_controls",
+    )
+    if conn.is_connected():
+        return conn
+
+    log.error("Unable to establish a connection to the database.")
+    return None
+
+
+def create_country(conn, cursor, country_code: str, country_name: str, continent: str):
+    inserted = False
+    sql = "INSERT IGNORE INTO countries VALUES (%s, %s, %s)"
+    val = (country_code, country_name, continent)
+    cursor.execute(sql, val)
+    conn.commit()
+
+    # assure that it was inserted properly
+    sql = "SELECT * FROM countries WHERE country_code = '%s'"
+    val = (country_code,)
+    cursor.execute(sql, val)
+    cursor.fetchall()
+    if cursor.rowcount != 1:
+        log.error(f"Country {country_code} was not inserted properly.")
+    else:
+        inserted = True
+
+    return inserted
+
+
+def send_to_db(results):
+    db = mysql.connector.connect(
+        host="localhost", user="yourusername", passwd="yourpassword"
+    )
+
+    cursor = db.cursor()
+
+    sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+    val = ("John", "Highway 21")
+    cursor.execute(sql, val)
 
 
 def send_target_to_workers(target: str, workers: list):
@@ -86,7 +137,7 @@ def send_target_to_workers(target: str, workers: list):
         failures = []
 
         for result in results:
-            status_line = f"{BOLD}{result['worker']['location']:<20}{RESET}"
+            status_line = f"{BOLD}{result['worker']['country_name']:<20}{RESET}"
 
             if result["success"]:
                 successes.append(
@@ -148,7 +199,7 @@ if __name__ == "__main__":
 
             target_worker = None
             for worker in workers:
-                if worker["location"].lower() == args.worker.lower():
+                if worker["country_name"].lower() == args.worker.lower():
                     target_worker = worker
 
             if not target_worker:
@@ -163,11 +214,14 @@ if __name__ == "__main__":
 
         send_target_to_workers(args.target, workers)
 
+        for worker in workers:
+
+
     # if we are not sending targets, then just ping all workers
     else:
 
         for worker in workers:
             if ping(worker["ip"]):
-                print(f"{worker['location']:<20} OK")
+                print(f"{worker['country_name']:<20} OK")
             else:
-                print(f"{worker['location']:<20} OFFLINE")
+                print(f"{worker['country_name']:<20} OFFLINE")
