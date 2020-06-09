@@ -11,5 +11,11 @@
 
 Note: All the pattern (for AS number parsing) to include and exclude need to be added in shell script.
 
+# Output files:
+1. File having top in file name contain top 20 ASes
+2. File having full in file name conatin all ASes
+3. File having heavy hitter and country in file name contain final heavy hitter ASes list 
+4. as_relationship_graph.txt contain parent-child cone graph from caida ASes relationship dataset
+
 # ToDo
-1. Fixing search of the child node. (DFS traversal algo in search method)
+1. Optimize % of internet cover code. Currently commented in asrelationship.py file.
