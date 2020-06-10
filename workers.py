@@ -1,7 +1,7 @@
 workers = [
     {
         "country_name": "Korea",
-        "counry_code": "KR",
+        "country_code": "KR",
         "continent": "Asia",
         "city": None,
         "ip": "103.140.45.134",
