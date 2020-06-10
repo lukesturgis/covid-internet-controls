@@ -69,7 +69,7 @@ def send_target_to_worker(worker: dict, target: str):
         response = requests.post(address, data=data, timeout=10).json()
 
     except requests.RequestException as e:
-        response = {"success": False, "data": str(e)}
+        response = {"target": target, "success": False, "data": str(e)}
 
     log.debug(f"{json.dumps(response, indent=4)}")
     response["worker"] = worker
@@ -146,6 +146,7 @@ def get_from_db(conn, sql, values):
 
 
 def send_worker_to_db(conn, worker):
+    log.info(f"Updating DB for worker {worker['ip']}...")
     sql = "INSERT IGNORE INTO countries VALUES (%s, %s, %s)"
     values = (worker["country_code"], worker["country_name"], worker["continent"])
     send_to_db(conn, sql, values)
@@ -165,6 +166,7 @@ def get_response_id(conn, content):
 
 
 def send_results_to_db(conn, worker, results):
+    log.info(f"Sending results for {worker['ip']} ({worker['country_name']})...")
     domain = get_domain_name_from_url(results["target"])
     path = get_path_from_url(results["target"])
     if "http://" in results["target"]:
@@ -193,8 +195,8 @@ def send_results_to_db(conn, worker, results):
 
         response_id = get_response_id(conn, results["content"])
 
-        sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol) VALUES (%s, %s, %s, %s, %s)"
-        values = (worker["ip"], domain, path, response_id, protocol)
+        sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol, censored) VALUES (%s, %s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, response_id, protocol, False)
         send_to_db(conn, sql, values)
 
     # sql = "INSERT INTO request VALUES (%s, %s, %s, %s, %s)"
@@ -291,6 +293,7 @@ if __name__ == "__main__":
         else:
             workers = workers
 
+        log.info(f"Requesting {args.target}...")
         results = send_target_to_workers(args.target, workers)
         conn = setup_db()
         if not conn:
@@ -300,7 +303,8 @@ if __name__ == "__main__":
             send_worker_to_db(conn, worker)
 
         for result in results:
-            send_results_to_db(conn, result["worker"], result)
+            if ping(result["worker"]["ip"]):
+                send_results_to_db(conn, result["worker"], result)
 
     # if we are not sending targets, then just ping all workers
     else:
