@@ -131,7 +131,7 @@ for country_top_AS_list in countries_list:
         filehandle.writelines("%s\n" % place for place in AS_array)
 
 
-    #Calculating % of internet covered in heavy_hitter file. ((final_child list + heavy hitter list)/full AS list)
+    #Calculating % of internet covered in heavy_hitter file. ((final_child list)/full AS list)
     #ToDo: check if child_count array is properly getting assigned or not.
     full_as_country_file = full_as_countries_list[country_index];
 
@@ -149,14 +149,14 @@ for country_top_AS_list in countries_list:
                     if graph.search_child(int(hhp), int(fac)) == True:
                         child_count[int(fac)] = 1
 #                        print("Parent {} and child {} relation is true. Child count flag is {}".format(int(hhp), int(fac),child_count[int(fac)]))
-            print("parent number checked {} from country {}".format(i,country_top_AS_list))
-            i=i+1
+#                print("parent number checked {} from country {}".format(i,country_top_AS_list))
+#                i=i+1
     final_child_count = 0
     for flag in child_count:
          if flag == 1:
             final_child_count +=1
-    print("heavy_hitter {}, child count {}, full_as_list_length {}, % of AS covered by heavy hitter ASes is {}".format(
-        heavy_hitter_list_len,final_child_count, full_as_list_len, (100*(heavy_hitter_list_len + final_child_count)/full_as_list_len)))
+    print("country {}, heavy_hitter {}, child count {}, full_as_list_length {}, % of AS covered by heavy hitter ASes is {}".format(country_top_AS_list,
+        heavy_hitter_list_len,final_child_count, full_as_list_len, (100*(final_child_count)/full_as_list_len)))
 
     country_index += 1
 
