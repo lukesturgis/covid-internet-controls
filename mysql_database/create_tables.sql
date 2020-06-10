@@ -30,8 +30,9 @@ CREATE TABLE IF NOT EXISTS request (
     worker_ip VARCHAR(32) NOT NULL, 
     domain VARCHAR(256) NOT NULL,
     path VARCHAR(256) NOT NULL,
-    response_id INT NOT NULL,
+    response_id INT,
     protocol VARCHAR(5) NOT NULL,
+    censored BOOLEAN,
     PRIMARY KEY (id),
     FOREIGN KEY (worker_ip) REFERENCES workers(worker_ip),
     FOREIGN KEY (response_id) REFERENCES response(id)
