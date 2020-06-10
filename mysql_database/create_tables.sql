@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS response (
     id INT NOT NULL AUTO_INCREMENT,
     success BOOLEAN NOT NULL,
     status_code INT NOT NULL,
-    content TEXT NOT NULL,
+    content LONGBLOB NOT NULL,
+    content_hash CHAR(32) NOT NULL,
     PRIMARY KEY (id)
 );
 

@@ -76,8 +76,45 @@ def send_target_to_worker(worker: dict, target: str):
     return response
 
 
-def setup_db():
+def strip_protocol(url: str):
+    url = url.replace("http://", "")
+    url = url.replace("https://", "")
+    return url
 
+
+def get_domain_name_from_url(url: str):
+    """
+    Parse a URL and extract the domain name without any extras (port, etc.)
+    """
+
+    # strip protocol
+    url = strip_protocol(url)
+
+    # now strip path
+    url = url.split("/")
+    url = url[0]
+
+    # strip port, if existing
+    url = url.split(":")[0]
+
+    if not url.startswith("www."):
+        url = "www." + url
+
+    return url
+
+
+def get_path_from_url(url: str):
+    url = strip_protocol(url)
+
+    url_split = url.split("/")
+    path = "/"
+    if len(url_split) > 1:
+        path = path + "/".join(url_split[1:])
+
+    return path
+
+
+def setup_db():
     conn = mysql.connector.connect(
         host=MYSQL_HOST,
         user=MYSQL_USER,
@@ -91,36 +128,65 @@ def setup_db():
     return None
 
 
-def create_country(conn, cursor, country_code: str, country_name: str, continent: str):
-    inserted = False
-    sql = "INSERT IGNORE INTO countries VALUES (%s, %s, %s)"
-    val = (country_code, country_name, continent)
-    cursor.execute(sql, val)
+def send_to_db(conn, sql, values):
+    log.debug(f"sql is {sql}")
+    log.debug(f"values are {values}")
+    cursor = conn.cursor()
+    cursor.execute(sql, values)
     conn.commit()
 
-    # assure that it was inserted properly
-    sql = "SELECT * FROM countries WHERE country_code = '%s'"
-    val = (country_code,)
-    cursor.execute(sql, val)
-    cursor.fetchall()
-    if cursor.rowcount != 1:
-        log.error(f"Country {country_code} was not inserted properly.")
-    else:
-        inserted = True
 
-    return inserted
+def get_from_db(conn, sql, values):
+    log.debug(f"sql is {sql}")
+    log.debug(f"values are {values}")
+    cursor = conn.cursor()
+    cursor.execute(sql, values)
+    results = cursor.fetchall()
+    return results
 
 
-def send_to_db(results):
-    db = mysql.connector.connect(
-        host="localhost", user="yourusername", passwd="yourpassword"
-    )
+def send_worker_to_db(conn, worker):
+    sql = "INSERT IGNORE INTO countries VALUES (%s, %s, %s)"
+    values = (worker["country_code"], worker["country_name"], worker["continent"])
+    send_to_db(conn, sql, values)
 
-    cursor = db.cursor()
+    sql = "INSERT IGNORE INTO workers VALUES (%s, %s)"
+    values = (worker["ip"], worker["country_code"])
+    send_to_db(conn, sql, values)
 
-    sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-    val = ("John", "Highway 21")
-    cursor.execute(sql, val)
+
+def get_response_id(conn, content):
+    sql = "SELECT id FROM response WHERE content_hash = MD5(%s)"
+    values = (content,)
+    response = get_from_db(conn, sql, values)
+    if len(response) > 0:
+        return response[0][0]
+    return None
+
+
+def send_results_to_db(conn, worker, results):
+    response_id = get_response_id(conn, results["content"])
+
+    print(f"response is {response_id}")
+    if not response_id:
+        sql = "INSERT INTO response (success, status_code, content, content_hash) VALUES (%s, %s, %s, MD5(%s))"
+        values = (
+            results["success"],
+            results["status_code"],
+            results["content"],
+            results["content"],
+        )
+        send_to_db(conn, sql, values)
+
+    domain = get_domain_name_from_url(results["target"])
+    path = get_path_from_url(results["target"])
+    response_id = get_response_id(conn, results["content"])
+
+    sql = "INSERT INTO request (worker_ip, domain, path, response_id) VALUES (%s, %s, %s, %s)"
+    values = (worker["ip"], domain, path, response_id)
+    send_to_db(conn, sql, values)
+
+    # sql = "INSERT INTO request VALUES (%s, %s, %s, %s, %s)"
 
 
 def send_target_to_workers(target: str, workers: list):
@@ -161,6 +227,8 @@ def send_target_to_workers(target: str, workers: list):
 
         for failure in failures:
             print(failure)
+
+        return results
 
 
 if __name__ == "__main__":
@@ -212,10 +280,16 @@ if __name__ == "__main__":
         else:
             workers = workers
 
-        send_target_to_workers(args.target, workers)
+        results = send_target_to_workers(args.target, workers)
+        conn = setup_db()
+        if not conn:
+            sys.exit(1)
 
         for worker in workers:
+            send_worker_to_db(conn, worker)
 
+        for result in results:
+            send_results_to_db(conn, result["worker"], result)
 
     # if we are not sending targets, then just ping all workers
     else:
