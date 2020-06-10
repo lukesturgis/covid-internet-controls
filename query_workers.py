@@ -150,8 +150,8 @@ def send_worker_to_db(conn, worker):
     values = (worker["country_code"], worker["country_name"], worker["continent"])
     send_to_db(conn, sql, values)
 
-    sql = "INSERT IGNORE INTO workers VALUES (%s, %s)"
-    values = (worker["ip"], worker["country_code"])
+    sql = "INSERT IGNORE INTO workers VALUES (%s, %s, %s)"
+    values = (worker["ip"], worker["country_code"], worker["city"])
     send_to_db(conn, sql, values)
 
 
@@ -165,26 +165,37 @@ def get_response_id(conn, content):
 
 
 def send_results_to_db(conn, worker, results):
-    response_id = get_response_id(conn, results["content"])
-
-    print(f"response is {response_id}")
-    if not response_id:
-        sql = "INSERT INTO response (success, status_code, content, content_hash) VALUES (%s, %s, %s, MD5(%s))"
-        values = (
-            results["success"],
-            results["status_code"],
-            results["content"],
-            results["content"],
-        )
-        send_to_db(conn, sql, values)
-
     domain = get_domain_name_from_url(results["target"])
     path = get_path_from_url(results["target"])
-    response_id = get_response_id(conn, results["content"])
+    if "http://" in results["target"]:
+        protocol = "http"
+    else:
+        protocol = "https"
 
-    sql = "INSERT INTO request (worker_ip, domain, path, response_id) VALUES (%s, %s, %s, %s)"
-    values = (worker["ip"], domain, path, response_id)
-    send_to_db(conn, sql, values)
+    if results["success"] is False:
+        sql = "INSERT INTO request (worker_ip, domain, path, protocol, censored) VALUES (%s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, protocol, True)
+        send_to_db(conn, sql, values)
+
+    else:
+        response_id = get_response_id(conn, results["content"])
+
+        if not response_id:
+            log.debug("Response does not currently exist, entering it now...")
+            sql = "INSERT INTO response (success, status_code, content, content_hash) VALUES (%s, %s, %s, MD5(%s))"
+            values = (
+                results["success"],
+                results["status_code"],
+                results["content"],
+                results["content"],
+            )
+            send_to_db(conn, sql, values)
+
+        response_id = get_response_id(conn, results["content"])
+
+        sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol) VALUES (%s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, response_id, protocol)
+        send_to_db(conn, sql, values)
 
     # sql = "INSERT INTO request VALUES (%s, %s, %s, %s, %s)"
 
