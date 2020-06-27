@@ -96,3 +96,7 @@ File name: authorized_keys
 
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFCsbawZd989aMFe3g2EwYSzfYNL8wXz/IwryllKxqhA root@csec-virtual-machine
 
+Normal information:
+root password: TWCUU0Xz6TQiRUwPKZoD13Ta
+'worker' user password: BqspKb7e65K8NhqUrE24F51q
+
