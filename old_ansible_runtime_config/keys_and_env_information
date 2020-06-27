@@ -100,3 +100,66 @@ Normal information:
 root password: TWCUU0Xz6TQiRUwPKZoD13Ta
 'worker' user password: BqspKb7e65K8NhqUrE24F51q
 
+
+MYSQL TABLES:
+mysql> show tables;
+| Tables_in_covid_internet_controls |
+|countries|
+|request|
+|response| 
+|workers|
+
+mysql> select * from countries;                                                                                                                                             
++--------------+--------------+---------------+                                                                                                                             
+| country_code | country_name | continent     |                                                                                                                             
++--------------+--------------+---------------+                                                                                                                             
+| AU           | Australia    | Australia     |                                                                                                                             
+| CN           | China        | Asia          |                                                                                                                             
+| HK           | Hong_Kong    | Asia          |                                                                                                                             
+| KR           | Korea        | Asia          |                                                                                                                            
+| PE           | Peru         | South_America |                                                                                                                             
+| ZA           | South_Africa | Africa        |                                                                                                                            
++--------------+--------------+---------------+   
+
+mysql> select * from workers;                                                                                                                                               
++-----------------+--------------+-----------+                                                                                                                              
+| worker_ip       | country_code | city      |                                                                                                                             
++-----------------+--------------+-----------+                                                                                                                              
+| 102.67.140.37   | ZA           | NULL      |                                                                                                                              
+| 103.140.45.134  | KR           | NULL      |                                                                                                                              
+| 109.201.143.179 | AU           | NULL      |                                                                                                                              
+| 111.230.200.28  | CN           | Guangzhou |                                                                                                                              
+| 111.231.28.232  | CN           | Shanghai  |                                                                                                                              
+| 124.156.101.160 | HK           | NULL      |                                                                                                                              
+| 129.21.183.10   | CN           | Shanghai  |                                                                                                                             
+| 129.28.202.97   | CN           | Chongqing |                                                                                                                              
+| 139.155.74.236  | CN           | Chengdu   |                                                                                                                              
+| 45.7.230.136    | PE           | NULL      |                                                                                                                              
+| 49.233.48.214   | CN           | Beijing   |                                                                                                                              
++-----------------+--------------+-----------+  
+
+mysql> select * from request;                                                                                                                                               
++----+-----------------+----------------+------+-------------+----------+----------+                                                                                        
+| id | worker_ip       | domain         | path | response_id | protocol | censored |                                                                             
+| 12 | 111.231.28.232  | www.google.com | /    |        NULL | http     |        1 |                                                                                        
+| 13 | 49.233.48.214   | www.google.com | /    |        NULL | http     |        1 |
+| 14 | 111.230.200.28  | www.google.com | /    |        NULL | http     |        1 |
+| 15 | 139.155.74.236  | www.google.com | /    |        NULL | http     |        1 |
+| 16 | 124.156.101.160 | www.google.com | /    |           2 | http     |        0 |
+| 17 | 102.67.140.37   | www.google.com | /    |           2 | http     |        0 |
++----+-----------------+----------------+------+-------------+----------+----------+
+
+mysql> select * from response; 
+| id | success | status_code | content| content_hash| 
+|2   |1        |302          |
+<HTML>
+<HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>302 Moved</TITLE></HEAD>
+<BODY>
+<H1>302 Moved</H1>
+The document has moved<A HREF="https://www.google.com/?gws_rd=ssl">here</A>.
+</BODY>
+</HTML>
+|68a006996ece55adef2db478ed631ea5 |
+
+
