@@ -162,4 +162,12 @@ The document has moved<A HREF="https://www.google.com/?gws_rd=ssl">here</A>.
 </HTML>
 |68a006996ece55adef2db478ed631ea5 |
 
+Command:
+grep -Rw '.' -e 'env'^C
+
+Sample .env file:
+# a comment that will be ignored.
+REDIS_ADDRESS=localhost:6379
+MEANING_OF_LIFE=42
+MULTILINE_VAR="hello\nworld"
 
