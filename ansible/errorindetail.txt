@@ -55,3 +55,136 @@ NO MORE HOSTS LEFT *************************************************************
 PLAY RECAP *******************************************************************************************************************
 Rochester_US               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
 
+
+<============================================================================================================================>
+
+csec@csec-virtual-machine:~/covid-internet-controls/ansible$ sudo ansible-playbook deploy.yml -vvvv
+ansible-playbook 2.9.7
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/csec/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.17 (default, Apr 15 2020, 17:20:14) [GCC 7.5.0]
+Using /etc/ansible/ansible.cfg as config file
+setting up inventory plugins
+host_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+script declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Parsed /etc/ansible/hosts inventory source with ini plugin
+Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/dist-packages/ansible/plugins/callback/default.pyc
+
+PLAYBOOK: deploy.yml *********************************************************************************************************
+Positional arguments: deploy.yml
+remote_user: sahil
+become_method: sudo
+inventory: (u'/etc/ansible/hosts',)
+forks: 5
+tags: (u'all',)
+verbosity: 4
+connection: smart
+timeout: 10
+1 plays in deploy.yml
+Read vars_file '.env'
+Read vars_file '.env'
+Read vars_file '.env'
+
+PLAY [all] *******************************************************************************************************************
+Read vars_file '.env'
+META: ran handlers
+Read vars_file '.env'
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'echo ~sahil && sleep 0'"'"''
+<129.21.67.226> (0, '/home/sahil\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/sahil/.ansible/tmp `"&& mkdir /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330 && echo ansible-tmp-1593388084.7-9487-126704949856330="` echo /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330 `" ) && sleep 0'"'"''
+<129.21.67.226> (0, 'ansible-tmp-1593388084.7-9487-126704949856330=/home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+<Rochester_US> Attempting python interpreter discovery
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<129.21.67.226> (0, 'PLATFORM\nLinux\nFOUND\n/usr/bin/python\n/usr/bin/python3.5\n/usr/bin/python2.7\n/usr/bin/python3\n/usr/bin/python\nENDFOUND\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''
+<129.21.67.226> (0, '{"osrelease_content": "NAME=\\"Ubuntu\\"\\nVERSION=\\"16.04.1 LTS (Xenial Xerus)\\"\\nID=ubuntu\\nID_LIKE=debian\\nPRETTY_NAME=\\"Ubuntu 16.04.1 LTS\\"\\nVERSION_ID=\\"16.04\\"\\nHOME_URL=\\"http://www.ubuntu.com/\\"\\nSUPPORT_URL=\\"http://help.ubuntu.com/\\"\\nBUG_REPORT_URL=\\"http://bugs.launchpad.net/ubuntu/\\"\\nUBUNTU_CODENAME=xenial\\n", "platform_dist_result": ["Ubuntu", "16.04", "xenial"]}\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/packaging/os/apt.py
+<129.21.67.226> PUT /home/csec/.ansible/tmp/ansible-local-9480qCE7Kx/tmpBxiaC0 TO /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/AnsiballZ_apt.py
+<129.21.67.226> SSH: EXEC sftp -b - -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec '[129.21.67.226]'
+<129.21.67.226> (0, 'sftp> put /home/csec/.ansible/tmp/ansible-local-9480qCE7Kx/tmpBxiaC0 /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/AnsiballZ_apt.py\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug2: Remote version: 3\r\ndebug2: Server supports extension "posix-rename@openssh.com" revision 1\r\ndebug2: Server supports extension "statvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "fstatvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "hardlink@openssh.com" revision 1\r\ndebug2: Server supports extension "fsync@openssh.com" revision 1\r\ndebug3: Sent message fd 6 T:16 I:1\r\ndebug3: SSH_FXP_REALPATH . -> /home/sahil size 0\r\ndebug3: Looking up /home/csec/.ansible/tmp/ansible-local-9480qCE7Kx/tmpBxiaC0\r\ndebug3: Sent message fd 6 T:17 I:2\r\ndebug3: Received stat reply T:101 I:2\r\ndebug1: Couldn\'t stat remote file: No such file or directory\r\ndebug3: Sent message SSH2_FXP_OPEN I:3 P:/home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/AnsiballZ_apt.py\r\ndebug3: Sent message SSH2_FXP_WRITE I:4 O:0 S:32768\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 4 32768 bytes at 0\r\ndebug3: Sent message SSH2_FXP_WRITE I:5 O:32768 S:32768\r\ndebug3: Sent message SSH2_FXP_WRITE I:6 O:65536 S:32768\r\ndebug3: Sent message SSH2_FXP_WRITE I:7 O:98304 S:32768\r\ndebug3: Sent message SSH2_FXP_WRITE I:8 O:131072 S:11869\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 5 32768 bytes at 32768\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 6 32768 bytes at 65536\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 7 32768 bytes at 98304\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 8 11869 bytes at 131072\r\ndebug3: Sent message SSH2_FXP_CLOSE I:4\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'chmod u+x /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/ /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/AnsiballZ_apt.py && sleep 0'"'"''
+<129.21.67.226> (0, '', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec -tt 129.21.67.226 '/bin/sh -c '"'"'/usr/bin/python /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/AnsiballZ_apt.py && sleep 0'"'"''
+<129.21.67.226> (1, '\r\n{"exception": "WARNING: The below traceback may *not* be related to the actual failure.\\n  File \\"/tmp/ansible_apt_payload_fSkJlQ/ansible_apt_payload.zip/ansible/modules/packaging/os/apt.py\\", line 308, in <module>\\n", "stdout": "Reading package lists...\\n", "cmd": "apt-get update", "failed": true, "stderr": "W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)\\nE: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)\\nE: Unable to lock directory /var/lib/apt/lists/\\nW: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\\nW: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)\\n", "rc": 100, "invocation": {"module_args": {"dpkg_options": "force-confdef,force-confold", "autoremove": false, "force": false, "force_apt_get": false, "policy_rc_d": null, "package": null, "autoclean": false, "install_recommends": null, "purge": false, "allow_unauthenticated": false, "state": "present", "upgrade": null, "update_cache": true, "default_release": null, "only_upgrade": false, "deb": null, "cache_valid_time": 0}}, "warnings": ["Updating cache and auto-installing missing dependency: python-apt"], "msg": "W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)\\nE: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)\\nE: Unable to lock directory /var/lib/apt/lists/\\nW: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\\nW: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)"}\r\n', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 1\r\nShared connection to 129.21.67.226 closed.\r\n')
+<129.21.67.226> Failed to connect to the host via ssh: OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug2: fd 3 setting O_NONBLOCK
+debug2: mux_client_hello_exchange: master version 4
+debug3: mux_client_forwards: request forwardings: 0 local, 0 remote
+debug3: mux_client_request_session: entering
+debug3: mux_client_request_alive: entering
+debug3: mux_client_request_alive: done pid = 9446
+debug3: mux_client_request_session: session request sent
+debug1: mux_client_request_session: master session id: 2
+debug3: mux_client_read_packet: read header failed: Broken pipe
+debug2: Received exit status from master 1
+Shared connection to 129.21.67.226 closed.
+<129.21.67.226> ESTABLISH SSH CONNECTION FOR USER: sahil
+<129.21.67.226> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="sahil"' -o ConnectTimeout=10 -o ControlPath=/home/csec/.ansible/cp/219a48adec 129.21.67.226 '/bin/sh -c '"'"'rm -f -r /home/sahil/.ansible/tmp/ansible-tmp-1593388084.7-9487-126704949856330/ > /dev/null 2>&1 && sleep 0'"'"''
+<129.21.67.226> (0, '', 'OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 9446\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')
+
+TASK [Update apt] ************************************************************************************************************
+task path: /home/csec/covid-internet-controls/ansible/deploy.yml:9
+The full traceback is:
+WARNING: The below traceback may *not* be related to the actual failure.
+  File "/tmp/ansible_apt_payload_fSkJlQ/ansible_apt_payload.zip/ansible/modules/packaging/os/apt.py", line 308, in <module>
+[WARNING]: Updating cache and auto-installing missing dependency: python-apt
+fatal: [Rochester_US]: FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "cmd": "apt-get update",
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false,
+            "autoclean": false,
+            "autoremove": false,
+            "cache_valid_time": 0,
+            "deb": null,
+            "default_release": null,
+            "dpkg_options": "force-confdef,force-confold",
+            "force": false,
+            "force_apt_get": false,
+            "install_recommends": null,
+            "only_upgrade": false,
+            "package": null,
+            "policy_rc_d": null,
+            "purge": false,
+            "state": "present",
+            "update_cache": true,
+            "upgrade": null
+        }
+    },
+    "msg": "W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)\nE: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)",
+    "rc": 100,
+    "stderr": "W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)\nE: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)\n",
+    "stderr_lines": [
+        "W: chmod 0700 of directory /var/lib/apt/lists/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)",
+        "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)",
+        "E: Unable to lock directory /var/lib/apt/lists/",
+        "W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)",
+        "W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)"
+    ],
+    "stdout": "Reading package lists...\n",
+    "stdout_lines": [
+        "Reading package lists..."
+    ]
+}
+
+PLAY RECAP *******************************************************************************************************************
+Rochester_US               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+csec@csec-virtual-machine:~/covid-internet-controls/ansible$
+
