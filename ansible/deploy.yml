@@ -16,6 +16,10 @@
         name: docker.io
         state: present
 
+    - name: Install tree
+      apt:
+        name: tree
+        state: present
 
     - name: Clone Git repository
       git:
