@@ -54,3 +54,12 @@ To run an ansible playbook, you will need to perform the following:
 
 
 This will execute the playbook against all of the hosts that exist in `/etc/ansible/hosts`.
+
+## Sahil Instructions:
+1. changes in ansible.cfg: <become: true, become_method: sudo> 
+2. Host file: Rochester_US ansible_host=129.21.183.44 ansible_user=sg5414
+3. Command: ansible-playbook mail.yml -k -K
+4. command on slave VPS: apt install python-docker
+
+## ToDo:
+1. Make step 4 (python-docker) as part of ansible deploy.yml file.
