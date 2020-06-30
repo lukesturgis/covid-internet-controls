@@ -27,3 +27,6 @@ To run these tests, first install `pytest`:
 Then run the tests:
 
     pytest
+
+##Sahil: Need to rewrite all the instructions for deployment
+
