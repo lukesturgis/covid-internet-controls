@@ -42,13 +42,3 @@
 
 ## db-[99:101]-node.example.com
 
-## [Test host] HB1 server
-#Rochester_US ansible_host=129.21.67.226 ansible_user=sahil
-#Rochester_US ansible_host= 3.235.150.29 ansible_user=root
-#Rochester_US ansible_host=129.21.183.46 ansible_user=sg5414
-Rochester_US ansible_host=129.21.183.44 ansible_user=sg5414
-
-
-
-
-
