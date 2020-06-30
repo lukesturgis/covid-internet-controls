@@ -54,9 +54,3 @@ To run an ansible playbook, you will need to perform the following:
 
 
 This will execute the playbook against all of the hosts that exist in `/etc/ansible/hosts`.
-
-
-## Sahil Diff from above:
-1. Changes to ansible.cfg: ansible.cfg: <become: true, become_method: sudo>
-2. Changes to Host file: Rochester_US ansible_host=129.21.183.44 ansible_user=sg5414
-3. Command (to be pass the password for sudo activies permissions): ansible-playbook deploy.yml -k -K
