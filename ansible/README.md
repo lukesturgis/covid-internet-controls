@@ -67,8 +67,8 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 
 ## Sahil-ToDo:
 1. Make step 4 (python-docker) as part of ansible deploy.yml file.
-2. Step 3 needs to be automated via host file
-See these link for reference:<br>
+2. Step 3 needs to be automated via host inventory file.
+<br>See these link for reference:
 <br>https://stackoverflow.com/questions/37004686/how-to-pass-a-user-password-in-ansible-command
 <br>https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#hosts-and-users
 
