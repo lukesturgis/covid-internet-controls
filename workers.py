@@ -1,79 +1,21 @@
 workers = [
     {
-        "country_name": "Korea",
-        "country_code": "KR",
-        "continent": "Asia",
-        "city": None,
-        "ip": "103.140.45.134",
+        "country_name": "United_States",
+        "country_code": "US",
+        "continent": "America",
+        "city": "Rochester",
+        "ip": "129.21.183.44",
     },
     {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Shanghai",
-        "ip": "129.21.183.10",
-    },
-    {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Shanghai",
-        "ip": "111.231.28.232",
-    },
-    {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Beijing",
-        "ip": "49.233.48.214",
-    },
-    {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Guangzhou",
-        "ip": "111.230.200.28",
-    },
-    {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Chengdu",
-        "ip": "139.155.74.236",
-    },
-    {
-        "country_name": "China",
-        "country_code": "CN",
-        "continent": "Asia",
-        "city": "Chongqing",
-        "ip": "129.28.202.97",
-    },
-    {
-        "country_name": "Hong_Kong",
-        "country_code": "HK",
-        "continent": "Asia",
-        "city": None,
-        "ip": "124.156.101.160",
-    },
-    {
-        "country_name": "South_Africa",
-        "country_code": "ZA",
-        "continent": "Africa",
-        "city": None,
-        "ip": "102.67.140.37",
-    },
-    {
-        "country_name": "Australia",
-        "country_code": "AU",
-        "continent": "Australia",
-        "city": None,
-        "ip": "109.201.143.179",
-    },
-    {
-        "country_name": "Peru",
-        "country_code": "PE",
-        "continent": "South_America",
-        "city": None,
-        "ip": "45.7.230.136",
+        "country_name": "United_States",
+        "country_code": "US",
+        "continent": "America",
+        "city": "Rochester",
+        "ip": "129.21.183.46",
     },
 ]
+
+
+
+
+
