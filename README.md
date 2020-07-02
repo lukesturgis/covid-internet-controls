@@ -32,3 +32,4 @@ Then run the tests:
 1. website_list.txt should contains all the website in given sample format.
 2. query_worker_multiple_targets.sh is wrapper script which takes multiple target websites from website_list.txt file.
 3. ToDo: password for all nodes in ansible to have sudo privileges and database design and connections.
+<br>Try ansible_passoword=12345 in host or become: yes in .yml file
