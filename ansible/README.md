@@ -71,7 +71,7 @@ A. To set python3.6 as default python3 interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
 sudo update-alternatives --config python3
 
-B. Follow these instructions to make pip3 install work:
+B. Follow these instructions to make pip3 install work: (Link: https://blog.csdn.net/weixin_42730667/article/details/100260883)
 1. sudo find / -name 'lsb_release.py'
 // result:
 // /usr/share/pyshared/lsb_release.py
@@ -86,4 +86,3 @@ B. Follow these instructions to make pip3 install work:
 <br>See these link for reference:
 <br>https://stackoverflow.com/questions/37004686/how-to-pass-a-user-password-in-ansible-command
 <br>https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#hosts-and-users
-
