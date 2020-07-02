@@ -66,6 +66,20 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 7. sudo pip3 install mysql-connector
 8. sudo pip3 install python-dotenv
 
+## Sahil: In case 3.6 is installed from source code
+A. To set python3.6 as default python3 interpreter
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
+sudo update-alternatives --config python3
+
+B. Follow these instructions to make pip3 install work:
+sudo find / -name 'lsb_release.py'
+# result:
+# /usr/share/pyshared/lsb_release.py
+# /usr/lib/python2.7/dist-packages/lsb_release.py
+# /usr/lib/python3/dist-packages/lsb_release.py
+python -V
+sudo cp  /usr/lib/python3/dist-packages/lsb_release.py /opt/ptyhon3.7/lib/python3.7
+
 ## Sahil ToDo:
 1. Make step 4 (python-docker) as part of ansible deploy.yml file.
 2. Step 3 needs to be automated via host inventory file.
