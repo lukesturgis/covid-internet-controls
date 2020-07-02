@@ -65,6 +65,7 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 6. sudo pip3 install coloredlogs
 7. sudo pip3 install mysql-connector
 8. sudo pip3 install python-dotenv
+9. For csec rit server: sudo chmod 777 -R .ansible/* . It needs to permission to be modified by remote user as it can't access the .ansible/tmp folder for its operations.
 
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
