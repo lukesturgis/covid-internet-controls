@@ -61,11 +61,12 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 3. Command: ansible-playbook mail.yml -k -K
 4. command on slave VPS: apt install python-docker
 <br>Packages on query_worker.py host:</br>
-5. sudo pip3 install coloredlogs
-6. sudo pip3 install mysql-connector
-7. sudo pip3 install python-dotenv
+5. sudo apt-get install python3-pip
+6. sudo pip3 install coloredlogs
+7. sudo pip3 install mysql-connector
+8. sudo pip3 install python-dotenv
 
-## Sahil-ToDo:
+## Sahil ToDo:
 1. Make step 4 (python-docker) as part of ansible deploy.yml file.
 2. Step 3 needs to be automated via host inventory file.
 <br>See these link for reference:
