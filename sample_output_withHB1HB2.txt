@@ -1,0 +1,195 @@
+root@sahilgupta221-HP-Pavilion-Sleekbook-14-PC:~/covid-internet-controls# ./query_worker_multiple_targets.sh > sample_output_withHB1HB2.txt
+2020-07-02 12:45:56 - INFO - Requesting www.facebook.com...
+2020-07-02 12:45:56 - DEBUG - Sending www.facebook.com to United_States...
+2020-07-02 12:45:56 - DEBUG - Sending www.facebook.com to United_States...
+2020-07-02 12:45:56 - DEBUG - Starting new HTTP connection (1): 129.21.183.46:42075
+2020-07-02 12:45:56 - DEBUG - Starting new HTTP connection (1): 129.21.183.44:42075
+2020-07-02 12:45:56 - DEBUG - http://129.21.183.46:42075 "POST /new_target HTTP/1.1" 200 430
+2020-07-02 12:45:56 - DEBUG - {
+    "content": "",
+    "headers": {
+        "Alt-Svc": "h3-29=\":443\"; ma=3600,h3-27=\":443\"; ma=3600",
+        "Connection": "keep-alive",
+        "Content-Length": "0",
+        "Content-Type": "text/html; charset=\"utf-8\"",
+        "Date": "Thu, 02 Jul 2020 16:45:56 GMT",
+        "Location": "https://www.facebook.com/",
+        "X-FB-Debug": "UIKUMZnkFrgtywRrMwNY25DobXOeEAzqca6P2PuO85Z7sS9d2ESpeD0nBDK0u4PRTQkhA3y0IStRtTFRnK2StA=="
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.facebook.com"
+}
+2020-07-02 12:45:56 - DEBUG - http://129.21.183.44:42075 "POST /new_target HTTP/1.1" 200 430
+2020-07-02 12:45:56 - DEBUG - {
+    "content": "",
+    "headers": {
+        "Alt-Svc": "h3-29=\":443\"; ma=3600,h3-27=\":443\"; ma=3600",
+        "Connection": "keep-alive",
+        "Content-Length": "0",
+        "Content-Type": "text/html; charset=\"utf-8\"",
+        "Date": "Thu, 02 Jul 2020 16:45:56 GMT",
+        "Location": "https://www.facebook.com/",
+        "X-FB-Debug": "IOevUknp3EZ7TCBtkz1A80S1GuVF/Mc2Iz2fwkcJZH5wOJXvZf+guGr3ucn8mrTixqMwfmelOm8/Lm8YrQTFcA=="
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.facebook.com"
+}
+2020-07-02 12:46:02 - INFO - Requesting www.google.com...
+2020-07-02 12:46:02 - DEBUG - Sending www.google.com to United_States...
+2020-07-02 12:46:02 - DEBUG - Sending www.google.com to United_States...
+2020-07-02 12:46:02 - DEBUG - Starting new HTTP connection (1): 129.21.183.44:42075
+2020-07-02 12:46:02 - DEBUG - Starting new HTTP connection (1): 129.21.183.46:42075
+2020-07-02 12:46:02 - DEBUG - http://129.21.183.44:42075 "POST /new_target HTTP/1.1" 200 696
+2020-07-02 12:46:02 - DEBUG - {
+    "content": "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302 Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A HREF=\"https://www.google.com/?gws_rd=ssl\">here</A>.\r\n</BODY></HTML>\r\n",
+    "headers": {
+        "Cache-Control": "private",
+        "Content-Length": "231",
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Thu, 02 Jul 2020 16:46:02 GMT",
+        "Location": "https://www.google.com/?gws_rd=ssl",
+        "Server": "gws",
+        "Set-Cookie": "1P_JAR=2020-07-02-16; expires=Sat, 01-Aug-2020 16:46:02 GMT; path=/; domain=.google.com; Secure",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "0"
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.google.com"
+}
+2020-07-02 12:46:02 - DEBUG - http://129.21.183.46:42075 "POST /new_target HTTP/1.1" 200 696
+2020-07-02 12:46:02 - DEBUG - {
+    "content": "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302 Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A HREF=\"https://www.google.com/?gws_rd=ssl\">here</A>.\r\n</BODY></HTML>\r\n",
+    "headers": {
+        "Cache-Control": "private",
+        "Content-Length": "231",
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Thu, 02 Jul 2020 16:46:02 GMT",
+        "Location": "https://www.google.com/?gws_rd=ssl",
+        "Server": "gws",
+        "Set-Cookie": "1P_JAR=2020-07-02-16; expires=Sat, 01-Aug-2020 16:46:02 GMT; path=/; domain=.google.com; Secure",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "0"
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.google.com"
+}
+2020-07-02 12:46:08 - INFO - Requesting www.instagram.com...
+2020-07-02 12:46:08 - DEBUG - Sending www.instagram.com to United_States...
+2020-07-02 12:46:08 - DEBUG - Sending www.instagram.com to United_States...
+2020-07-02 12:46:08 - DEBUG - Starting new HTTP connection (1): 129.21.183.46:42075
+2020-07-02 12:46:08 - DEBUG - Starting new HTTP connection (1): 129.21.183.44:42075
+2020-07-02 12:46:08 - DEBUG - http://129.21.183.44:42075 "POST /new_target HTTP/1.1" 200 303
+2020-07-02 12:46:08 - DEBUG - http://129.21.183.46:42075 "POST /new_target HTTP/1.1" 200 303
+2020-07-02 12:46:08 - DEBUG - {
+    "content": "",
+    "headers": {
+        "Connection": "keep-alive",
+        "Content-Length": "0",
+        "Content-Type": "text/plain",
+        "Date": "Thu, 02 Jul 2020 16:46:08 GMT",
+        "Location": "https://www.instagram.com/",
+        "Server": "proxygen-bolt",
+        "X-FB-TRIP-ID": "1679558926"
+    },
+    "status_code": 301,
+    "success": true,
+    "target": "http://www.instagram.com"
+}2020-07-02 12:46:08 - DEBUG - {
+    "content": "",
+    "headers": {
+        "Connection": "keep-alive",
+        "Content-Length": "0",
+        "Content-Type": "text/plain",
+        "Date": "Thu, 02 Jul 2020 16:46:08 GMT",
+        "Location": "https://www.instagram.com/",
+        "Server": "proxygen-bolt",
+        "X-FB-TRIP-ID": "1679558926"
+    },
+    "status_code": 301,
+    "success": true,
+    "target": "http://www.instagram.com"
+}
+
+2020-07-02 12:46:13 - INFO - Requesting www.chainshot.com...
+2020-07-02 12:46:13 - DEBUG - Sending www.chainshot.com to United_States...
+2020-07-02 12:46:13 - DEBUG - Sending www.chainshot.com to United_States...
+2020-07-02 12:46:13 - DEBUG - Starting new HTTP connection (1): 129.21.183.44:42075
+2020-07-02 12:46:13 - DEBUG - Starting new HTTP connection (1): 129.21.183.46:42075
+2020-07-02 12:46:14 - DEBUG - http://129.21.183.46:42075 "POST /new_target HTTP/1.1" 200 391
+2020-07-02 12:46:14 - DEBUG - {
+    "content": "Found. Redirecting to https://www.chainshot.com/",
+    "headers": {
+        "Connection": "keep-alive",
+        "Content-Length": "48",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Thu, 02 Jul 2020 16:46:14 GMT",
+        "Location": "https://www.chainshot.com/",
+        "Server": "Cowboy",
+        "Vary": "Accept",
+        "Via": "1.1 vegur",
+        "X-Powered-By": "Express"
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.chainshot.com"
+}
+2020-07-02 12:46:14 - DEBUG - http://129.21.183.44:42075 "POST /new_target HTTP/1.1" 200 391
+2020-07-02 12:46:14 - DEBUG - {
+    "content": "Found. Redirecting to https://www.chainshot.com/",
+    "headers": {
+        "Connection": "keep-alive",
+        "Content-Length": "48",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Date": "Thu, 02 Jul 2020 16:46:14 GMT",
+        "Location": "https://www.chainshot.com/",
+        "Server": "Cowboy",
+        "Vary": "Accept",
+        "Via": "1.1 vegur",
+        "X-Powered-By": "Express"
+    },
+    "status_code": 302,
+    "success": true,
+    "target": "http://www.chainshot.com"
+}
+2020-07-02 12:46:19 - INFO - Requesting www.twitter.com...
+2020-07-02 12:46:19 - DEBUG - Sending www.twitter.com to United_States...
+2020-07-02 12:46:19 - DEBUG - Sending www.twitter.com to United_States...
+2020-07-02 12:46:19 - DEBUG - Starting new HTTP connection (1): 129.21.183.44:42075
+2020-07-02 12:46:19 - DEBUG - Starting new HTTP connection (1): 129.21.183.46:42075
+2020-07-02 12:46:19 - DEBUG - http://129.21.183.44:42075 "POST /new_target HTTP/1.1" 200 602
+2020-07-02 12:46:19 - DEBUG - {
+    "content": "",
+    "headers": {
+        "content-length": "0",
+        "date": "Thu, 02 Jul 2020 16:46:19 GMT",
+        "location": "https://www.twitter.com/",
+        "server": "tsa_b",
+        "set-cookie": "personalization_id=\"v1_L79Tl/V6KUkuXeAd0YTVcQ==\"; Max-Age=63072000; Expires=Sat, 2 Jul 2022 16:46:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None, guest_id=v1%3A159370837971685464; Max-Age=63072000; Expires=Sat, 2 Jul 2022 16:46:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None",
+        "x-connection-hash": "5b298a789f5d56e7aacaf5657f0cd0e8",
+        "x-response-time": "3"
+    },
+    "status_code": 301,
+    "success": true,
+    "target": "http://www.twitter.com"
+}
+2020-07-02 12:46:19 - DEBUG - http://129.21.183.46:42075 "POST /new_target HTTP/1.1" 200 602
+2020-07-02 12:46:19 - DEBUG - {
+    "content": "",
+    "headers": {
+        "content-length": "0",
+        "date": "Thu, 02 Jul 2020 16:46:19 GMT",
+        "location": "https://www.twitter.com/",
+        "server": "tsa_b",
+        "set-cookie": "personalization_id=\"v1_CXB4LTrXFemRflTGAhwAOA==\"; Max-Age=63072000; Expires=Sat, 2 Jul 2022 16:46:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None, guest_id=v1%3A159370837972502534; Max-Age=63072000; Expires=Sat, 2 Jul 2022 16:46:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None",
+        "x-connection-hash": "84de14be1407bbcdd75fa78f94c7c80b",
+        "x-response-time": "3"
+    },
+    "status_code": 301,
+    "success": true,
+    "target": "http://www.twitter.com"
+}
+
