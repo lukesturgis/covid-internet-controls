@@ -41,14 +41,7 @@
 # leading 0s:
 
 ## db-[99:101]-node.example.com
-
-## [Test host] HB1 server
-#Rochester_US ansible_host=129.21.67.226 ansible_user=sahil
-#Rochester_US ansible_host= 3.235.150.29 ansible_user=root
-#Rochester_US ansible_host=129.21.183.46 ansible_user=sg5414
-Rochester_US ansible_host=129.21.183.44 ansible_user=sg5414
-
-
-
-
-
+#Rochester_US1 ansible_host=129.21.183.46 ansible_user=sg5414
+Rochester_US1 ansible_host=129.21.183.44 ansible_user=sg5414 ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = Seemavijay221!
+Rochester_US2 ansible_host=129.21.183.46 ansible_user=sg5414 ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = Seemavijay221!
+#Rochester_US3 ansible_host=129.21.183.10 ansible_user=csec ansible_password=ka$hmoney ansible_become=yes #ansible_become_password = Seemavijay221!
