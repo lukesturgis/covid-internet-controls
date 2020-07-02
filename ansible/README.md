@@ -65,6 +65,21 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 6. sudo pip3 install coloredlogs
 7. sudo pip3 install mysql-connector
 8. sudo pip3 install python-dotenv
+9. For csec rit server: sudo chmod 777 -R .ansible/* . It needs to permission to be modified by remote user as it can't access the .ansible/tmp folder for its operations.
+
+## Sahil: In case 3.6 is installed from source code
+A. To set python3.6 as default python3 interpreter
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
+sudo update-alternatives --config python3
+
+B. Follow these instructions to make pip3 install work: (Link: https://blog.csdn.net/weixin_42730667/article/details/100260883)
+1. sudo find / -name 'lsb_release.py'
+// result:
+// /usr/share/pyshared/lsb_release.py
+// /usr/lib/python2.7/dist-packages/lsb_release.py
+// /usr/lib/python3/dist-packages/lsb_release.py
+2. python -V
+3. sudo cp  /usr/lib/python3/dist-packages/lsb_release.py /opt/ptyhon3.7/lib/python3.7
 
 ## Sahil ToDo:
 1. Make step 4 (python-docker) as part of ansible deploy.yml file.
@@ -72,4 +87,3 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 <br>See these link for reference:
 <br>https://stackoverflow.com/questions/37004686/how-to-pass-a-user-password-in-ansible-command
 <br>https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#hosts-and-users
-
