@@ -72,13 +72,13 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/pytho
 sudo update-alternatives --config python3
 
 B. Follow these instructions to make pip3 install work:
-sudo find / -name 'lsb_release.py'
-# result:
-# /usr/share/pyshared/lsb_release.py
-# /usr/lib/python2.7/dist-packages/lsb_release.py
-# /usr/lib/python3/dist-packages/lsb_release.py
-python -V
-sudo cp  /usr/lib/python3/dist-packages/lsb_release.py /opt/ptyhon3.7/lib/python3.7
+1. sudo find / -name 'lsb_release.py'
+// result:
+// /usr/share/pyshared/lsb_release.py
+// /usr/lib/python2.7/dist-packages/lsb_release.py
+// /usr/lib/python3/dist-packages/lsb_release.py
+2. python -V
+3. sudo cp  /usr/lib/python3/dist-packages/lsb_release.py /opt/ptyhon3.7/lib/python3.7
 
 ## Sahil ToDo:
 1. Make step 4 (python-docker) as part of ansible deploy.yml file.
