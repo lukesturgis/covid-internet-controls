@@ -40,6 +40,18 @@
 # Here's another example of host ranges, this time there are no
 # leading 0s:
 
+
+## Akshay Orpe Suggestion
+#[Rochester_US]
+#129.21.183.44
+#129.21.183.45
+#129.21.184.46
+
+#[Rochester_US:vars]
+#ansible_user=sg5414
+#ansible_passoword=12345
+
+
 ## db-[99:101]-node.example.com
 #Rochester_US1 ansible_host=129.21.183.46 ansible_user=sg5414
 Rochester_US1 ansible_host=129.21.183.44 ansible_user=sg5414 ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = Seemavijay221!
