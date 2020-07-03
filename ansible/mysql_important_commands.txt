@@ -5,7 +5,7 @@
 
 
 
-### Setting user on mysql server
+### Setting user on mysql server (link: https://linuxize.com/post/how-to-create-mysql-user-accounts-and-grant-privileges/)
 sahilgupta221@sahilgupta221-HP-Pavilion-Sleekbook-14-PC:~/covid-internet-controls/ansible$ mysql -u root -p
 Enter password:root
 Welcome to the MySQL monitor.  Commands end with ; or \g.
