@@ -1,0 +1,82 @@
+## Setting the User Password in Ansible Playbooks
+- name: Deploy Ansible User
+hosts: all
+tasks:
+
+- name: Create Devops User
+user:
+name: devops
+groups: "{{ admin_group }}"
+append: true
+create_home: true
+comment: "Ansible Management Account"
+expires: -1
+password: "{{ 'Password1' | password_hash('sha512','A512') }}"
+
+## Deploy SSH Public Key in Ansible Playbooks
+Deploy SSH Public Key
+-----
+$ cd $HOME/deploy_devops
+$ vim deploy_devops.yml
+---
+- name: Deploy Ansible User
+hosts: all
+tasks:
+
+- name: Create Devops User
+user:
+name: devops
+groups: "{{ admin_group }}"
+append: true
+create_home: true
+comment: "Ansible Management Account"
+expires: -1
+password: "{{ 'Password1' | password_hash('sha512','A512') }}"
+
+- name: Deploy Local User SSH Key
+authorized_key:
+user: devops
+state: present
+manage_dir: true
+key: "{{ lookup('file', '/home/tux/.ssh/id_rsa.pub') }}"
+...
+
+$ ansible-playbook deploy_devops.yml
+
+## Password-less Sudo Access
+Configure Password-less Sudo
+-----
+$ cd $HOME/deploy_devops
+$ vim deploy_devops.yml
+---
+- name: Deploy Ansible User
+hosts: all
+tasks:
+
+- name: Create Devops User
+user:
+name: devops
+groups: "{{ admin_group }}"
+append: true
+create_home: true
+comment: "Ansible Management Account"
+expires: -1
+password: "{{ 'Password1' | password_hash('sha512','A512') }}"
+
+- name: Deploy Local User SSH Key
+authorized_key:
+user: devops
+state: present
+manage_dir: true
+key: "{{ lookup('file', '/home/tux/.ssh/id_rsa.pub') }}"
+
+- name: Setup Sudo Access for Devops User
+copy:
+dest: /etc/sudoers.d/devops
+content: 'devops ALL=(ALL) NOPASSWD: ALL' 
+validate: /usr/sbin/visudo -cf %s
+...
+
+$ ansible-playbook deploy_devops.yml
+
+## 
