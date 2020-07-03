@@ -58,7 +58,7 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 ## Sahil Instructions:
 1. changes in ansible.cfg: <become: true, become_method: sudo> 
 2. Host file: Rochester_US ansible_host=129.21.183.44 ansible_user=sg5414
-3. Command: ansible-playbook mail.yml -k -K
+3. Command: ansible-playbook deploy.yml -k -K
 4. command on slave VPS: apt install python-docker
 <br>Packages on query_worker.py host:</br>
 5. sudo apt-get install python3-pip
@@ -66,7 +66,15 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 7. sudo pip3 install mysql-connector
 8. sudo pip3 install python-dotenv
 9. For csec rit server: sudo chmod 777 -R .ansible/* . It needs to permission to be modified by remote user as it can't access the .ansible/tmp folder for its operations.
+10. New cmd for ansible execution: ansible-playbook deploy.yml
+11. Install Ansible instruction (luke one install old version)
 
+ sudo apt update
+ sudo apt install software-properties-common
+ sudo apt-add-repository --yes --update ppa:ansible/ansible
+ sudo apt install ansible
+ 
+ 
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
