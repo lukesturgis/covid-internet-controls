@@ -116,10 +116,15 @@ def get_path_from_url(url: str):
 
 def setup_db():
     conn = mysql.connector.connect(
-        host=MYSQL_HOST,
-        user=MYSQL_USER,
-        passwd=MYSQL_PASSWORD,
+#        host=MYSQL_HOST,
+#        user=MYSQL_USER,
+#        passwd=MYSQL_PASSWORD,
+#        database="covid_internet_controls",
+        host="127.0.0.1",
+        user= "sahilgupta221",
+        passwd="easypass123",
         database="covid_internet_controls",
+
     )
     if conn.is_connected():
         return conn
@@ -295,16 +300,16 @@ if __name__ == "__main__":
 
         log.info(f"Requesting {args.target}...")
         results = send_target_to_workers(args.target, workers)
-#        conn = setup_db()
-#        if not conn:
-#            sys.exit(1)
+        conn = setup_db()
+        if not conn:
+            sys.exit(1)
 
-#        for worker in workers:
-#            send_worker_to_db(conn, worker)
+        for worker in workers:
+            send_worker_to_db(conn, worker)
 
-#        for result in results:
-#            if ping(result["worker"]["ip"]):
-#                send_results_to_db(conn, result["worker"], result)
+        for result in results:
+            if ping(result["worker"]["ip"]):
+                send_results_to_db(conn, result["worker"], result)
 
     # if we are not sending targets, then just ping all workers
     else:
