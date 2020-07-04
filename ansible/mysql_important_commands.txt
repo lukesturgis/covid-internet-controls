@@ -1,4 +1,4 @@
-## Installation:
+### Installation:
     sudo apt-get update
     sudo apt-get install mysql-server
     mysql_secure_installation
@@ -50,3 +50,11 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> exit
 Bye
 sahilgupta221@sahilgupta221-HP-Pavilion-Sleekbook-14-PC:~/covid-internet-controls/ansible$
+
+### Exporting and importing databases from mysql server
+A. mysqldump -u username -p dbname > dbexport.sql 
+B. mysql -u username -p dbname < dbexport.sql 
+
+
+
+
