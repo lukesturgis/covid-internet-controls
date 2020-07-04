@@ -31,5 +31,8 @@ Then run the tests:
 ## Sahil: Need to rewrite all the instructions for deployment
 1. website_list.txt should contains all the website in given sample format.
 2. query_worker_multiple_targets.sh is wrapper script which takes multiple target websites from website_list.txt file.
-3. ToDo: password for all nodes in ansible to have sudo privileges and database design and connections.
-<br>Try<br> ansible_passoword=12345 in host or "become: yes" in .yml file
+3. Next ToDo's:<br>
+<br>1. Add random function in worker forloop to send a  website to different workers at random gap of 2 to 4 minutes. + Add same random function in wrapper script in target loop.
+<br>2. Now going to make HB1 as my C&C command center.
+<br>3. Test wrapper script on HB1.
+<br>4. Add VPSes in ansible host config file (workers.py) and test the wrapper script.
