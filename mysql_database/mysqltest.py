@@ -1,11 +1,11 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-  host="129.21.183.44",
-  user="root",
-  password="TWCUU0Xz6TQiRUwPKZoD13Ta"
+  host="127.0.0.1",
+  user="sahilgupta221",
+  password="easypass123"
 )
 
 mycursor = mydb.cursor()
 
-mycursor.execute("CREATE DATABASE mydatabase")
+mycursor.execute("CREATE DATABASE covid_internet_controls")
