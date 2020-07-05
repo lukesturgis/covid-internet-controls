@@ -128,7 +128,7 @@ def setup_db():
 #        database="covid_internet_controls",
         host="127.0.0.1",
         user= "sahilgupta221",
-        passwd="easypass123",
+        passwd="easypass321!",
         database="covid_internet_controls",
 
     )
