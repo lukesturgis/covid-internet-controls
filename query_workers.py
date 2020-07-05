@@ -12,8 +12,8 @@ import coloredlogs
 import mysql.connector
 import requests
 from dotenv import load_dotenv
-
 from workers import workers
+from datetime import datetime
 
 load_dotenv()
 log = logging.getLogger(__name__)
@@ -174,14 +174,17 @@ def send_results_to_db(conn, worker, results):
     log.info(f"Sending results for {worker['ip']} ({worker['country_name']})...")
     domain = get_domain_name_from_url(results["target"])
     path = get_path_from_url(results["target"])
+    now = datetime.now()
+    formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
+
     if "http://" in results["target"]:
         protocol = "http"
     else:
         protocol = "https"
 
     if results["success"] is False:
-        sql = "INSERT INTO request (worker_ip, domain, path, protocol, censored) VALUES (%s, %s, %s, %s, %s)"
-        values = (worker["ip"], domain, path, protocol, True)
+        sql = "INSERT INTO request (worker_ip, domain, path, protocol, censored, date) VALUES (%s, %s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, protocol, True, formatted_date)
         send_to_db(conn, sql, values)
 
     else:
