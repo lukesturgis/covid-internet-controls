@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: covid_internet_controls
 -- ------------------------------------------------------
--- Server version	5.7.30-0ubuntu0.18.04.1
+-- Server version	5.7.30-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,7 +36,6 @@ CREATE TABLE `countries` (
 
 LOCK TABLES `countries` WRITE;
 /*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-INSERT INTO `countries` VALUES ('AU','Australia','Australia'),('CN','China','Asia'),('HK','Hong_Kong','Asia'),('KR','Korea','Asia'),('PE','Peru','South_America'),('ZA','South_Africa','Africa');
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,12 +54,13 @@ CREATE TABLE `request` (
   `response_id` int(11) DEFAULT NULL,
   `protocol` varchar(5) NOT NULL,
   `censored` tinyint(1) DEFAULT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `worker_ip` (`worker_ip`),
   KEY `response_id` (`response_id`),
   CONSTRAINT `request_ibfk_1` FOREIGN KEY (`worker_ip`) REFERENCES `workers` (`worker_ip`),
   CONSTRAINT `request_ibfk_2` FOREIGN KEY (`response_id`) REFERENCES `response` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,6 @@ CREATE TABLE `request` (
 
 LOCK TABLES `request` WRITE;
 /*!40000 ALTER TABLE `request` DISABLE KEYS */;
-INSERT INTO `request` VALUES (12,'111.231.28.232','www.google.com','/',NULL,'http',1),(13,'49.233.48.214','www.google.com','/',NULL,'http',1),(14,'111.230.200.28','www.google.com','/',NULL,'http',1),(15,'139.155.74.236','www.google.com','/',NULL,'http',1),(16,'124.156.101.160','www.google.com','/',2,'http',0),(17,'102.67.140.37','www.google.com','/',2,'http',0);
 /*!40000 ALTER TABLE `request` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +86,7 @@ CREATE TABLE `response` (
   `content` longblob NOT NULL,
   `content_hash` char(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +95,6 @@ CREATE TABLE `response` (
 
 LOCK TABLES `response` WRITE;
 /*!40000 ALTER TABLE `response` DISABLE KEYS */;
-INSERT INTO `response` VALUES (2,1,302,_binary '<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302 Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A HREF=\"https://www.google.com/?gws_rd=ssl\">here</A>.\r\n</BODY></HTML>\r\n','68a006996ece55adef2db478ed631ea5');
 /*!40000 ALTER TABLE `response` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +121,6 @@ CREATE TABLE `workers` (
 
 LOCK TABLES `workers` WRITE;
 /*!40000 ALTER TABLE `workers` DISABLE KEYS */;
-INSERT INTO `workers` VALUES ('102.67.140.37','ZA',NULL),('103.140.45.134','KR',NULL),('109.201.143.179','AU',NULL),('111.230.200.28','CN','Guangzhou'),('111.231.28.232','CN','Shanghai'),('124.156.101.160','HK',NULL),('129.21.183.10','CN','Shanghai'),('129.28.202.97','CN','Chongqing'),('139.155.74.236','CN','Chengdu'),('45.7.230.136','PE',NULL),('49.233.48.214','CN','Beijing');
 /*!40000 ALTER TABLE `workers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-10 14:28:20
+-- Dump completed on 2020-07-04 20:05:11

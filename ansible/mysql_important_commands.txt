@@ -55,6 +55,31 @@ sahilgupta221@sahilgupta221-HP-Pavilion-Sleekbook-14-PC:~/covid-internet-control
 A. mysqldump -u username -p dbname > dbexport.sql 
 B. mysql -u username -p dbname < dbexport.sql 
 
+### Adding DATE column to request table
+
+ALTER TABLE request ADD COLUMN date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER censored;
+
+### Truncating tables:
+SET FOREIGN_KEY_CHECKS = 0; 
+TRUNCATE table $table_name; 
+SET FOREIGN_KEY_CHECKS = 1;
+
+### checking colums of table
+show columns from request;
+
+### updating date value from python script
+from datetime import datetime
+now = datetime.now()
+formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
+sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol, censored) VALUES (%s, %s, %s, %s, %s, %s)"
+values = (worker["ip"], domain, path, response_id, protocol, False)
+
+
+###
+
+
+
+
 
 
 
