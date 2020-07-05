@@ -8,7 +8,6 @@ The Ansible command and control server (C&C) is responsible for handling all req
 
 Setup for this C&C server is as follows:
 
-
 1. Install Ansible
 
   		sudo apt-add-repository ppa:ansible/ansible
