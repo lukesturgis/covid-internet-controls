@@ -13,6 +13,11 @@ Setup for this C&C server is as follows:
 
   		sudo apt-add-repository ppa:ansible/ansible
 		sudo apt install ansible
+#sahil modification:
+<br> sudo apt update
+<br> sudo apt install software-properties-common
+<br> sudo apt-add-repository --yes --update ppa:ansible/ansible
+<br> sudo apt install ansible
 
 2. Create/modify `/etc/ansible/hosts`, which contains the IP addresses of managed hosts. Note that this file contains addresses with a prefix for easier understanding of which country a VPS resides in, rather than an IP address.
 
@@ -69,12 +74,11 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 10. New cmd for ansible execution: ansible-playbook deploy.yml
 11. Install Ansible instruction (luke one install old version)
 
- sudo apt update
- sudo apt install software-properties-common
- sudo apt-add-repository --yes --update ppa:ansible/ansible
- sudo apt install ansible
- 
- 
+<br>  sudo apt update
+<br>  sudo apt install software-properties-common
+<br>  sudo apt-add-repository --yes --update ppa:ansible/ansible
+<br> sudo apt install ansible
+  
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
