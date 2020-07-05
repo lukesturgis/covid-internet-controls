@@ -213,7 +213,7 @@ def send_results_to_db(conn, worker, results):
 def send_target_to_workers(target: str, workers: list):
     """ Send a target to all workers in a multiprocessing pool. """
 
-    with Pool(processes=20) as pool:
+    with Pool(processes=60) as pool:
         results = list(
             pool.starmap(send_target_to_worker, zip(workers, repeat(target)))
         )
