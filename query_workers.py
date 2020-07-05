@@ -14,6 +14,9 @@ import requests
 from dotenv import load_dotenv
 from workers import workers
 from datetime import datetime
+import time
+from random import randrange
+
 
 load_dotenv()
 log = logging.getLogger(__name__)
@@ -38,7 +41,7 @@ def ping(worker: str):
     pingable = False
 
     try:
-        response = requests.get(f"http://{worker}:42075/ping", timeout=5)
+        response = requests.get(f"http://{worker}:42075/ping", timeout=15)
 
     except requests.ConnectionError as e:
         log.debug(f"Connecting to {worker} yielded: {e}")
@@ -59,20 +62,23 @@ def ping(worker: str):
 
 
 def send_target_to_worker(worker: dict, target: str):
-    """ Send a target to a single worker. """
-
+    """ Send a target to a single worker. """	
+    time.sleep(randrange(20)+1)
     data = {"key": REQUEST_KEY, "target": target}
     log.debug(f"Sending {target} to {worker['country_name']}...")
     address = f"http://{worker['ip']}:42075/new_target"
 
     try:
-        response = requests.post(address, data=data, timeout=10).json()
+        response = requests.post(address, data=data, timeout=25).json()
 
     except requests.RequestException as e:
         response = {"target": target, "success": False, "data": str(e)}
 
     log.debug(f"{json.dumps(response, indent=4)}")
     response["worker"] = worker
+    now = datetime.now()
+    formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
+    response["date"] = formatted_date
     return response
 
 
@@ -174,8 +180,6 @@ def send_results_to_db(conn, worker, results):
     log.info(f"Sending results for {worker['ip']} ({worker['country_name']})...")
     domain = get_domain_name_from_url(results["target"])
     path = get_path_from_url(results["target"])
-    now = datetime.now()
-    formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
 
     if "http://" in results["target"]:
         protocol = "http"
@@ -183,8 +187,8 @@ def send_results_to_db(conn, worker, results):
         protocol = "https"
 
     if results["success"] is False:
-        sql = "INSERT INTO request (worker_ip, domain, path, protocol, censored, date) VALUES (%s, %s, %s, %s, %s, %s)"
-        values = (worker["ip"], domain, path, protocol, True, formatted_date)
+        sql = "INSERT INTO request (worker_ip, domain, path, protocol, censored) VALUES (%s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, protocol, True)
         send_to_db(conn, sql, values)
 
     else:
@@ -203,8 +207,8 @@ def send_results_to_db(conn, worker, results):
 
         response_id = get_response_id(conn, results["content"])
 
-        sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol, censored) VALUES (%s, %s, %s, %s, %s, %s)"
-        values = (worker["ip"], domain, path, response_id, protocol, False)
+        sql = "INSERT INTO request (worker_ip, domain, path, response_id, protocol, censored,date) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        values = (worker["ip"], domain, path, response_id, protocol, False, results["date"])
         send_to_db(conn, sql, values)
 
     # sql = "INSERT INTO request VALUES (%s, %s, %s, %s, %s)"
@@ -218,6 +222,7 @@ def send_target_to_workers(target: str, workers: list):
             pool.starmap(send_target_to_worker, zip(workers, repeat(target)))
         )
 
+	
         # put all results into respective lists so that we can print successes
         # first, then the failures
         successes = []
