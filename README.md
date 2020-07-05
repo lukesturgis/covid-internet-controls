@@ -37,3 +37,10 @@ Then run the tests:
 <br>2. Now going to make HB1 as my C&C command center.
 <br>3. Test wrapper script on HB1.
 <br>4. Add VPSes in ansible host config file (workers.py) and test the wrapper script.
+
+### Sahil: Cron job instructions (https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/)
+11. Run a job every Sunday:
+0 0 * * SUN <command-to-execute>
+Or,
+0 0 * * 0 <command-to-execute>
+It will run at exactly at 00:00 on Sunday.
