@@ -77,7 +77,11 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 <br>  sudo apt install software-properties-common
 <br>  sudo apt-add-repository --yes --update ppa:ansible/ansible
 <br> sudo apt install ansible
-  
+12. Usefull crontab command (/etc/crontab)
+<br >A. */1 * * * * root /home/sg5414/cronjontestfolder/test1/test.sh
+<br >B. 0 9 * * 0 root /home/sg5414/cronjontestfolder/test1/test.sh
+(Meaning: At 09:00 on Sunday)
+
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
