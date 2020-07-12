@@ -84,7 +84,7 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 <br>13. Error on VPS host: 
 <br>E: Release file for http://dl.google.com/linux/chrome/deb/dists/stable/Release is not valid yet (invalid for another 2h 45min 28s). Updates for this repository will not be applied.
 <br>E: Release file for http://us.archive.ubuntu.com/ubuntu/dists/bionic-updates/InRelease is not valid yet (invalid for another 4h 34min 33s). Updates for this repository will not be applied.
-<br><b>Solution<\b>: sudo hwclock --hctosys (You need to fix the clock in this case, check using date if clock is back in time or not)
+<br><b>Solution: sudo hwclock --hctosys (You need to fix the clock in this case, check using date if clock is back in time or not)
 
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
