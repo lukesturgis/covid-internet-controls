@@ -3,12 +3,16 @@
   strategy: free
   vars_files:
     - .env
+  vars:
+    ansible_become_pass: easypass321!
+    ansible_become: yes    
 
   tasks:
 
     - name: Update apt
       apt:
         update_cache: yes
+     #become: yes
     
     - name: python-docker
       apt:
