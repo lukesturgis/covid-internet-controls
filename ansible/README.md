@@ -84,7 +84,15 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 <br>13. Error on VPS host: 
 <br>E: Release file for http://dl.google.com/linux/chrome/deb/dists/stable/Release is not valid yet (invalid for another 2h 45min 28s). Updates for this repository will not be applied.
 <br>E: Release file for http://us.archive.ubuntu.com/ubuntu/dists/bionic-updates/InRelease is not valid yet (invalid for another 4h 34min 33s). Updates for this repository will not be applied.
-<br><b>Solution: sudo hwclock --hctosys (You need to fix the clock in this case, check using date if clock is back in time or not)
+<br><b>Solution: sudo hwclock --hctosys (You need to fix the clock in this case, check using date if clock is back in time or not)	
+<br>14. Error: Err:7 http://mirrors.digitalocean.com/ubuntu cosmic Release
+  404  Not Found [IP: 104.24.117.209 80]
+Ign:8 http://archive.ubuntu.com/ubuntu cosmic InRelease
+<br>Solution: If you want to continue using an outdated release then edit /etc/apt/sources.list and change archive.ubuntu.com and security.ubuntu.com to old-releases.ubuntu.com.
+then update with:
+
+    sudo apt-get update && sudo apt-get dist-upgrade
+
 
 
 ## Sahil: In case 3.6 is installed from source code
