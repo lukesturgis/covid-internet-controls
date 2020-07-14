@@ -57,15 +57,6 @@
 #Rochester_US1 ansible_host=129.21.183.44 ansible_user=sg5414 ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = #Seemavijay221!
 #Rochester_US2 ansible_host=129.21.183.46 ansible_user=sg5414 ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = #Seemavijay221!
 #Rochester_US3 ansible_host=129.21.183.10 ansible_user=csec ansible_password=Seemavijay221! ansible_become=yes #ansible_become_password = #Seemavijay221!
-
-
-## Real VPS host configurations
-Germany ansible_host=194.76.226.113 ansible_user=root ansible_password=easypass321! #ansible_become=yes #ansible_become_password = #Seemavijay221!
-London ansible_host=212.71.252.140 ansible_user=root ansible_password=easypass321! #ansible_become=yes #ansible_become_password = #Seemavijay221!
-Sydney ansible_host=172.105.190.189 ansible_user=root ansible_password=easypass321! #ansible_become=yes #ansible_become_password = #Seemavijay221!
-Bursa_TR ansible_host=185.181.209.228 ansible_user=root ansible_password=easypass321! ansible_port=28954  #ansible_become=yes #ansible_become_password = Seemavijay221!
-Seoul ansible_host=141.164.46.236 ansible_user=root ansible_password=easypass321! #ansible_become=yes #ansible_become_password = #Seemavijay221!
-
 #[Germany]
 #194.76.226.113
 
@@ -74,6 +65,57 @@ Seoul ansible_host=141.164.46.236 ansible_user=root ansible_password=easypass321
 #ansible_password:easypass321! 
 #ansible_become:yes 
 #ansible_become_password:easypass321!
+
+
+
+## Real VPS host configurations
+Germany ansible_host=194.76.226.113 ansible_user=root ansible_password=easypass321!
+London ansible_host=212.71.252.140 ansible_user=root ansible_password=easypass321!
+Sydney ansible_host=172.105.190.189 ansible_user=root ansible_password=easypass321!
+Bursa_TR ansible_host=185.181.209.228 ansible_user=root ansible_password=easypass321! ansible_port=28954
+Seoul ansible_host=141.164.46.236 ansible_user=root ansible_password=easypass321!
+
+Millan ansible_host=185.213.20.242 ansible_user=root ansible_password=easypass321!
+Tokyo ansible_host=172.104.79.212 ansible_user=root ansible_password=easypass321!
+Seattle ansible_host=23.227.190.135 ansible_user=root ansible_password=easypass321!
+New_York ansible_host=23.227.178.109 ansible_user=root ansible_password=easypass321!
+
+Ohio ansible_host=18.191.43.171 ansible_user=root ansible_password=easypass321!
+Virginia ansible_host=3.235.150.29 ansible_user=root ansible_password=easypass321!
+Washinton ansible_host=38.68.38.170 ansible_user=root ansible_password=easypass321!
+LA ansible_host=173.232.146.200 ansible_user=root ansible_password=easypass321!
+Siberia_Khabarovsk ansible_host=92.223.72.165 ansible_user=root ansible_password=easypass321!
+##Siberia_Novosibirsk ansible_host=217.65.87.244 ansible_user=root ansible_password=easypass321!
+   
+#ChinaVPShosting
+China_beijing ansible_host=140.143.36.180 ansible_user=ubuntu ansible_password=easypass321!
+China_Chengdu ansible_host=139.155.2.148 ansible_user=ubuntu ansible_password=easypass321!
+China_Chongqing ansible_host=129.28.157.165 ansible_user=ubuntu ansible_password=easypass321!
+China_Guangzhou ansible_host=203.195.154.91 ansible_user=ubuntu ansible_password=easypass321!
+China_Shanghai ansible_host=81.68.74.156 ansible_user=ubuntu ansible_password=easypass321!
+Hongkong ansible_host=129.226.169.60 ansible_user=ubuntu ansible_password=easypass321!
+
+
+#onliveserver.com
+United_kingdom_London ansible_host=79.141.170.113 ansible_user=root ansible_password=easypass321!
+Ukraine_Kyiv  ansible_host=176.107.188.184 ansible_user=root ansible_password=easypass321!
+Turkey_Istanbul ansible_host=152.89.36.213 ansible_user=root ansible_password=easypass321!
+SouthAfrica_Johannesburg ansible_host=102.130.116.16 ansible_user=root ansible_password=easypass321! ansible_port=28954
+SouthKorea_seoul ansible_host=27.255.75.155 ansible_user=root ansible_password=easypass321!
+
+Singapore ansible_host=139.99.31.107 ansible_user=root ansible_password=easypass321!
+Russia_Moscow ansible_host=91.237.249.130 ansible_user=root ansible_password=easypass321!
+Japan_Tokyo ansible_host=210.140.10.50 ansible_user=root ansible_password=easypass321!
+Italy_Milan ansible_host=94.198.97.45 ansible_user=root ansible_password=easypass321!
+India_Noida ansible_host=103.129.97.180 ansible_user=root ansible_password=easypass321!
+Brazil_Sao_Paulo ansible_host=45.179.88.217 ansible_user=root ansible_password=easypass321!
+Australia_sydney ansible_host=139.99.140.84 ansible_user=root ansible_password=easypass321!
+
+#vps3 protomail
+Brazil ansible_host=178.63.116.245 ansible_user=root ansible_password=easypass321!
+Egypt ansible_host=41.223.52.157 ansible_user=root ansible_password=easypass321!
+     
+
 
 
 
