@@ -93,6 +93,7 @@ China_Chengdu ansible_host=139.155.2.148 ansible_user=ubuntu ansible_password=ea
 China_Chongqing ansible_host=129.28.157.165 ansible_user=ubuntu ansible_password=easypass321!
 China_Guangzhou ansible_host=203.195.154.91 ansible_user=ubuntu ansible_password=easypass321!
 China_Shanghai ansible_host=81.68.74.156 ansible_user=ubuntu ansible_password=easypass321!
+China_Zhengzhou ansible_host=122.114.252.96 ansible_user=root ansible_password=easypass321!
 Hongkong ansible_host=129.226.169.60 ansible_user=ubuntu ansible_password=easypass321!
 
 
@@ -100,7 +101,7 @@ Hongkong ansible_host=129.226.169.60 ansible_user=ubuntu ansible_password=easypa
 United_kingdom_London ansible_host=79.141.170.113 ansible_user=root ansible_password=easypass321!
 Ukraine_Kyiv  ansible_host=176.107.188.184 ansible_user=root ansible_password=easypass321!
 Turkey_Istanbul ansible_host=152.89.36.213 ansible_user=root ansible_password=easypass321!
-SouthAfrica_Johannesburg ansible_host=102.130.116.16 ansible_user=root ansible_password=easypass321! ansible_port=28954
+SouthAfrica_Johannesburg ansible_host=102.130.116.16 ansible_user=root ansible_password=easypass321!
 SouthKorea_seoul ansible_host=27.255.75.155 ansible_user=root ansible_password=easypass321!
 
 Singapore ansible_host=139.99.31.107 ansible_user=root ansible_password=easypass321!
