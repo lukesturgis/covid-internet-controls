@@ -1,0 +1,322 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Update apt] **************************************************************
+fatal: [Germany]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 194.76.226.113 port 22: No route to host", "unreachable": true}
+changed: [London]
+changed: [Sydney]
+changed: [Seoul]
+fatal: [Millan]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "changed": false, "msg": "Failed to update apt cache: E:Release file for http://security.ubuntu.com/ubuntu/dists/bionic-security/InRelease is not valid yet (invalid for another 12h 58min 21s). Updates for this repository will not be applied., E:Release file for http://us.archive.ubuntu.com/ubuntu/dists/bionic-updates/InRelease is not valid yet (invalid for another 12h 59min 29s). Updates for this repository will not be applied., E:Release file for http://us.archive.ubuntu.com/ubuntu/dists/bionic-backports/InRelease is not valid yet (invalid for another 13h 1min 3s). Updates for this repository will not be applied."}
+changed: [Bursa_TR]
+changed: [New_York]
+changed: [Ohio]
+changed: [Virginia]
+changed: [Seattle]
+fatal: [LA]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 173.232.146.200 port 22: Connection timed out", "unreachable": true}
+changed: [Tokyo]
+fatal: [Siberia_Khabarovsk]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 92.223.72.165 port 22: Connection timed out", "unreachable": true}
+changed: [Washinton]
+changed: [China_beijing]
+changed: [China_Chengdu]
+changed: [China_Chongqing]
+changed: [China_Zhengzhou]
+fatal: [United_kingdom_London]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+changed: [China_Shanghai]
+changed: [Hongkong]
+fatal: [Turkey_Istanbul]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+changed: [China_Guangzhou]
+changed: [Ukraine_Kyiv]
+fatal: [Japan_Tokyo]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+fatal: [SouthKorea_seoul]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: "}
+changed: [SouthAfrica_Johannesburg]
+fatal: [Singapore]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+ok: [Italy_Milan]
+fatal: [Brazil]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+changed: [Brazil_Sao_Paulo]
+changed: [Russia_Moscow]
+fatal: [India_Noida]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "msg": "Failed to update apt cache: E:The repository 'http://security.ubuntu.com/ubuntu cosmic-security Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-updates Release' no longer has a Release file., W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'http://us.archive.ubuntu.com/ubuntu cosmic-backports Release' no longer has a Release file."}
+changed: [Australia_sydney]
+
+TASK [python-docker] ***********************************************************
+ok: [London]
+ok: [Bursa_TR]
+ok: [Sydney]
+
+TASK [Update apt] **************************************************************
+changed: [Egypt]
+
+TASK [python-docker] ***********************************************************
+ok: [New_York]
+ok: [Seoul]
+ok: [Ohio]
+ok: [Seattle]
+ok: [Virginia]
+ok: [Tokyo]
+ok: [Washinton]
+ok: [China_Chengdu]
+ok: [China_Chongqing]
+ok: [China_Shanghai]
+ok: [Ukraine_Kyiv]
+ok: [China_Zhengzhou]
+ok: [China_Guangzhou]
+ok: [Hongkong]
+ok: [Italy_Milan]
+
+TASK [Install Docker] **********************************************************
+ok: [London]
+
+TASK [python-docker] ***********************************************************
+ok: [SouthAfrica_Johannesburg]
+ok: [China_beijing]
+
+TASK [Install Docker] **********************************************************
+ok: [Sydney]
+ok: [Bursa_TR]
+ok: [New_York]
+ok: [Seattle]
+ok: [Ohio]
+ok: [Seoul]
+ok: [Virginia]
+ok: [Tokyo]
+ok: [Washinton]
+ok: [China_Shanghai]
+ok: [Ukraine_Kyiv]
+ok: [China_Zhengzhou]
+
+TASK [python-docker] ***********************************************************
+ok: [Brazil_Sao_Paulo]
+ok: [Russia_Moscow]
+
+TASK [Install Docker] **********************************************************
+ok: [China_Chongqing]
+ok: [China_Chengdu]
+
+TASK [Clone Git repository] ****************************************************
+changed: [London]
+
+TASK [python-docker] ***********************************************************
+fatal: [Egypt]: FAILED! => {"changed": false, "msg": "No package matching 'python-docker' is available"}
+ok: [Australia_sydney]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Bursa_TR]
+changed: [New_York]
+changed: [Seattle]
+changed: [Ohio]
+changed: [Sydney]
+changed: [Virginia]
+changed: [Tokyo]
+changed: [Seoul]
+changed: [Washinton]
+
+TASK [Install Docker] **********************************************************
+ok: [Hongkong]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_Shanghai]
+changed: [Ukraine_Kyiv]
+
+TASK [Install Docker] **********************************************************
+ok: [SouthAfrica_Johannesburg]
+ok: [Italy_Milan]
+ok: [China_beijing]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [London]
+
+TASK [Install Docker] **********************************************************
+ok: [China_Guangzhou]
+ok: [Brazil_Sao_Paulo]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Bursa_TR]
+ok: [Sydney]
+ok: [New_York]
+ok: [Seattle]
+ok: [Ohio]
+ok: [Tokyo]
+ok: [Virginia]
+ok: [Washinton]
+ok: [Seoul]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Hongkong]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_Shanghai]
+ok: [Ukraine_Kyiv]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_Chongqing]
+changed: [China_Chengdu]
+changed: [SouthAfrica_Johannesburg]
+
+TASK [Build Docker image] ******************************************************
+changed: [London]
+
+TASK [Install Docker] **********************************************************
+ok: [Russia_Moscow]
+ok: [Australia_sydney]
+
+TASK [Build Docker image] ******************************************************
+changed: [Bursa_TR]
+changed: [Sydney]
+changed: [New_York]
+changed: [Seattle]
+changed: [Tokyo]
+changed: [Seoul]
+changed: [Ohio]
+changed: [Virginia]
+changed: [Washinton]
+changed: [China_Shanghai]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_beijing]
+
+TASK [Build Docker image] ******************************************************
+changed: [Ukraine_Kyiv]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Hongkong]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Italy_Milan]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_Chongqing]
+
+TASK [Run Docker container] ****************************************************
+ok: [London]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Brazil_Sao_Paulo]
+
+TASK [Run Docker container] ****************************************************
+ok: [Sydney]
+ok: [Bursa_TR]
+ok: [Seattle]
+ok: [Seoul]
+ok: [New_York]
+ok: [Tokyo]
+ok: [Ohio]
+ok: [Virginia]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_Guangzhou]
+
+TASK [Run Docker container] ****************************************************
+ok: [Washinton]
+ok: [China_Shanghai]
+
+TASK [Build Docker image] ******************************************************
+changed: [Hongkong]
+
+TASK [Run Docker container] ****************************************************
+ok: [Ukraine_Kyiv]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Russia_Moscow]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_Chengdu]
+ok: [SouthAfrica_Johannesburg]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Australia_sydney]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_beijing]
+
+TASK [Run Docker container] ****************************************************
+ok: [Hongkong]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_Chongqing]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Russia_Moscow]
+ok: [Italy_Milan]
+ok: [Brazil_Sao_Paulo]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_beijing]
+changed: [China_Chengdu]
+
+TASK [Run Docker container] ****************************************************
+ok: [China_Chongqing]
+
+TASK [Build Docker image] ******************************************************
+changed: [SouthAfrica_Johannesburg]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Australia_sydney]
+ok: [China_Guangzhou]
+
+TASK [Build Docker image] ******************************************************
+changed: [Italy_Milan]
+changed: [Russia_Moscow]
+
+TASK [Run Docker container] ****************************************************
+ok: [China_beijing]
+
+TASK [Build Docker image] ******************************************************
+fatal: [Brazil_Sao_Paulo]: FAILED! => {"changed": true, "cmd": ["docker", "build", "-t", "worker", "/src/worker"], "delta": "0:00:00.412663", "end": "2020-07-15 21:04:44.109161", "msg": "non-zero return code", "rc": 1, "start": "2020-07-15 21:04:43.696498", "stderr": "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?", "stderr_lines": ["Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?"], "stdout": "", "stdout_lines": []}
+
+TASK [Run Docker container] ****************************************************
+fatal: [Italy_Milan]: FAILED! => {"changed": false, "msg": "Failed to import the required Python library (Docker SDK for Python: docker (Python >= 2.7) or docker-py (Python 2.6)) on it4755.onliveserver.com's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter, for example via `pip install docker` or `pip install docker-py` (Python 2.6). The error was: No module named backports.ssl_match_hostname"}
+ok: [China_Chengdu]
+ok: [SouthAfrica_Johannesburg]
+ok: [Russia_Moscow]
+
+TASK [Build Docker image] ******************************************************
+changed: [Australia_sydney]
+
+TASK [Run Docker container] ****************************************************
+ok: [Australia_sydney]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_Guangzhou]
+
+TASK [Run Docker container] ****************************************************
+ok: [China_Guangzhou]
+
+TASK [Clone Git repository] ****************************************************
+fatal: [China_Zhengzhou]: FAILED! => {"changed": false, "cmd": "/usr/bin/git clone --origin origin https://github.com/lukesturgis/covid-internet-controls /src", "msg": "Cloning into '/src'...\nerror: RPC failed; curl 18 transfer closed with outstanding read data remaining\nfatal: The remote end hung up unexpectedly\nfatal: early EOF\nfatal: index-pack failed", "rc": 128, "stderr": "Cloning into '/src'...\nerror: RPC failed; curl 18 transfer closed with outstanding read data remaining\nfatal: The remote end hung up unexpectedly\nfatal: early EOF\nfatal: index-pack failed\n", "stderr_lines": ["Cloning into '/src'...", "error: RPC failed; curl 18 transfer closed with outstanding read data remaining", "fatal: The remote end hung up unexpectedly", "fatal: early EOF", "fatal: index-pack failed"], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+Australia_sydney           : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Brazil                     : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Brazil_Sao_Paulo           : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Bursa_TR                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Chengdu              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Chongqing            : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Guangzhou            : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Shanghai             : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Zhengzhou            : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+China_beijing              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Egypt                      : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Germany                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Hongkong                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+India_Noida                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Italy_Milan                : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Japan_Tokyo                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+LA                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+London                     : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Millan                     : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+New_York                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Ohio                       : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Russia_Moscow              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Seattle                    : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Seoul                      : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Siberia_Khabarovsk         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Singapore                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+SouthAfrica_Johannesburg   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SouthKorea_seoul           : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Sydney                     : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Tokyo                      : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Turkey_Istanbul            : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Ukraine_Kyiv               : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+United_kingdom_London      : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Virginia                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Washinton                  : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
