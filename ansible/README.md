@@ -100,7 +100,8 @@ https://linuxconfig.org/how-to-downgrade-ubuntu-linux-system-to-its-previous-ver
 15. Avoiding error in 13:
 https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubuntu-com-ubuntu-bionic-old-releases-rel
 
-
+16. Install pip3 whereever pip3 is not installed. (VPS + query machine)
+Sol: apt install python3-pip
 
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
