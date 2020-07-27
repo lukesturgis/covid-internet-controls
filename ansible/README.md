@@ -93,6 +93,8 @@ then update with:
 
     sudo apt-get update && sudo apt-get dist-upgrade
 
+14. Downgrading from ubuntu 18.10 to 18.04. (To avoid error in 13)
+https://linuxconfig.org/how-to-downgrade-ubuntu-linux-system-to-its-previous-version
 
 
 ## Sahil: In case 3.6 is installed from source code
