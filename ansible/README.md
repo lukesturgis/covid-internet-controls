@@ -88,6 +88,7 @@ This will execute the playbook against all of the hosts that exist in `/etc/ansi
 <br>14. Error: Err:7 http://mirrors.digitalocean.com/ubuntu cosmic Release
   404  Not Found [IP: 104.24.117.209 80]
 Ign:8 http://archive.ubuntu.com/ubuntu cosmic InRelease
+
 <br>Solution: If you want to continue using an outdated release then edit /etc/apt/sources.list and change archive.ubuntu.com and security.ubuntu.com to old-releases.ubuntu.com.
 then update with:
 
@@ -95,6 +96,10 @@ then update with:
 
 14. Downgrading from ubuntu 18.10 to 18.04. (To avoid error in 13)
 https://linuxconfig.org/how-to-downgrade-ubuntu-linux-system-to-its-previous-version
+
+15. Avoiding error in 13:
+https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubuntu-com-ubuntu-bionic-old-releases-rel
+
 
 
 ## Sahil: In case 3.6 is installed from source code
