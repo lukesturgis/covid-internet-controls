@@ -182,6 +182,13 @@ workers = [
         "ip": "92.223.72.165",
     },
     {
+        "country_name": "Siberia",
+        "country_code": "RU",
+        "continent": "Asia",
+        "city": "Novosibirsk",
+        "ip": "217.65.87.244",
+    },
+    {
         "country_name": "Singapore",
         "country_code": "SG",
         "continent": "Asia",
