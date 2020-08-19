@@ -999,3 +999,629 @@ United_kingdom_London      : ok=5    changed=1    unreachable=0    failed=0    s
 Virginia                   : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
 Washinton                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
 
+
+PLAY [all] *********************************************************************
+
+TASK [Update apt] **************************************************************
+fatal: [Germany]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 194.76.226.113 port 22: No route to host", "unreachable": true}
+fatal: [Millan]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the RSA key sent by the remote host is\nSHA256:hxMQImyWLiaCHDO7uZxg5gt4VztZmR9qZc9aMW0XwjQ.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending RSA key in /root/.ssh/known_hosts:6\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"185.213.20.242\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@185.213.20.242: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+changed: [London]
+changed: [Tokyo]
+changed: [Bursa_TR]
+changed: [Seoul]
+changed: [Sydney]
+fatal: [Washinton]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:Q2j91XF7TW/B4lCYlyPQ/AN26quVwnkOrrrw6/zY1Lg.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /root/.ssh/known_hosts:12\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"38.68.38.170\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@38.68.38.170: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+fatal: [LA]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:3Mtc2eszl3Dbb+3MXLwOt3jSotUKz4iSEDlQoTNthFo.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /root/.ssh/known_hosts:13\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"173.232.146.200\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@173.232.146.200: Permission denied (publickey,password).", "unreachable": true}
+fatal: [Seattle]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 23.227.190.135 port 22: Connection timed out", "unreachable": true}
+fatal: [New_York]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 23.227.178.109 port 22: Connection timed out", "unreachable": true}
+fatal: [Siberia_Khabarovsk]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 92.223.72.165 port 22: No route to host", "unreachable": true}
+changed: [Ohio]
+changed: [Virginia]
+fatal: [Siberia_Novosibirsk]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 217.65.87.244 port 22: Connection timed out", "unreachable": true}
+changed: [China_Guangzhou]
+changed: [China_Chengdu]
+changed: [China_Chongqing]
+fatal: [China_Zhengzhou]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 122.114.252.96 port 22: Connection timed out", "unreachable": true}
+changed: [China_beijing]
+changed: [Hongkong]
+changed: [China_Shanghai]
+changed: [Turkey_Istanbul]
+changed: [Ukraine_Kyiv]
+changed: [United_kingdom_London]
+fatal: [Russia_Moscow]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory.In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo /root/.ansible/tmp `\"&& mkdir /root/.ansible/tmp/ansible-tmp-1596848478.95-15566-201346500547799 && echo ansible-tmp-1596848478.95-15566-201346500547799=\"` echo /root/.ansible/tmp/ansible-tmp-1596848478.95-15566-201346500547799 `\" ), exited with result 1", "unreachable": true}
+ok: [Italy_Milan]
+changed: [SouthAfrica_Johannesburg]
+changed: [Singapore]
+changed: [Japan_Tokyo]
+fatal: [Brazil]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the RSA key sent by the remote host is\nSHA256:Ql5hXvB94n5qkQ4EjpxNTKVIl76Y7s4CnhtiY4K8uYI.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending RSA key in /root/.ssh/known_hosts:32\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"178.63.116.245\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@178.63.116.245: Permission denied (publickey,password).", "unreachable": true}
+fatal: [Brazil_Sao_Paulo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 45.179.88.217 port 22: Connection timed out", "unreachable": true}
+changed: [SouthKorea_seoul]
+
+TASK [python-docker] ***********************************************************
+ok: [London]
+
+TASK [Update apt] **************************************************************
+fatal: [Egypt]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 41.223.52.157 port 22: Connection timed out", "unreachable": true}
+
+TASK [python-docker] ***********************************************************
+ok: [Sydney]
+ok: [Bursa_TR]
+ok: [Seoul]
+ok: [Ohio]
+ok: [Tokyo]
+ok: [Virginia]
+
+TASK [Update apt] **************************************************************
+changed: [Australia_sydney]
+
+TASK [python-docker] ***********************************************************
+ok: [China_Chongqing]
+ok: [China_Chengdu]
+ok: [China_Guangzhou]
+ok: [United_kingdom_London]
+ok: [China_beijing]
+ok: [Hongkong]
+
+TASK [Update apt] **************************************************************
+changed: [India_Noida]
+
+TASK [python-docker] ***********************************************************
+ok: [Ukraine_Kyiv]
+ok: [China_Shanghai]
+ok: [Turkey_Istanbul]
+ok: [SouthAfrica_Johannesburg]
+ok: [Singapore]
+ok: [Japan_Tokyo]
+
+TASK [Install Docker] **********************************************************
+ok: [London]
+
+TASK [python-docker] ***********************************************************
+ok: [Italy_Milan]
+
+TASK [Install Docker] **********************************************************
+ok: [Ohio]
+ok: [Virginia]
+ok: [Sydney]
+ok: [Tokyo]
+ok: [Bursa_TR]
+ok: [Seoul]
+ok: [China_Shanghai]
+ok: [China_Chongqing]
+ok: [China_Chengdu]
+ok: [China_Guangzhou]
+ok: [United_kingdom_London]
+ok: [Hongkong]
+ok: [China_beijing]
+ok: [Ukraine_Kyiv]
+
+TASK [Clone Git repository] ****************************************************
+changed: [London]
+
+TASK [python-docker] ***********************************************************
+ok: [SouthKorea_seoul]
+ok: [Australia_sydney]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Sydney]
+changed: [Bursa_TR]
+changed: [Ohio]
+changed: [Virginia]
+changed: [Tokyo]
+changed: [Seoul]
+
+TASK [python-docker] ***********************************************************
+ok: [India_Noida]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Hongkong]
+changed: [China_Guangzhou]
+changed: [China_Chengdu]
+changed: [United_kingdom_London]
+changed: [China_Shanghai]
+
+TASK [Install Docker] **********************************************************
+ok: [Turkey_Istanbul]
+ok: [SouthAfrica_Johannesburg]
+ok: [Japan_Tokyo]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_Chongqing]
+
+TASK [Install Docker] **********************************************************
+ok: [Italy_Milan]
+ok: [Singapore]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [London]
+ok: [Bursa_TR]
+ok: [Ohio]
+ok: [Virginia]
+ok: [Tokyo]
+ok: [Seoul]
+ok: [Sydney]
+ok: [Hongkong]
+ok: [United_kingdom_London]
+ok: [China_Chengdu]
+
+TASK [Clone Git repository] ****************************************************
+changed: [Ukraine_Kyiv]
+changed: [Turkey_Istanbul]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_Guangzhou]
+
+TASK [Clone Git repository] ****************************************************
+changed: [China_beijing]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_Shanghai]
+
+TASK [Install Docker] **********************************************************
+ok: [SouthKorea_seoul]
+
+TASK [Build Docker image] ******************************************************
+changed: [London]
+changed: [Sydney]
+
+TASK [Install Docker] **********************************************************
+ok: [Australia_sydney]
+
+TASK [Build Docker image] ******************************************************
+changed: [Bursa_TR]
+changed: [Ohio]
+changed: [Virginia]
+changed: [Tokyo]
+changed: [Seoul]
+
+TASK [Install Docker] **********************************************************
+ok: [India_Noida]
+
+TASK [Build Docker image] ******************************************************
+changed: [United_kingdom_London]
+changed: [Hongkong]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Ukraine_Kyiv]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_Chengdu]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Turkey_Istanbul]
+ok: [China_Chongqing]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_Guangzhou]
+
+TASK [Clone Git repository] ****************************************************
+changed: [SouthAfrica_Johannesburg]
+changed: [Japan_Tokyo]
+changed: [Italy_Milan]
+changed: [Singapore]
+
+TASK [Run Docker container] ****************************************************
+ok: [London]
+ok: [Ohio]
+ok: [Virginia]
+ok: [Bursa_TR]
+ok: [Sydney]
+ok: [Tokyo]
+ok: [Seoul]
+ok: [Hongkong]
+ok: [United_kingdom_London]
+ok: [China_Chengdu]
+
+TASK [Build Docker image] ******************************************************
+changed: [China_Chongqing]
+changed: [China_Shanghai]
+changed: [Ukraine_Kyiv]
+changed: [Turkey_Istanbul]
+
+TASK [Clone Git repository] ****************************************************
+changed: [SouthKorea_seoul]
+changed: [India_Noida]
+changed: [Australia_sydney]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [China_beijing]
+
+TASK [Run Docker container] ****************************************************
+ok: [Ukraine_Kyiv]
+ok: [China_Chongqing]
+ok: [China_Guangzhou]
+ok: [China_Shanghai]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Italy_Milan]
+ok: [SouthAfrica_Johannesburg]
+ok: [Japan_Tokyo]
+ok: [Singapore]
+
+TASK [Run Docker container] ****************************************************
+ok: [Turkey_Istanbul]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [SouthKorea_seoul]
+ok: [India_Noida]
+
+TASK [Build Docker image] ******************************************************
+changed: [SouthAfrica_Johannesburg]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Australia_sydney]
+
+TASK [Build Docker image] ******************************************************
+changed: [Japan_Tokyo]
+changed: [Singapore]
+changed: [China_beijing]
+changed: [Italy_Milan]
+
+TASK [Run Docker container] ****************************************************
+ok: [SouthAfrica_Johannesburg]
+ok: [Japan_Tokyo]
+
+TASK [Build Docker image] ******************************************************
+changed: [India_Noida]
+
+TASK [Run Docker container] ****************************************************
+fatal: [Italy_Milan]: FAILED! => {"changed": false, "msg": "Failed to import the required Python library (Docker SDK for Python: docker (Python >= 2.7) or docker-py (Python 2.6)) on it4755.onliveserver.com's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter, for example via `pip install docker` or `pip install docker-py` (Python 2.6). The error was: No module named ssl_match_hostname"}
+ok: [Singapore]
+
+TASK [Build Docker image] ******************************************************
+changed: [Australia_sydney]
+
+TASK [Run Docker container] ****************************************************
+ok: [India_Noida]
+ok: [Australia_sydney]
+ok: [China_beijing]
+
+TASK [Build Docker image] ******************************************************
+changed: [SouthKorea_seoul]
+
+TASK [Run Docker container] ****************************************************
+changed: [SouthKorea_seoul]
+
+PLAY RECAP *********************************************************************
+Australia_sydney           : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Brazil                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Brazil_Sao_Paulo           : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Bursa_TR                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Chengdu              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Chongqing            : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Guangzhou            : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Shanghai             : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+China_Zhengzhou            : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_beijing              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Egypt                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Germany                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Hongkong                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+India_Noida                : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Italy_Milan                : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+Japan_Tokyo                : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LA                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+London                     : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Millan                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+New_York                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Ohio                       : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Russia_Moscow              : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Seattle                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Seoul                      : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Siberia_Khabarovsk         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Siberia_Novosibirsk        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Singapore                  : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SouthAfrica_Johannesburg   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SouthKorea_seoul           : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Sydney                     : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Tokyo                      : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Turkey_Istanbul            : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Ukraine_Kyiv               : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+United_kingdom_London      : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Virginia                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Washinton                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Update apt] **************************************************************
+changed: [London]
+fatal: [Millan]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the RSA key sent by the remote host is\nSHA256:hxMQImyWLiaCHDO7uZxg5gt4VztZmR9qZc9aMW0XwjQ.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending RSA key in /root/.ssh/known_hosts:6\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"185.213.20.242\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@185.213.20.242: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+fatal: [Germany]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 194.76.226.113 port 22: Connection timed out", "unreachable": true}
+changed: [Seoul]
+changed: [Bursa_TR]
+changed: [Seattle]
+changed: [Sydney]
+fatal: [Washinton]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:Q2j91XF7TW/B4lCYlyPQ/AN26quVwnkOrrrw6/zY1Lg.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /root/.ssh/known_hosts:12\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"38.68.38.170\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@38.68.38.170: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+fatal: [LA]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:3Mtc2eszl3Dbb+3MXLwOt3jSotUKz4iSEDlQoTNthFo.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /root/.ssh/known_hosts:13\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"173.232.146.200\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@173.232.146.200: Permission denied (publickey,password).", "unreachable": true}
+fatal: [Siberia_Khabarovsk]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 92.223.72.165 port 22: No route to host", "unreachable": true}
+changed: [Ohio]
+changed: [Tokyo]
+changed: [New_York]
+changed: [Virginia]
+fatal: [Siberia_Novosibirsk]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 217.65.87.244 port 22: Connection timed out", "unreachable": true}
+fatal: [China_beijing]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 140.143.36.180 port 22: Connection timed out", "unreachable": true}
+fatal: [China_Chengdu]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 139.155.2.148 port 22: Connection timed out", "unreachable": true}
+fatal: [China_Chongqing]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 129.28.157.165 port 22: Connection timed out", "unreachable": true}
+fatal: [China_Guangzhou]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 203.195.154.91 port 22: Connection timed out", "unreachable": true}
+fatal: [China_Shanghai]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 81.68.74.156 port 22: Connection timed out", "unreachable": true}
+fatal: [China_Zhengzhou]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 122.114.252.96 port 22: Connection timed out", "unreachable": true}
+fatal: [Hongkong]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 129.226.169.60 port 22: Connection timed out", "unreachable": true}
+changed: [Ukraine_Kyiv]
+changed: [United_kingdom_London]
+fatal: [Russia_Moscow]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory.In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo /root/.ansible/tmp `\"&& mkdir /root/.ansible/tmp/ansible-tmp-1597453263.05-30229-14775230057242 && echo ansible-tmp-1597453263.05-30229-14775230057242=\"` echo /root/.ansible/tmp/ansible-tmp-1597453263.05-30229-14775230057242 `\" ), exited with result 1", "unreachable": true}
+changed: [Turkey_Istanbul]
+changed: [SouthAfrica_Johannesburg]
+ok: [Italy_Milan]
+fatal: [Brazil_Sao_Paulo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 45.179.88.217 port 22: Connection timed out", "unreachable": true}
+changed: [Singapore]
+changed: [Japan_Tokyo]
+fatal: [Brazil]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the RSA key sent by the remote host is\nSHA256:Ql5hXvB94n5qkQ4EjpxNTKVIl76Y7s4CnhtiY4K8uYI.\r\nPlease contact your system administrator.\r\nAdd correct host key in /root/.ssh/known_hosts to get rid of this message.\r\nOffending RSA key in /root/.ssh/known_hosts:32\r\n  remove with:\r\n  ssh-keygen -f \"/root/.ssh/known_hosts\" -R \"178.63.116.245\"\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nroot@178.63.116.245: Permission denied (publickey,password).", "unreachable": true}
+
+TASK [python-docker] ***********************************************************
+ok: [London]
+
+TASK [Update apt] **************************************************************
+changed: [SouthKorea_seoul]
+fatal: [Egypt]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 41.223.52.157 port 22: Connection timed out", "unreachable": true}
+
+TASK [python-docker] ***********************************************************
+ok: [Bursa_TR]
+ok: [Sydney]
+ok: [Seoul]
+ok: [Seattle]
+ok: [New_York]
+ok: [Tokyo]
+ok: [Ohio]
+ok: [Virginia]
+
+TASK [Update apt] **************************************************************
+changed: [Australia_sydney]
+
+TASK [python-docker] ***********************************************************
+ok: [United_kingdom_London]
+ok: [Ukraine_Kyiv]
+ok: [Turkey_Istanbul]
+ok: [SouthAfrica_Johannesburg]
+ok: [Japan_Tokyo]
+ok: [Italy_Milan]
+ok: [Singapore]
+
+TASK [Install Docker] **********************************************************
+ok: [London]
+ok: [Bursa_TR]
+ok: [Sydney]
+ok: [Tokyo]
+
+TASK [Update apt] **************************************************************
+changed: [India_Noida]
+
+TASK [Install Docker] **********************************************************
+ok: [New_York]
+ok: [Seoul]
+ok: [Ohio]
+ok: [Virginia]
+ok: [Seattle]
+ok: [United_kingdom_London]
+ok: [Ukraine_Kyiv]
+ok: [Turkey_Istanbul]
+
+TASK [Clone Git repository] ****************************************************
+ok: [London]
+
+TASK [python-docker] ***********************************************************
+ok: [Australia_sydney]
+ok: [SouthKorea_seoul]
+
+TASK [Clone Git repository] ****************************************************
+ok: [Bursa_TR]
+changed: [New_York]
+ok: [Seoul]
+ok: [Sydney]
+changed: [Seattle]
+ok: [Ohio]
+ok: [Tokyo]
+ok: [Virginia]
+
+TASK [Install Docker] **********************************************************
+ok: [Italy_Milan]
+ok: [Japan_Tokyo]
+ok: [SouthAfrica_Johannesburg]
+ok: [Singapore]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [London]
+ok: [Bursa_TR]
+ok: [Seattle]
+ok: [Sydney]
+ok: [Tokyo]
+ok: [New_York]
+ok: [Seoul]
+
+TASK [python-docker] ***********************************************************
+ok: [India_Noida]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Virginia]
+ok: [Ohio]
+
+TASK [Clone Git repository] ****************************************************
+ok: [United_kingdom_London]
+
+TASK [Build Docker image] ******************************************************
+skipping: [London]
+skipping: [Sydney]
+skipping: [Bursa_TR]
+skipping: [Seoul]
+skipping: [Tokyo]
+
+TASK [Clone Git repository] ****************************************************
+ok: [Ukraine_Kyiv]
+ok: [Turkey_Istanbul]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Ohio]
+skipping: [Virginia]
+changed: [New_York]
+
+TASK [Install Docker] **********************************************************
+ok: [SouthKorea_seoul]
+
+TASK [Build Docker image] ******************************************************
+changed: [Seattle]
+
+TASK [Install Docker] **********************************************************
+ok: [Australia_sydney]
+
+TASK [Clone Git repository] ****************************************************
+ok: [Italy_Milan]
+
+TASK [Run Docker container] ****************************************************
+skipping: [London]
+skipping: [Sydney]
+skipping: [Bursa_TR]
+skipping: [Seoul]
+skipping: [Tokyo]
+
+TASK [Clone Git repository] ****************************************************
+ok: [SouthAfrica_Johannesburg]
+ok: [Japan_Tokyo]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Ohio]
+skipping: [Virginia]
+ok: [New_York]
+ok: [Seattle]
+
+TASK [Clone Git repository] ****************************************************
+ok: [Singapore]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [United_kingdom_London]
+ok: [Ukraine_Kyiv]
+
+TASK [Build Docker image] ******************************************************
+skipping: [United_kingdom_London]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Turkey_Istanbul]
+
+TASK [Clone Git repository] ****************************************************
+ok: [SouthKorea_seoul]
+
+TASK [Install Docker] **********************************************************
+ok: [India_Noida]
+
+TASK [Clone Git repository] ****************************************************
+ok: [Australia_sydney]
+
+TASK [Run Docker container] ****************************************************
+skipping: [United_kingdom_London]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Ukraine_Kyiv]
+skipping: [Turkey_Istanbul]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Italy_Milan]
+ok: [SouthAfrica_Johannesburg]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Ukraine_Kyiv]
+skipping: [Turkey_Istanbul]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Italy_Milan]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Japan_Tokyo]
+
+TASK [Build Docker image] ******************************************************
+skipping: [SouthAfrica_Johannesburg]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Italy_Milan]
+skipping: [SouthAfrica_Johannesburg]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Japan_Tokyo]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Japan_Tokyo]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [SouthKorea_seoul]
+
+TASK [Build Docker image] ******************************************************
+skipping: [SouthKorea_seoul]
+
+TASK [Run Docker container] ****************************************************
+skipping: [SouthKorea_seoul]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Singapore]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Singapore]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Singapore]
+
+TASK [Clone Git repository] ****************************************************
+ok: [India_Noida]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [Australia_sydney]
+
+TASK [Build Docker image] ******************************************************
+skipping: [Australia_sydney]
+
+TASK [Run Docker container] ****************************************************
+skipping: [Australia_sydney]
+
+TASK [Copy over worker environment file] ***************************************
+ok: [India_Noida]
+
+TASK [Build Docker image] ******************************************************
+skipping: [India_Noida]
+
+TASK [Run Docker container] ****************************************************
+skipping: [India_Noida]
+
+PLAY RECAP *********************************************************************
+Australia_sydney           : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Brazil                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Brazil_Sao_Paulo           : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Bursa_TR                   : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+China_Chengdu              : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_Chongqing            : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_Guangzhou            : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_Shanghai             : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_Zhengzhou            : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+China_beijing              : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Egypt                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Germany                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Hongkong                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+India_Noida                : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Italy_Milan                : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Japan_Tokyo                : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+LA                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+London                     : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Millan                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+New_York                   : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Ohio                       : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Russia_Moscow              : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Seattle                    : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Seoul                      : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Siberia_Khabarovsk         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Siberia_Novosibirsk        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+Singapore                  : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+SouthAfrica_Johannesburg   : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+SouthKorea_seoul           : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Sydney                     : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Tokyo                      : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Turkey_Istanbul            : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Ukraine_Kyiv               : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+United_kingdom_London      : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Virginia                   : ok=5    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+Washinton                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
