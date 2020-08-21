@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 #from datetime import datetime
 import pathlib
 from pathlib import Path
+import time
 
 load_dotenv()
 log = logging.getLogger(__name__)
@@ -82,7 +83,10 @@ def get_response_id(conn, content):
 
 """
 
-def send_results_to_db(conn, worker, results):
+def send_results_to_db(conn, worker, resimport time
+
+print("Printed immediately.")
+time.sleep(2.4)ults):
     log.info(f"Sending results for {worker['ip']} ({worker['country_name']})...")
     domain = get_domain_name_from_url(results["target"])
     path = get_path_from_url(results["target"])
@@ -152,7 +156,8 @@ if __name__ == "__main__":
         sys.exit(1)
     else:
         print(conn)
-
+    os.system("rm -r 20*")
+    time.sleep(7)
     cursor = conn.cursor()
     sql = "select * from request as req JOIN response as res ON req.response_id = res.id JOIN workers as w ON req.worker_ip = w.worker_ip"
     values = ()
