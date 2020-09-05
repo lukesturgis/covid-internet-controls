@@ -20,6 +20,7 @@ for file in *; do
 		        echo "$innerfile"
 			cd $innerfile
 			firefox *
+			sleep 0.5
 			cd ../
 		    fi
 		done
