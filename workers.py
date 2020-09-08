@@ -7,7 +7,6 @@ workers = [
         "ip": "194.76.226.113",
     },
     {
-
 	"country_name": "Germany2",
 	"country_code": "DE",
         "continent": "Europe",
