@@ -1,0 +1,1317 @@
+<!DOCTYPE html><!-- HTML 5 -->
+<html lang="fr-FR">
+
+<head><meta charset="UTF-8" />
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=191-2&cb=1', false, [], true, false, true, false);__ez.dot={};__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=191-2&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=191-2&cb=1', false, [], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);(new Image()).src=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData)});}}
+function AddPixelById(impFullId,pixelData){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+(new Image()).src=pixelURL;}}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=191-2&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=191-2&cb=1', false, [], true, false, true, false);</script>
+<script>__ez.queue.addFile('/detroitchicago/anaheim.js', '/detroitchicago/anaheim.js?gcb=2&cb=1', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=191-2&cb=2', false, [], true, false, true, false);</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="" />
+
+<title>Les moutons enragés &#8211; Les moutons en ont marre, ils s&#039;informent</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Les moutons enragés &raquo; Flux" href="https://lesmoutonsenrages.fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Les moutons enragés &raquo; Flux des commentaires" href="https://lesmoutonsenrages.fr/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/lesmoutonsenrages.fr\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='leeway-custom-fonts-css'  href='https://lesmoutonsenrages.fr/wp-content/themes/leeway/css/custom-fonts.css?ver=20180413' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://lesmoutonsenrages.fr/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='leeway-parent-stylesheet-css'  href='https://lesmoutonsenrages.fr/wp-content/themes/leeway/style.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='leeway-stylesheet-css'  href='https://lesmoutonsenrages.fr/wp-content/themes/leeway-child/style.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://lesmoutonsenrages.fr/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='leeway-flexslider-css'  href='https://lesmoutonsenrages.fr/wp-content/themes/leeway/css/flexslider.css?ver=20160421' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-monalisa-css'  href='https://lesmoutonsenrages.fr/wp-content/plugins/wp-monalisa/wp-monalisa-default.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://lesmoutonsenrages.fr/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=8.9' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://lesmoutonsenrages.fr/wp-content/plugins/jetpack/css/jetpack.css?ver=8.9' type='text/css' media='all' />
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/themes/leeway/js/html5shiv.min.js?ver=3.7.3' id='html5shiv-js'></script>
+<![endif]-->
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/themes/leeway/js/navigation.js?ver=20160719' id='leeway-jquery-navigation-js'></script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/themes/leeway/js/jquery.flexslider-min.js?ver=2.6.0' id='flexslider-js'></script>
+<script type='text/javascript' id='leeway-post-slider-js-extra'>
+/* <![CDATA[ */
+var leeway_slider_params = {"animation":"slide","speed":"7000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/themes/leeway/js/slider.js?ver=2.6.0' id='leeway-post-slider-js'></script>
+<script type='text/javascript' id='srcmnt-ajax-request-js-extra'>
+/* <![CDATA[ */
+var SafeCommentsAjax = {"ajaxurl":"https:\/\/lesmoutonsenrages.fr\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/plugins/safe-report-comments/js/ajax.js?ver=5.5.1' id='srcmnt-ajax-request-js'></script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.5.4' id='ga-external-tracking-js'></script>
+<link rel="https://api.w.org/" href="https://lesmoutonsenrages.fr/wp-json/" /><meta name="generator" content="WordPress 5.5.1" />
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #db0000; background-image: url("https://lesmoutonsenrages.fr/wp-content/uploads/2018/04/nature.jpg"); background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+</style>
+	
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Les moutons enragés" />
+<meta property="og:description" content="Les moutons en ont marre, ils s&#039;informent" />
+<meta property="og:url" content="https://lesmoutonsenrages.fr/" />
+<meta property="og:site_name" content="Les moutons enragés" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="fr_FR" />
+
+<!-- End Jetpack Open Graph Tags -->
+<!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">window.google_analytics_uacct = "6798210428981240";</script>
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-33102168-1', 'auto');
+
+	ga('set', 'anonymizeIp', true);
+ 
+	ga('send', 'pageview');
+</script>
+		<style type="text/css" id="wp-custom-css">
+			blockquote {
+	font-size: 100%;
+	color: #111;
+}		</style>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6798210428981240",
+          enable_page_level_ads: true
+     });
+</script>
+
+<link rel='canonical' href='https://lesmoutonsenrages.fr/' />
+
+<script data-ezscrex="false" data-cfasync="false" type="text/javascript">window.google_analytics_uacct = "UA-169136026-29";</script>
+<script data-ezscrex="false" data-cfasync="false" type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['e._setAccount', 'UA-169136026-29']);
+_gaq.push(['f._setAccount', 'UA-38339005-1']);
+_gaq.push(['e._setDomainName', 'lesmoutonsenrages.fr']);
+_gaq.push(['f._setDomainName', 'lesmoutonsenrages.fr']);
+_gaq.push(['e._setCustomVar',1,'template','old_site_noads',3]);
+_gaq.push(['e._setCustomVar',2,'t','120',3]);
+_gaq.push(['e._setCustomVar',3,'rid','0',2]);
+_gaq.push(['e._setCustomVar',4,'bra','mod1',3]);
+_gaq.push(['e._setAllowAnchor',true]);
+_gaq.push(['e._setSiteSpeedSampleRate', 10]);
+_gaq.push(['f._setCustomVar',1,'template','old_site_noads',3]);
+_gaq.push(['f._setCustomVar',2,'domain','lesmoutonsenrages.fr',3]);
+_gaq.push(['f._setSiteSpeedSampleRate', 20]);
+_gaq.push(['e._trackPageview']);
+_gaq.push(['f._trackPageview']);
+
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">var ezouid = "1";</script><base href="https://lesmoutonsenrages.fr/"><script type='text/javascript'>
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 198508;
+var ezdomain = 'lesmoutonsenrages.fr';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"city":"Kyiv","country":"UA","days_since_last_visit":-1,"domain_id":198508,"engaged_time_visit":0,"ezcache_level":1,"forensiq_score":-1,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"78d954ff-8b3e-4adc-4810-2905f39c2951","position_selection_id":0,"postal_code":"04119","pv_event_count":0,"response_time_orig":78,"serverid":"3.120.37.178:9364","state":"30","t_epoch":1599379773,"template_id":120,"time_on_site_visit":0,"url":"https://lesmoutonsenrages.fr/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":3158,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script><script data-ezscrex='false' data-cfasync='false' type="text/javascript" src="/detroitchicago/rochester.js?cb=191-2&v=9" async></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_198508=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["78d954ff-8b3e-4adc-4810-2905f39c2951", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+
+<body class="home blog custom-background">
+
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div id="topheader-wrap">
+		
+	<div id="topheader" class="clearfix">
+
+		
+	</div>	</div>
+
+	<div id="wrapper" class="container hfeed">
+
+		<div id="header-wrap">
+
+			<header id="header" class="clearfix" role="banner">
+
+				<div id="logo" class="clearfix">
+
+										
+			<h1 class="site-title"><a href="https://lesmoutonsenrages.fr/" rel="home">Les moutons enragés</a></h1>
+
+							
+			<p class="site-description">Les moutons en ont marre, ils s&#039;informent</p>
+
+		
+				</div>
+
+				<nav id="mainnav" class="clearfix" role="navigation">
+					<ul id="mainnav-menu" class="main-navigation-menu"><li id="menu-item-95345" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-95345"><a href="https://lesmoutonsenrages.fr/" aria-current="page">Accueil</a>
+<ul class="sub-menu">
+	<li id="menu-item-95346" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95346"><a href="https://lesmoutonsenrages.fr/category/actualite-generale/">Actualité générale</a></li>
+	<li id="menu-item-95348" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95348"><a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/argent-et-politique/">Argent et politique</a></li>
+	<li id="menu-item-95314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95314"><a href="https://lesmoutonsenrages.fr/category/big-brothersecurite/">Big Brother/sécurité!</a></li>
+	<li id="menu-item-95321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95321"><a href="https://lesmoutonsenrages.fr/category/complots-et-theories/">complots et théories</a></li>
+	<li id="menu-item-95349" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95349"><a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/geopolitique/">Géopolitique</a></li>
+	<li id="menu-item-95310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95310"><a href="https://lesmoutonsenrages.fr/category/ecologie-environnement-et-animaux/">Écologie, environnement et animaux</a></li>
+	<li id="menu-item-95312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95312"><a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/">Manipulation</a></li>
+	<li id="menu-item-95347" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95347"><a href="https://lesmoutonsenrages.fr/category/medical-et-alimentation/">Médical et alimentation</a></li>
+	<li id="menu-item-95320" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-95320"><a href="https://lesmoutonsenrages.fr/category/revue-de-linfo-presque/">Revue de « l&rsquo;info presque&#8230; »</a></li>
+	<li id="menu-item-96633" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96633"><a href="https://lesmoutonsenrages.fr/category/reflexion/">Réflexion</a></li>
+</ul>
+</li>
+<li id="menu-item-113971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113971"><a href="https://lesmoutonsenrages.fr/poster-un-article/">Poster un article</a></li>
+<li id="menu-item-95356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95356"><a href="https://lesmoutonsenrages.fr/charte-des-commentaires-du-blog/">Les règles du blog</a></li>
+<li id="menu-item-96857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96857"><a href="https://lesmoutonsenrages.fr/comment-suivre-le-blog/">Comment suivre le blog?</a></li>
+<li id="menu-item-95358" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-95358"><a href="https://lesmoutonsenrages.fr/" aria-current="page">Boite à outils</a>
+<ul class="sub-menu">
+	<li id="menu-item-95293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95293"><a href="https://lesmoutonsenrages.fr/la-meilleure-arme-pour-agir-nos-imprimantes/">La meilleure arme pour agir: Nos imprimantes</a></li>
+	<li id="menu-item-95357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95357"><a href="https://lesmoutonsenrages.fr/carte-des-moutons-2/">Carte Des Moutons</a></li>
+	<li id="menu-item-95292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95292"><a href="https://lesmoutonsenrages.fr/passer-a-linux-sans-douleur/">La liberté avec LINUX ..</a></li>
+	<li id="menu-item-95351" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-95351"><a href="https://lesmoutonsenrages.fr/" aria-current="page">Articles importants!</a>
+	<ul class="sub-menu">
+		<li id="menu-item-95355" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-95355"><a href="https://lesmoutonsenrages.fr/2015/07/08/o-la-belle-arnaque-bruxelles-se-declare-zone-hors-ttip-sous-condition-dans-lindifference-mediatique/">Ô la belle arnaque! Bruxelles se déclare « zone hors TTIP » (sous condition) dans l’indifférence médiatique</a></li>
+		<li id="menu-item-95354" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-95354"><a href="https://lesmoutonsenrages.fr/2015/12/03/cop21-le-niveau-de-connerie-monte-encore-dun-cranune-nouvelle-piece-a-conviction-demontrant-que-ce-sommet-nest-quune-arnaque/">COP21: le niveau de connerie monte encore d&rsquo;un cran+une nouvelle pièce à conviction démontrant que ce sommet n&rsquo;est qu&rsquo;une arnaque!</a></li>
+		<li id="menu-item-95353" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-95353"><a href="https://lesmoutonsenrages.fr/2015/03/03/rappel-qui-est-reellement-responsable-du-chaos-en-ukraine/">Rappel: Qui est réellement responsable du chaos en Ukraine?</a></li>
+		<li id="menu-item-95352" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-95352"><a href="https://lesmoutonsenrages.fr/2016/03/22/nos-dirigeants-auraient-ils-pu-eviter-les-attentats-oui-sils-avaient-bloque-le-financement-de-lislam-de-france-et-de-belgique-par-le-qatar/">Nos dirigeants auraient-ils pu éviter les attentats? Oui, s&rsquo;ils avaient bloqué le financement de l&rsquo;Islam de France et de Belgique par le Qatar!</a></li>
+		<li id="menu-item-95306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95306"><a href="https://lesmoutonsenrages.fr/nous-sommes-manipules/la-propagande-de-guerre/">La propagande de guerre</a></li>
+		<li id="menu-item-95307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95307"><a href="https://lesmoutonsenrages.fr/nous-sommes-manipules/les-techniques-de-manipulation-des-masses-2/">Les techniques de manipulation</a></li>
+		<li id="menu-item-95308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95308"><a href="https://lesmoutonsenrages.fr/nous-sommes-manipules/petit-cours-de-novlangue/">Petit cours de novlangue</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-95350" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95350"><a href="https://forum.lesmoutonsenrages.fr/">► FORUM ◄</a></li>
+<li id="menu-item-97249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97249"><a href="https://lesmoutonsenrages.fr/les-liens-recommandes/">Les liens recommandés</a>
+<ul class="sub-menu">
+	<li id="menu-item-103057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103057"><a href="https://lesmoutonsenrages.fr/les-liens-recommandes/textes-incontournables/">Textes incontournables !</a></li>
+	<li id="menu-item-105440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105440"><a href="https://lesmoutonsenrages.fr/les-liens-recommandes/musiques/">Toutes les musiques que vous aimez..</a></li>
+	<li id="menu-item-102329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102329"><a href="https://lesmoutonsenrages.fr/les-liens-recommandes/videos-a-voir/">Vidéos à voir !…</a></li>
+</ul>
+</li>
+<li id="menu-item-106426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106426"><a href="https://lesmoutonsenrages.fr/les-liens-recommandes/aide-projets-idees-solutions/">Aide, Projets, idées, solutions….</a></li>
+<li id="menu-item-114555" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-114555"><a href="#">A propos&#8230;</a>
+<ul class="sub-menu">
+	<li id="menu-item-95300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95300"><a href="https://lesmoutonsenrages.fr/a-propos/a-propos-des-articles-du-blog/">À propos des articles du blog</a></li>
+	<li id="menu-item-95305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95305"><a href="https://lesmoutonsenrages.fr/a-propos/about/">Qui sommes nous?</a></li>
+	<li id="menu-item-95301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95301"><a href="https://lesmoutonsenrages.fr/a-propos/cgu-et-cookies/">CGU et cookies</a></li>
+	<li id="menu-item-95304" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95304"><a href="https://lesmoutonsenrages.fr/a-propos/pour-toute-reclamation/">Pour toute réclamation</a></li>
+	<li id="menu-item-95303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95303"><a href="https://lesmoutonsenrages.fr/a-propos/pour-contacter-voltigeur/">Pour contacter Voltigeur</a></li>
+</ul>
+</li>
+</ul>				</nav>
+
+			</header>
+
+		</div>
+
+		
+
+	<div id="wrap" class="clearfix">
+
+		<section id="content" class="primary" role="main">
+
+		
+		
+				
+	<article id="post-129769" class="post-129769 post type-post status-publish format-standard hentry category-analyse category-argent-politique-geopolitique category-economie category-manipulationdesinformationpropagande category-medical-et-alimentation category-n-o-m category-opinion category-re-information category-reflexion category-vous-nous-avez-ecrit tag-desastre-social tag-moratoire tag-trump tag-usa tag-vague-d-expulsion">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/" rel="bookmark">Pour éviter un désastre social, la Maison Blanche stoppe les expulsions jusque fin 2020</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/" title="9 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-06T09:00:52+02:00">dimanche 6 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/#respond">Laisser un commentaire</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Et c&rsquo;est le Covid19 le seul responsable de tout ce merdier ? La honte ne les étouffe pas tous ces « gestionnaires ». Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Par Charles Sannat pour <a href="https://insolentiae.com/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/">Insolentiae</a></p>
+
+
+
+<figure class="wp-block-image size-large is-resized is-style-rounded"><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche.jpg" alt="" class="lazy lazy-hidden wp-image-129770" width="405" height="300" data-lazy-srcset="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche.jpg 810w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche-300x222.jpg 300w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche-768x569.jpg 768w" data-lazy-sizes="(max-width: 405px) 100vw, 405px" /><noscript><img loading="lazy" src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche.jpg" alt="" class="wp-image-129770" width="405" height="300" srcset="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche.jpg 810w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche-300x222.jpg 300w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/maison-blanche-768x569.jpg 768w" sizes="(max-width: 405px) 100vw, 405px" /></noscript></figure>
+
+
+
+<p>C’est du jamais vu aux Etats-Unis pays libéral s’il en est !</p>
+
+
+
+<p>Lorsque vous ne payez pas votre loyer aux Etats-Unis, vous ne pouvez pas compter sur la clémence de la loi qui protégerait les forcément gentils locataires contre les forcément méchants propriétaires comme c’est le cas en France avec un délai d’expulsion moyen de… 2 ans !</p>
+
+
+
+<p>Aux Etats-Unis, quand vous ne payez pas votre loyer, vous êtes mis dehors en quelques semaines et c’est la police qui vient vous donner un papier pour dire de partir qui vous laisse x jours puis revient. Gare à vous si vous êtes toujours-là !</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/#more-129769" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129769" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129769" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/pour-eviter-un-desastre-social-la-maison-blanche-stoppe-les-expulsions-jusque-fin-2020/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/analyse/" rel="category tag">Analyse</a>, <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/" rel="category tag">Argent politique et géopolitique</a>, <a href="https://lesmoutonsenrages.fr/category/economie/" rel="category tag">Économie</a>, <a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/" rel="category tag">Manipulation</a>, <a href="https://lesmoutonsenrages.fr/category/medical-et-alimentation/" rel="category tag">Médical et alimentation</a>, <a href="https://lesmoutonsenrages.fr/category/n-o-m/" rel="category tag">N.O.M</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/re-information/" rel="category tag">ré-information</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129767" class="post-129767 post type-post status-publish format-standard hentry category-actions-et-alternatives category-analyse category-elections category-manipulationdesinformationpropagande category-n-o-m category-opinion category-re-information category-reflexion category-solidarite tag-asservissement tag-politique-de-la-peur tag-politique-spectacle tag-trahison">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/" rel="bookmark">Le nouveau monde ou l’abêtissement politique</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/" title="7 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-06T07:00:11+02:00">dimanche 6 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/#comments">Un commentaire</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Le spectacle donné par les hommes politiques, est de plus en plus affligeant mais, ce qui est encore plus évident et dangereux, c&rsquo;est la soumission d&rsquo;un peuple aux caprices contradictoires, d&rsquo;individus qui brillent par leurs positions dominantes, et pas par leur empathie pour ceux qu&rsquo;ils sont censés défendre et représenter. On est mal barré, s&rsquo;il n&rsquo;y a pas de réactions des gaulois. Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Par <a href="https://maximetandonnet.wordpress.com/"><strong>Maxime TANDONNET</strong></a></p>
+
+
+
+<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://maximetandonnet.files.wordpress.com/2018/12/xvm0b384f78-3c84-11e7-b5b5-21a5cdc791d1.jpg" alt=""/><noscript><img src="https://maximetandonnet.files.wordpress.com/2018/12/xvm0b384f78-3c84-11e7-b5b5-21a5cdc791d1.jpg" alt=""/></noscript></figure><div class="wp-block-media-text__content">
+<p>« Nouveau monde » ou « monde d’après », il est utile de se pencher sur la réalité de la vie politique aujourd’hui en France. Elle est dominée par un abêtissement général, perceptible autour d’une dizaine de paramètres:</p>
+
+
+
+<p></p>
+</div></div>
+
+
+
+<p><em><strong>La fin de l’engagement </strong> </em>: les partis politiques supposés, selon la Constitution concourir « à l’exercice de la démocratie », sont en voie de disparition. La dernière enquête CEVIPOF d’avril 2020 sur l’état d’esprit des Français (vague 11bis), montre qu’ils sont devenus l’institution la plus impopulaire (11% de confiance). Les taux d’adhésion s’effondrent. Or, les partis politiques servaient classiquement à faire émerger les projets et à désigner les futurs responsables politiques. Par quoi ont-ils été remplacés?</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/#more-129767" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129767" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129767" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/pour-le-changement/actions-et-alternatives/" rel="category tag">Actions et alternatives</a>, <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/analyse/" rel="category tag">Analyse</a>, <a href="https://lesmoutonsenrages.fr/category/elections/" rel="category tag">Élections</a>, <a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/" rel="category tag">Manipulation</a>, <a href="https://lesmoutonsenrages.fr/category/n-o-m/" rel="category tag">N.O.M</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/re-information/" rel="category tag">ré-information</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/solidarite/" rel="category tag">Solidarité</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129765" class="post-129765 post type-post status-publish format-standard hentry category-actualite-generale category-revue-de-linfo-presque category-vos-alertes-infos tag-les-nouvelles-du-jour">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/" rel="bookmark">Vos infos, news ( et autres ) du 6 septembre 2020..</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/" title="5 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-06T05:00:49+02:00">dimanche 6 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/#comments">29 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Bonjour à tout le monde. guten tag, hello, salam, nǐ hăo, buenos días, buongiorno , dzień dobry,  bom dia, Добрый день,  ia orana, pryvit, Kaliméra, kia ora, azul, bonghjornu, ..</p>
+
+
+
+<p class="has-text-align-center"><strong>POLITIQUE/SOCIÉTÉ</strong></p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://sun9-21.userapi.com/Fy-pWZQJlL4sEJnzVpLCh6kxzTPLtdD6Cd6QxA/RSKngQ2-CJ0.jpg" alt="" width="457" height="294"/><noscript><img loading="lazy" src="https://sun9-21.userapi.com/Fy-pWZQJlL4sEJnzVpLCh6kxzTPLtdD6Cd6QxA/RSKngQ2-CJ0.jpg" alt="" width="457" height="294"/></noscript><figcaption>Merci pour l&rsquo;image</figcaption></figure>
+
+
+
+<p><a href="https://www.lesechos.fr/politique-societe/societe/coronavirus-22-etablissements-scolaires-fermes-depuis-la-rentree-en-france-1239411">Coronavirus : 22 établissements scolaires fermés depuis la rentrée en France</a>. Le ministre de l&rsquo;Education nationale, Jean-Michel Blanquer, a annoncé ce vendredi matin que 22 établissements scolaires, dont 10 en métropole, ont été fermés à la suite de contaminations au Covid-19. Une centaine de classes sont concernées au total.</p>
+
+
+
+<p><a href="https://www.20minutes.fr/societe/2854567-20200905-coronavirus-lille-bars-fermes-minuit-6h00-samedi-soir">Coronavirus à Lille : Les bars seront fermés de minuit à 6 heures ce samedi soir</a>. Ce week-end devait se tenir la Grande Braderie de Lille, qui a été annulée, mais le préfet prend encore plus de précautions</p>
+
+
+
+<p><a href="https://www.20minutes.fr/arts-stars/television/2848955-20200905-arret-france-o-impact-representation-outre-mer">Arrêt de France Ô : Quel sera l’impact sur la représentation des Outre-mer ?</a> Le canal de la chaîne de France Télévisions, consacrée à la diversité culturelle et à la France d’outre-mer, a cessé d’émettre mardi 1er septembre sur la TNT</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/#more-129765" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129765" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129765" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/actualite-generale/" rel="category tag">Actualité générale</a>, <a href="https://lesmoutonsenrages.fr/category/revue-de-linfo-presque/" rel="category tag">Revue de l'info presque...</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/" rel="category tag">Vos alertes-infos</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129750" class="post-129750 post type-post status-publish format-standard hentry category-analyse category-complots-et-theories category-manipulationdesinformationpropagande category-n-o-m category-opinion category-re-information category-reflexion category-vos-alertes-infos category-vous-nous-avez-ecrit tag-complot-anti-russe tag-cui-bono-3 tag-navalny tag-pretexte">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/" rel="bookmark">Empoisonnement de Navalny au Novitchok – Monsieur 2 % défie les lois de la chimie</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/" title="13 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T13:00:49+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/#comments">3 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Si cet enregistrement produit par les biélorusses est valable, ça ressemble à un un coup monté. « <em><a href="https://fr.sputniknews.com/international/202009041044379368-la-tv-bielorusse-rend-publique-la-communication-interceptee-entre-berlin-et-varsovie-sur-navalny/">La TV biélorusse rend publique la «communication interceptée» entre Berlin et Varsovie sur Navalny</a>, Sur cet enregistrement rendu public, il est demandé à une personne, qui est présentée comme un représentant allemand du nom de Nick, si <a rel="noreferrer noopener" href="https://fr.sputniknews.com/international/202009041044376794-des-toxicologues-allemands-disent-avoir-decouvert-des-traces-dun-agent-de-type-novitchok-dans-le/" target="_blank">l’empoisonnement de Navalny</a> a été confirmé. <strong>L’homme fait remarquer que dans ce cas ce n’est pas nécessaire, car «à la guerre, toutes les méthodes sont bonnes</strong>»</em>. » Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Christelle Néant pour <a href="http://www.donbass-insider.com/fr/2020/09/04/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/">Donbass-Insider</a></p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://www.donbass-insider.com/wp-content/uploads/2020/09/navalny-novichok.jpg" alt="" width="468" height="293"/><noscript><img loading="lazy" src="https://www.donbass-insider.com/wp-content/uploads/2020/09/navalny-novichok.jpg" alt="" width="468" height="293"/></noscript></figure>
+
+
+
+<p>Douze jours après son arrivé en Allemagne, Berlin a finalement annoncé mercredi qu’Alexeï Navalny aurait été empoisonné avec le fameux poison neurotoxique Novitchok, déjà évoqué dans l’affaire Skripal. Sauf que comme dans l’affaire de Salisbury, l’histoire officielle concernant ce qui est arrivé à « monsieur 2 % » défie les lois de la chimie, de la biochimie, et de la logique.</p>
+
+
+
+<p>Je ne reviendrai pas sur l’appellation absurde de « principal opposant à Vladimir Poutine » que toute la presse occidentale colle à Navalny en dépit du bon sens. Il suffit de voir son taux de soutien ridicule au sein de la population russe (<a rel="noreferrer noopener" href="https://www.levada.ru/2020/07/29/odobrenie-organov-vlasti-i-doverie-politikam/" target="_blank">2 % selon le dernier sondage Levada</a>) et voir que Jirinovksi est loin devant lui, pour se rendre compte que ce cher Alexeï ne représente en rien une menace pour le Président russe.</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/#more-129750" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129750" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129750" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/empoisonnement-de-navalny-au-novitchok-monsieur-2-defie-les-lois-de-la-chimie/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/analyse/" rel="category tag">Analyse</a>, <a href="https://lesmoutonsenrages.fr/category/complots-et-theories/" rel="category tag">complots et théories</a>, <a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/" rel="category tag">Manipulation</a>, <a href="https://lesmoutonsenrages.fr/category/n-o-m/" rel="category tag">N.O.M</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/re-information/" rel="category tag">ré-information</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/" rel="category tag">Vos alertes-infos</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129748" class="post-129748 post type-post status-publish format-standard hentry category-analyse category-geopolitique category-opinion category-reflexion category-vous-nous-avez-ecrit tag-missiles-laser tag-tensions tag-turquie-grece">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/" rel="bookmark">La Turquie se dote de nouveaux missiles à guidage laser</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/" title="11 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T11:00:54+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/#comments">Un commentaire</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Source <a href="http://www.observateurcontinental.fr/?module=articles&amp;action=view&amp;id=1943">Observateur-Continental</a></p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="http://www.observateurcontinental.fr/media/volodina/9-12.jpg" alt="" width="501" height="255"/><noscript><img loading="lazy" src="http://www.observateurcontinental.fr/media/volodina/9-12.jpg" alt="" width="501" height="255"/></noscript></figure>
+
+
+
+<p><strong>Alors que les tensions entre la Turquie et la Grèce augmentent, Ankara aurait commencé à développer son premier missile sol-sol à guidage laser, le TRGL-230. Au-delà, on apprend que le président turc,&nbsp;Recep Tayyip Erdogan, a, en fait, à sa disposition une palette considérable de missiles et de systèmes de défense lui permettant de menacer, par exemple, la France.</strong></p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/#more-129748" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129748" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129748" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/la-turquie-se-dote-de-nouveaux-missiles-a-guidage-laser/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/analyse/" rel="category tag">Analyse</a>, <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/geopolitique/" rel="category tag">Géopolitique</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129752" class="post-129752 post type-post status-publish format-standard hentry category-analyse category-argent-et-politique category-arnaque category-economie category-manipulationdesinformationpropagande category-medical-et-alimentation category-opinion category-reflexion category-vous-nous-avez-ecrit tag-argent-magique tag-faillites-generalisees tag-plan-de-relance">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/" rel="bookmark">« L’annonce du plan de relance est un marqueur de fin de crise sanitaire » L’édito de Charles SANNAT</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/" title="9 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T09:00:14+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/#respond">Laisser un commentaire</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Fin de crise sanitaire ? Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Charles Sannat pour <a href="https://insolentiae.com/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/">Insolentiae</a></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance.jpg" alt="" class="lazy lazy-hidden wp-image-129756" width="381" height="262" data-lazy-srcset="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance.jpg 468w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance-300x206.jpg 300w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance-100x70.jpg 100w" data-lazy-sizes="(max-width: 381px) 100vw, 381px" /><noscript><img loading="lazy" src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance.jpg" alt="" class="wp-image-129756" width="381" height="262" srcset="https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance.jpg 468w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance-300x206.jpg 300w, https://lesmoutonsenrages.fr/wp-content/uploads/2020/09/france-relance-100x70.jpg 100w" sizes="(max-width: 381px) 100vw, 381px" /></noscript></figure></div>
+
+
+
+<p>Mes chères impertinentes, mes chers impertinents,</p>
+
+
+
+<p>Vous avez vu le logo? Il est beau le logo de France Relance… Dans notre pays, des équipes entières planchent sur les logos. Et puis sous les pupitres il faut indiquer le sujet que le mamamouchi concerné évoque… Bref.</p>
+
+
+
+<p>Il y a une dynamique épidémique dans la crise sanitaire et il y a également une dynamique économique avec différentes étapes correspondantes aux étapes de la crise sanitaire.</p>
+
+
+
+<p>Lorsque le confinement est décrété en France, notre pays prendra des mesures de soutien jamais vu, comme l’Italie avait pu le faire quelques semaines avant nous. Des mesures de soutien digne de l’économie de guerre. Suspension des loyers, chômage partiel à 100 % pour tous ceux qui ne pouvaient plus travailler pour qu’ils continuent à percevoir leurs salaires etc..</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/#more-129752" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129752" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129752" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/lannonce-du-plan-de-relance-est-un-marqueur-de-fin-de-crise-sanitaire-ledito-de-charles-sannat/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/analyse/" rel="category tag">Analyse</a>, <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/argent-et-politique/" rel="category tag">Argent et politique</a>, <a href="https://lesmoutonsenrages.fr/category/arnaque/" rel="category tag">Arnaque</a>, <a href="https://lesmoutonsenrages.fr/category/economie/" rel="category tag">Économie</a>, <a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/" rel="category tag">Manipulation</a>, <a href="https://lesmoutonsenrages.fr/category/medical-et-alimentation/" rel="category tag">Médical et alimentation</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129761" class="post-129761 post type-post status-publish format-standard hentry category-argent-politique-geopolitique category-economie category-n-o-m category-opinion category-reflexion category-scandale category-vos-alertes-infos category-vous-nous-avez-ecrit tag-crise-economique tag-des-millions-de-gens-a-la-rue tag-usa tag-vague-d-expulsion">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/" rel="bookmark">VIDEO CHOC – USA: Près de 40 millions de locataires menacés d’expulsion !</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/" title="8 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T08:00:48+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/#comments">14 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>C&rsquo;est effrayant ce qui se passe aux USA.. Les lois ne sont pas favorables aux locataires en difficulté. Même si Trump met en place une moratoire de quatre mois, ça ne résoudra rien et ne s&rsquo;appliquera pas à tout le monde. Se retrouver à la rue avec femme et bébés, en abandonnant tout, sans savoir où aller, jeunes ou vieux, tous dehors&#8230; Le « rêve » américain tourne au cauchemar pour les moins favorisés. Le capitalisme dans toute son inhumanité et intransigeance. Merci à Élysées. Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://previews.123rf.com/images/andreypopov/andreypopov2004/andreypopov200400080/143773225-close-up-of-a-person-s-hand-holding-eviction-notice-in-red-envelope.jpg" alt="" width="325" height="217"/><noscript><img loading="lazy" src="https://previews.123rf.com/images/andreypopov/andreypopov2004/andreypopov200400080/143773225-close-up-of-a-person-s-hand-holding-eviction-notice-in-red-envelope.jpg" alt="" width="325" height="217"/></noscript><figcaption>Illustration/ 123.RF</figcaption></figure>
+
+
+
+<p>Source <strong><a rel="noreferrer noopener" href="https://www.francetvinfo.fr/monde/usa/usa-40-millions-de-locataires-menaces-dexpulsion_4094907.html" target="_blank">francetvinfo</a></strong></p>
+
+
+
+<p><strong>La crise a encore davantage creusé les inégalités aux États-Unis. 40 millions d’Américains pourraient perdre brutalement leur logement.</strong></p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/#more-129761" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129761" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129761" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/video-choc-usa-pres-de-40-millions-de-locataires-menaces-dexpulsion/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/" rel="category tag">Argent politique et géopolitique</a>, <a href="https://lesmoutonsenrages.fr/category/economie/" rel="category tag">Économie</a>, <a href="https://lesmoutonsenrages.fr/category/n-o-m/" rel="category tag">N.O.M</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/argent-et-politique/scandale/" rel="category tag">Scandale</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/" rel="category tag">Vos alertes-infos</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129754" class="post-129754 post type-post status-publish format-standard hentry category-argent-politique-geopolitique category-arnaque category-economie category-manipulationdesinformationpropagande category-medical-et-alimentation category-n-o-m category-opinion category-re-information category-reflexion category-vous-nous-avez-ecrit tag-covid19-le-virus-de-la-peur tag-covid19-grippe tag-le-grand-reset tag-nouveau-test tag-roche">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/" rel="bookmark">Nouveau: Un test de Roche pour faire la différence entre le Covid-19 et la grippe.</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/" title="7 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T07:00:59+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/#comments">10 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>J&rsquo;ai pensé depuis le début de la crise, que ce virus était le prétexte tout trouvé pour remettre les compteurs à zéro. Chaque jours nous en avons confirmation avec les chiffres revus et corrigés à la baisse. Ce nouveau test du laboratoire Roche vient rajouter de l&rsquo;eau au moulin. Il démontre que les « experts » ont tout mélangé pour gonfler la gravité de la maladie, ce qui a mis les pays dans une situation de crise économique sans précédent. Comme tout est lié, on ne reprendra pas les déclarations « prédictives » des uns et des autres. Souhaitons que cette paranoïa finisse et que les gens cesse d&rsquo;avoir peur. Ce Virus existe, il peut être dangereux pour des personnes déjà fragilisées qui doivent être protégées mais, n&rsquo;en faisons pas un tueur aveugle. Cherchez à qui profite cette épidémie, et la destruction de notre économie. Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Par <a href="https://lilianeheldkhawam.com/2020/09/04/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/">Liliane Held Khawam</a></p>
+
+
+
+<figure class="wp-block-image is-resized size-large"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://image.cnbcfm.com/api/v1/image/106184048-1571210859960gettyimages-138037014.jpeg?v=1587107754" alt="" width="439" height="291"/><noscript><img loading="lazy" src="https://image.cnbcfm.com/api/v1/image/106184048-1571210859960gettyimages-138037014.jpeg?v=1587107754" alt="" width="439" height="291"/></noscript></figure>
+
+
+
+<p>Traduction : « <em>À l&rsquo;approche de la saison grippale, ce nouveau test est particulièrement important car le SRAS-CoV-2 et les infections grippales peuvent difficilement être différenciés par les seuls symptômes. Désormais, avec un seul test, les professionnels de la santé peuvent en toute confiance fournir le bon diagnostic et le plan de traitement le plus efficace pour leurs patients », a déclaré Thomas Schinecker, PDG de Roche Diagnostics.</em>« </p>
+
+
+
+<p>Les chiffres officiels américains révisaient à la baisse le nombre total des décès Covid-19. Une baisse drastique puisque seules 6% des décès annoncés initialement auraient été dus au seul Covid-19! Du coup, nous avions osé affirmé que la Statistique ne pouvait justifier le qualificatif «&nbsp;Pandémie&nbsp;» au sujet de ce virus!</p>
+
+
+
+<h6><a href="https://lilianeheldkhawam.com/2020/09/02/fausse-statistique-fausse-pandemie-mais-desastre-annonce-de-sante-mentale-lhk/">https://lilianeheldkhawam.com/2020/09/02/fausse-statistique-fausse-pandemie-mais-desastre-annonce-de-sante-mentale-lhk/</a></h6>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/#more-129754" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129754" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129754" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/" rel="category tag">Argent politique et géopolitique</a>, <a href="https://lesmoutonsenrages.fr/category/arnaque/" rel="category tag">Arnaque</a>, <a href="https://lesmoutonsenrages.fr/category/economie/" rel="category tag">Économie</a>, <a href="https://lesmoutonsenrages.fr/category/manipulationdesinformationpropagande/" rel="category tag">Manipulation</a>, <a href="https://lesmoutonsenrages.fr/category/medical-et-alimentation/" rel="category tag">Médical et alimentation</a>, <a href="https://lesmoutonsenrages.fr/category/n-o-m/" rel="category tag">N.O.M</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/re-information/" rel="category tag">ré-information</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129746" class="post-129746 post type-post status-publish format-standard hentry category-actualite-generale category-revue-de-linfo-presque category-vos-alertes-infos tag-les-nouvelles-du-jour">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/" rel="bookmark">Vos infos, news (et autres ) du 5 Septembre 2020..</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/" title="5 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-05T05:00:06+02:00">samedi 5 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/#comments">108 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Bonjour à tout le monde. guten tag, hello, salam, nǐ hăo, buenos días, buongiorno , dzień dobry,  bom dia, Добрый день,  ia orana, pryvit, Kaliméra, kia ora, azul, bonghjornu, ..</p>
+
+
+
+<p class="has-text-align-center"><strong>POLITIQUE/SOCIÉTÉ</strong></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://sun6-16.userapi.com/Lrl8M--o7cmGe3m4Z2SVtRtlHheCk0dcZR-e-A/MJN3-lG-9TY.jpg" alt="" width="360" height="317"/><noscript><img loading="lazy" src="https://sun6-16.userapi.com/Lrl8M--o7cmGe3m4Z2SVtRtlHheCk0dcZR-e-A/MJN3-lG-9TY.jpg" alt="" width="360" height="317"/></noscript><figcaption>Merci pour l&rsquo;image</figcaption></figure></div>
+
+
+
+<p><a href="https://www.20minutes.fr/politique/2853731-20200904-150-ans-republique-direct-emmanuel-macron-attendu-pantheon-prononcer-discours">150 ans en République&nbsp;: «&nbsp;La République parce qu’elle est indivisible n’admet aucune aventure séparatiste&nbsp;», dit Emmanuel Macron</a>&#8230; Emmanuel Macron célébrait&nbsp;ce vendredi 4&nbsp;septembre les 150 ans de la proclamation de la République, en 1870, depuis le Panthéon</p>
+
+
+
+<p><a href="https://www.20minutes.fr/politique/2853967-20200904-150-ans-republique-histoire-bloc-auquel-adhere-dit-nicolas-offenstadt-apres-discours-emmanuel-macron">150 ans en République&nbsp;: «&nbsp;L’histoire ce n’est pas un bloc auquel on adhère&nbsp;», dit Nicolas Offenstadt après le discours d’Emmanuel Macron</a>. Le président de la République a défendu l’idée selon laquelle l’histoire de France est un bloc. Pour&nbsp;l’historien Nicolas Offenstadt cette vision, proche&nbsp;du «&nbsp;roman national&nbsp;», est dépassée</p>
+
+
+
+<p><a href="https://video.lefigaro.fr/figaro/video/emmanuel-macron-ceux-qui-sen-prennent-aux-forces-de-lordre-aux-elus-ne-passeront-pas/">Emmanuel Macron: «Ceux qui s&rsquo;en prennent aux forces de l&rsquo;ordre, aux élus, ne passeront pas»</a>. Le Président, Emmanuel Macron, a prononcé un discours ce vendredi 4 septembre au Panthéon, pour célébrer les 150 ans de la Troisième République.</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/#more-129746" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129746" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129746" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/actualite-generale/" rel="category tag">Actualité générale</a>, <a href="https://lesmoutonsenrages.fr/category/revue-de-linfo-presque/" rel="category tag">Revue de l'info presque...</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/" rel="category tag">Vos alertes-infos</a>			</span>
+
+		</div>
+
+	</article>		
+	<article id="post-129738" class="post-129738 post type-post status-publish format-standard hentry category-argent-et-politique category-economie category-opinion category-reflexion category-vous-nous-avez-ecrit tag-bayrou tag-utile-a-macron">
+
+		<h2 class="entry-title post-title"><a href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/" rel="bookmark">Bayrou nommé camarade commissaire au Plan !</a></h2>		
+		<div class="entry-meta postmeta clearfix"><span class="meta-date"><a href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/" title="13 h 00 min" rel="bookmark"><time class="entry-date published updated" datetime="2020-09-04T13:00:27+02:00">vendredi 4 septembre 2020</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="https://lesmoutonsenrages.fr/author/voltigeur/" title="Voir toutes les publications (post) par Volti" rel="author">Volti</a></span></span>
+	<span class="meta-comments">
+		<a href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/#comments">3 commentaires</a>	</span>
+
+<span class="post-edit-link"><span class="author vcard"><a class="url fn n" href="">Modifier l&#039;article</a></span></span></div>
+		
+		
+		<a href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/" rel="bookmark">
+					</a>
+
+		
+		<div class="entry clearfix">
+			
+<p>Bayrou jouera-t-il un rôle non négligeable pour les présidentielles de 2022 ? Son passage éphémère comme garde des sceaux au début du quinquennat Macron, interroge sur son utilité comme commissaire au plan, alors que France-Stratégie est là pour réfléchir aux questions. Partagez ! <strong>Volti</strong></p>
+
+
+
+<p class="has-text-align-center">******</p>
+
+
+
+<p>Source <a href="https://insolentiae.com/bayrou-nomme-camarade-commissaire-au-plan/">Insolentiae</a></p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img class="lazy lazy-hidden" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://insolentiae.com/wp-content/uploads/Francois-Bayrou.jpg" alt="" width="399" height="312"/><noscript><img loading="lazy" src="https://insolentiae.com/wp-content/uploads/Francois-Bayrou.jpg" alt="" width="399" height="312"/></noscript></figure>
+
+
+
+<p>Le commissariat général au Plan ou commissariat général du Plan (CGP) est une institution française ayant existé de 1946 à 2006, chargée de définir à titre indicatif la planification économique du pays, notamment via des plans quinquennaux.</p>
+
+
+
+<p>Le Plan cesse d’être un organe de planification pour prendre en 2006 le nom de « Centre d’analyse stratégique » (CAS) puis, en 2013, celui de commissariat général à la Stratégie et la Prospective, plus connu sous le nom de France Stratégie.</p>
+
+
+
+ <a href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/#more-129738" class="more-link">Lire la suite</a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Partager :</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-129738" class="share-facebook sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/?share=facebook" target="_blank" title="Cliquez pour partager sur Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-129738" class="share-twitter sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/?share=twitter" target="_blank" title="Cliquez pour partager sur Twitter"><span>Twitter</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/?share=telegram" target="_blank" title="Cliquez pour partager sur Telegram"><span>Telegram</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://lesmoutonsenrages.fr/2020/09/04/bayrou-nomme-camarade-commissaire-au-plan/?share=pocket" target="_blank" title="Cliquez pour partager sur Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div>			<div class="page-links"></div>
+		</div>
+		
+		<div class="postinfo clearfix">
+			<span class="meta-category">
+				Categorie: <a href="https://lesmoutonsenrages.fr/category/argent-politique-geopolitique/argent-et-politique/" rel="category tag">Argent et politique</a>, <a href="https://lesmoutonsenrages.fr/category/economie/" rel="category tag">Économie</a>, <a href="https://lesmoutonsenrages.fr/category/opinion/" rel="category tag">Opinion</a>, <a href="https://lesmoutonsenrages.fr/category/reflexion/" rel="category tag">Réflexion</a>, <a href="https://lesmoutonsenrages.fr/category/vos-alertes-infos/vous-nous-avez-ecrit/" rel="category tag">Vous nous avez écrit</a>			</span>
+
+		</div>
+
+	</article>
+			  <div class="post-pagination clearfix">
+					<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://lesmoutonsenrages.fr/page/2/">2</a>
+<a class="page-numbers" href="https://lesmoutonsenrages.fr/page/3/">3</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="https://lesmoutonsenrages.fr/page/3044/">3 044</a>
+<a class="next page-numbers" href="https://lesmoutonsenrages.fr/page/2/">&raquo;</a>			  </div>
+
+			
+		</section>
+
+		
+	<section id="sidebar" class="secondary clearfix" role="complementary">
+
+		<aside id="meta-2" class="widget widget_meta clearfix"><h3 class="widgettitle"><span>Connexion</span></h3>
+		<ul>
+			<li><a href="https://lesmoutonsenrages.fr/wp-login.php?action=register">Inscription</a></li>			<li><a href="https://lesmoutonsenrages.fr/wp-login.php">Connexion</a></li>
+			<li><a href="https://lesmoutonsenrages.fr/feed/">Flux des publications</a></li>
+			<li><a href="https://lesmoutonsenrages.fr/comments/feed/">Flux des commentaires</a></li>
+
+			<li><a href="https://fr.wordpress.org/">Site de WordPress-FR</a></li>
+		</ul>
+
+		</aside><aside id="search-2" class="widget widget_search clearfix">
+	<form role="search" method="get" class="search-form" action="https://lesmoutonsenrages.fr/">
+		<label>
+			<span class="screen-reader-text">Recherche:</span>
+			<input type="search" class="search-field" placeholder="Recherche &hellip;" value="" name="s">
+		</label>
+		<button type="submit" class="search-submit">
+			<span class="genericon-search"></span>
+		</button>
+	</form>
+
+</aside><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><h3 class="widgettitle"><span>Nous soutenir</span></h3><div class="textwidget custom-html-widget"><a href="https://fr.tipeee.com/les-moutons-enrages" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/02/128px-Tipeee_logo.png" data-lazy-type="image" data-lazy-src="https://les-interdits.lesmoutonsenrages.fr/wp-content/uploads/2020/02/128px-Tipeee_logo.png" alt="tipeee_logo" class="lazy lazy-hidden aligncenter lazy wp-image-244 lazy-loaded"><noscript><img src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/02/128px-Tipeee_logo.png" data-lazy-type="image" data-lazy-src="https://les-interdits.lesmoutonsenrages.fr/wp-content/uploads/2020/02/128px-Tipeee_logo.png" alt="tipeee_logo" class="aligncenter lazy wp-image-244 lazy-loaded"></noscript></a>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="JVRR3HM9U8DKU">
+<input type="image" class="aligncenter" src="https://lesmoutonsenrages.fr/wp-content/uploads/2018/02/btn_donate_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+</form></div></aside><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><h3 class="widgettitle"><span>Reprenez le contrôle de votre actualité et restez connecté avec vos sites préférés où que vous soyez</span></h3><div class="textwidget custom-html-widget"><a href="https://socialf.app" target="_blank" rel="noopener noreferrer"><img class="lazy lazy-hidden aligncenter size-full wp-image-95920" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/02/SocialF-icon-splashes.png" alt="App SocialF"/><noscript><img class="aligncenter size-full wp-image-95920" src="https://lesmoutonsenrages.fr/wp-content/uploads/2020/02/SocialF-icon-splashes.png" alt="App SocialF"/></noscript></a></div></aside><aside id="custom_html-2" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><a href="https://forum.lesmoutonsenrages.fr" target="_blank" rel="noopener noreferrer"><img class="lazy lazy-hidden aligncenter size-full wp-image-95920" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2016/06/Rejoindre-le-forum.jpg" alt="Rejoindre le forum"/><noscript><img class="aligncenter size-full wp-image-95920" src="https://lesmoutonsenrages.fr/wp-content/uploads/2016/06/Rejoindre-le-forum.jpg" alt="Rejoindre le forum"/></noscript></a></div></aside><aside id="rss_links-10" class="widget widget_rss_links clearfix"><h3 class="widgettitle"><span>Nos flux RSS</span></h3><p><a target="_self" href="https://lesmoutonsenrages.fr/feed/" title="S&rsquo;abonner à Articles"><img src="https://lesmoutonsenrages.fr/wp-content/plugins/jetpack/images/rss/red-medium.png" alt="RSS Feed" /></a>&nbsp;<a target="_self" href="https://lesmoutonsenrages.fr/feed/" title="S&rsquo;abonner à Articles">RSS - Articles</a></p><p><a target="_self" href="https://lesmoutonsenrages.fr/comments/feed/" title="S&rsquo;abonner à Commentaires"><img src="https://lesmoutonsenrages.fr/wp-content/plugins/jetpack/images/rss/red-medium.png" alt="RSS Feed" /></a>&nbsp;<a target="_self" href="https://lesmoutonsenrages.fr/comments/feed/" title="S&rsquo;abonner à Commentaires">RSS - Commentaires</a></p>
+</aside><aside id="custom_html-4" class="widget_text widget widget_custom_html clearfix"><h3 class="widgettitle"><span>Le site des Interdits des Moutons Enragés</span></h3><div class="textwidget custom-html-widget"><a href="https://les-interdits.lesmoutonsenrages.fr"><img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-type="image" data-lazy-src="https://lesmoutonsenrages.fr/wp-content/uploads/2019/05/bannière-moutons_enrags_1024.jpg" title="Les Moutons Enragés" alt="moutons"><noscript><img src="https://lesmoutonsenrages.fr/wp-content/uploads/2019/05/bannière-moutons_enrags_1024.jpg" title="Les Moutons Enragés" alt="moutons"></noscript></a></div></aside><aside id="ai_widget-2" class="widget ai_widget clearfix"><div class='code-block code-block-2' style='margin: 8px 0; clear: both;'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar (Resp) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6798210428981240"
+     data-ad-slot="6173229478"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</aside><aside id="recent-comments-2" class="widget widget_recent_comments clearfix"><h3 class="widgettitle"><span>Commentaires récents</span></h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>Thierry65</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765975">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>laurence</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765974">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link">jacko46</span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765973">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>laurence</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/05/nouveau-un-test-de-roche-pour-faire-la-difference-entre-le-covid-19-et-la-grippe/comment-page-1/#comment-765972">Nouveau: Un test de Roche pour faire la différence entre le Covid-19 et la grippe.</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://electra2zeiss.forumactif.com/' rel='external nofollow ugc' class='url'>Orne et Akasha</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765971">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://electra2zeiss.forumactif.com/' rel='external nofollow ugc' class='url'>Orne et Akasha</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765970">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link">Volti</span> dans <a href="https://lesmoutonsenrages.fr/2020/09/05/vos-infos-news-et-autres-du-5-aout-2020-2/comment-page-1/#comment-765969">Vos infos, news (et autres ) du 5 Septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>laurence</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765968">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://livresdefemmeslivresdeverites.blogspot.fr/' rel='external nofollow ugc' class='url'>Étirév Anwen</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/le-nouveau-monde-ou-labetissement-politique/comment-page-1/#comment-765967">Le nouveau monde ou l’abêtissement politique</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://electra2zeiss.forumactif.com/' rel='external nofollow ugc' class='url'>Orne et Akasha</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765966">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link">ConscienceU12</span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765965">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>Thierry65</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765964">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://electra2zeiss.forumactif.com/' rel='external nofollow ugc' class='url'>Orne et Akasha</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765963">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://lesmoutonsenrages.fr' rel='external nofollow ugc' class='url'>laurence</a></span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765962">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li><li class="recentcomments"><span class="comment-author-link">jacko46</span> dans <a href="https://lesmoutonsenrages.fr/2020/09/06/vos-infos-news-et-autres-du-6-septembre-2020/comment-page-1/#comment-765961">Vos infos, news ( et autres ) du 6 septembre 2020..</a></li></ul></aside><aside id="categories-2" class="widget widget_categories clearfix"><h3 class="widgettitle"><span>Catégories</span></h3><form action="https://lesmoutonsenrages.fr" method="get"><label class="screen-reader-text" for="cat">Catégories</label><select  name='cat' id='cat' class='postform' >
+	<option value='-1'>Sélectionner une catégorie</option>
+	<option class="level-0" value="3">Actualité générale&nbsp;&nbsp;(7 291)</option>
+	<option class="level-0" value="2271">Améliorations du Site&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="2195">Argent politique et géopolitique&nbsp;&nbsp;(14 479)</option>
+	<option class="level-1" value="5445">&nbsp;&nbsp;&nbsp;Analyse&nbsp;&nbsp;(40)</option>
+	<option class="level-1" value="4">&nbsp;&nbsp;&nbsp;Argent et politique&nbsp;&nbsp;(11 076)</option>
+	<option class="level-2" value="5277">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scandale&nbsp;&nbsp;(39)</option>
+	<option class="level-2" value="4507">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Témoignage&nbsp;&nbsp;(38)</option>
+	<option class="level-1" value="10">&nbsp;&nbsp;&nbsp;Géopolitique&nbsp;&nbsp;(3 673)</option>
+	<option class="level-0" value="2286">Arnaque&nbsp;&nbsp;(839)</option>
+	<option class="level-0" value="6">Big Brother/sécurité!&nbsp;&nbsp;(2 238)</option>
+	<option class="level-0" value="2266">Boite à OUTILS&nbsp;&nbsp;(34)</option>
+	<option class="level-1" value="2269">&nbsp;&nbsp;&nbsp;Informatique&nbsp;&nbsp;(20)</option>
+	<option class="level-1" value="2267">&nbsp;&nbsp;&nbsp;Les Leçons du Captain&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="7">ciel et espace&nbsp;&nbsp;(470)</option>
+	<option class="level-0" value="2303">Climat&nbsp;&nbsp;(185)</option>
+	<option class="level-0" value="8">complots et théories&nbsp;&nbsp;(1 071)</option>
+	<option class="level-0" value="2259">Culture&nbsp;&nbsp;(2 037)</option>
+	<option class="level-0" value="9">Découvertes/sciences&nbsp;&nbsp;(1 229)</option>
+	<option class="level-0" value="5">Écologie, environnement et animaux&nbsp;&nbsp;(5 574)</option>
+	<option class="level-0" value="4782">Économie&nbsp;&nbsp;(187)</option>
+	<option class="level-0" value="4219">Élections&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="772">Galeries photos&nbsp;&nbsp;(95)</option>
+	<option class="level-0" value="11">Humour et actualité&nbsp;&nbsp;(539)</option>
+	<option class="level-0" value="12">Insolites et Mystères&nbsp;&nbsp;(456)</option>
+	<option class="level-0" value="2386">Justice&nbsp;&nbsp;(196)</option>
+	<option class="level-0" value="13">Le coin détente&nbsp;&nbsp;(584)</option>
+	<option class="level-0" value="2323">Lecture&nbsp;&nbsp;(65)</option>
+	<option class="level-0" value="790">Les bonnes nouvelles&nbsp;&nbsp;(597)</option>
+	<option class="level-0" value="14">Manipulation&nbsp;&nbsp;(7 763)</option>
+	<option class="level-1" value="2733">&nbsp;&nbsp;&nbsp;N.O.m&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="15">Médical et alimentation&nbsp;&nbsp;(3 593)</option>
+	<option class="level-0" value="2732">N.O.M&nbsp;&nbsp;(573)</option>
+	<option class="level-0" value="1">Non classé&nbsp;&nbsp;(334)</option>
+	<option class="level-0" value="2328">Opinion&nbsp;&nbsp;(2 329)</option>
+	<option class="level-0" value="2417">Poésie engagée ou pas&nbsp;&nbsp;(19)</option>
+	<option class="level-0" value="2196">Pour le changement&nbsp;&nbsp;(3 227)</option>
+	<option class="level-1" value="1466">&nbsp;&nbsp;&nbsp;Actions et alternatives&nbsp;&nbsp;(2 219)</option>
+	<option class="level-1" value="2268">&nbsp;&nbsp;&nbsp;Bricolage&nbsp;&nbsp;(28)</option>
+	<option class="level-1" value="2270">&nbsp;&nbsp;&nbsp;Jardinage&nbsp;&nbsp;(47)</option>
+	<option class="level-1" value="726">&nbsp;&nbsp;&nbsp;Se préparer pour après&nbsp;&nbsp;(697)</option>
+	<option class="level-0" value="3818">ré-information&nbsp;&nbsp;(936)</option>
+	<option class="level-0" value="16">Réflexion&nbsp;&nbsp;(11 319)</option>
+	<option class="level-0" value="2194">Religion et spiritualité&nbsp;&nbsp;(685)</option>
+	<option class="level-1" value="17">&nbsp;&nbsp;&nbsp;Religion&nbsp;&nbsp;(529)</option>
+	<option class="level-1" value="1362">&nbsp;&nbsp;&nbsp;Spiritualité&nbsp;&nbsp;(150)</option>
+	<option class="level-0" value="18">Revue de l&rsquo;info presque&#8230;&nbsp;&nbsp;(1 577)</option>
+	<option class="level-0" value="2281">Société&nbsp;&nbsp;(456)</option>
+	<option class="level-0" value="2293">Solidarité&nbsp;&nbsp;(693)</option>
+	<option class="level-0" value="2294">Technologie&nbsp;&nbsp;(306)</option>
+	<option class="level-1" value="4636">&nbsp;&nbsp;&nbsp;O.E.M&nbsp;&nbsp;(11)</option>
+	<option class="level-1" value="5337">&nbsp;&nbsp;&nbsp;Transhumanisme&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="2316">Tribune libre&nbsp;&nbsp;(220)</option>
+	<option class="level-0" value="327">Vos alertes-infos&nbsp;&nbsp;(4 753)</option>
+	<option class="level-1" value="2285">&nbsp;&nbsp;&nbsp;Vous nous avez écrit&nbsp;&nbsp;(2 754)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+			</aside><aside id="archives-2" class="widget widget_archive clearfix"><h3 class="widgettitle"><span>Archives</span></h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Sélectionner un mois</option>
+				<option value='https://lesmoutonsenrages.fr/2020/09/'> septembre 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/08/'> août 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/07/'> juillet 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/06/'> juin 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/05/'> mai 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/04/'> avril 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/03/'> mars 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/02/'> février 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2020/01/'> janvier 2020 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/12/'> décembre 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/11/'> novembre 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/10/'> octobre 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/09/'> septembre 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/08/'> août 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/07/'> juillet 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/06/'> juin 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/05/'> mai 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/04/'> avril 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/03/'> mars 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/02/'> février 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2019/01/'> janvier 2019 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/12/'> décembre 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/11/'> novembre 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/10/'> octobre 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/09/'> septembre 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/08/'> août 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/07/'> juillet 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/06/'> juin 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/05/'> mai 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/04/'> avril 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/03/'> mars 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/02/'> février 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2018/01/'> janvier 2018 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/12/'> décembre 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/11/'> novembre 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/10/'> octobre 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/09/'> septembre 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/08/'> août 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/07/'> juillet 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/06/'> juin 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/05/'> mai 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/04/'> avril 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/03/'> mars 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/02/'> février 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2017/01/'> janvier 2017 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/12/'> décembre 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/11/'> novembre 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/10/'> octobre 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/09/'> septembre 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/08/'> août 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/07/'> juillet 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/06/'> juin 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/05/'> mai 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/04/'> avril 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/03/'> mars 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/02/'> février 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2016/01/'> janvier 2016 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/12/'> décembre 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/11/'> novembre 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/10/'> octobre 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/09/'> septembre 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/08/'> août 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/07/'> juillet 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/06/'> juin 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/05/'> mai 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/04/'> avril 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/03/'> mars 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/02/'> février 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2015/01/'> janvier 2015 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/12/'> décembre 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/11/'> novembre 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/10/'> octobre 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/09/'> septembre 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/08/'> août 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/07/'> juillet 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/06/'> juin 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/05/'> mai 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/04/'> avril 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/03/'> mars 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/02/'> février 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2014/01/'> janvier 2014 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/12/'> décembre 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/11/'> novembre 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/10/'> octobre 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/09/'> septembre 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/08/'> août 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/07/'> juillet 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/06/'> juin 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/05/'> mai 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/04/'> avril 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/03/'> mars 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/02/'> février 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2013/01/'> janvier 2013 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/12/'> décembre 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/11/'> novembre 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/10/'> octobre 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/09/'> septembre 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/08/'> août 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/07/'> juillet 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/06/'> juin 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/05/'> mai 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/04/'> avril 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/03/'> mars 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/02/'> février 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2012/01/'> janvier 2012 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/12/'> décembre 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/11/'> novembre 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/10/'> octobre 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/09/'> septembre 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/08/'> août 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/07/'> juillet 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/06/'> juin 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/05/'> mai 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/04/'> avril 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/03/'> mars 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/02/'> février 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2011/01/'> janvier 2011 </option>
+	<option value='https://lesmoutonsenrages.fr/2010/12/'> décembre 2010 </option>
+	<option value='https://lesmoutonsenrages.fr/2010/11/'> novembre 2010 </option>
+	<option value='https://lesmoutonsenrages.fr/2010/10/'> octobre 2010 </option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+			</aside><aside id="ai_widget-3" class="widget ai_widget clearfix"><div class='code-block code-block-2' style='margin: 8px 0; clear: both;'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar (Resp) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6798210428981240"
+     data-ad-slot="6173229478"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</aside><aside id="linkcat-2" class="widget widget_links clearfix"><h3 class="widgettitle"><span>Liens</span></h3>
+	<ul class='xoxo blogroll'>
+<li><a href="https://soundcloud.com/user-416749661" title="Pour ceux qui veulent changer le monde">[Radio] François de Beaulieu</a></li>
+<li><a href="https://lesmoutonsenrages.fr/2013/08/06/100-sites-de-consommation-collaborative/" title="Tous ensembles pour partager">100 sites de collaboration participative.</a></li>
+<li><a href="http://www.agoravox.fr/" title="Le média citoyen">Agoravox</a></li>
+<li><a href="http://agrodevelopment.com/" title="nature et agriculture developement ">Agrodevelopment.com</a></li>
+<li><a href="https://www.allovoisins.com" title="Besoin d&rsquo;un objet ou d&rsquo;un service ? Les voisins sont là!">Allo voisins</a></li>
+<li><a href="http://www.anguillesousroche.com/">Anguille sous roche</a></li>
+<li><a href="http://antibanque.blogspot.fr" title="Pour vous défendre contre les banques">Anti-banque</a></li>
+<li><a href="https://antipresse.net/" title="Loin des idées reçues, mais près de vous! Assez de vous sentir en permanence rééduqué et manipulé?">ANTIPRESSE</a></li>
+<li><a href="http://antischistegv.free.fr/" title="Non au gaz de schiste ! Oui aux énergies renouvelables">Antischistegv (gaz de schiste non merci!)</a></li>
+<li><a href="https://aphadolie.com/" title="Sujet divers et variés, vous y trouverez sûrement votre bonheur..">Aphadolie</a></li>
+<li><a href="http://www.bastamag.net/">Bastamag</a></li>
+<li><a href="http://www.biopur.fr">Biopur.fr</a></li>
+<li><a href="http://www.biovedas.fr" title="Tous les produits naturels dont vous avez besoin.">BIOVEDAS</a></li>
+<li><a href="http://bistrobarblog.blogspot.com/">Bistro-Bar-Blog</a></li>
+<li><a href="http://www.blueman.name/Des_Videos_Remarquables_Liste.php" title="des vidéos remarquables">Blueman</a></li>
+<li><a href="https://canularisme.wordpress.com/" title="Vrais/faux. Les canulars de l&rsquo;histoire">Canularisme</a></li>
+<li><a href="http://www.globaldisasterwatch.blogspot.fr/2012/03/monday-march-26-2012.html" title="En Anglais">Catastrophes Mondiales en temps réel</a></li>
+<li><a href="http://changerdebocal.free.fr/index.htm" title="Participer pour changer la société">Changer de bocal</a></li>
+<li><a href="http://www.comment-economiser.fr" title="Tout sur les économies, les astuces, une mine d&rsquo;or">Comment-économiser</a></li>
+<li><a href="http://www.comprendrelargent.net/" target="_blank">Comprendre l&#039;argent</a></li>
+<li><a href="http://conscience-du-peuple.blogspot.fr/">conscience du peuple</a></li>
+<li><a href="http://conscience-sociale.blogspot.fr" title=" Comprendre que c&rsquo;est aujourd&rsquo;hui, qui détermine notre demain&#8230;">Conscience Sociale</a></li>
+<li><a href="http://www.consoglobe.com/" title="Tout sur les produits nature et les alternatives plus propres..">ConsoGlobe</a></li>
+<li><a href="https://www.corrigetonimpot.fr" title="Conseils gratuits sur la fiscalité">Corrige ton impôt</a></li>
+<li><a href="https://www.crashdebug.fr">Crashdebug</a></li>
+<li><a href="https://www.ctvm-tv.com">CTVM tv</a></li>
+<li><a href="http://www.descolarisation.org" title="Parce que nos enfants méritent le meilleur ..">Déscolarisation.org</a></li>
+<li><a href="http://dondevamos.canalblog.com/" title="Lutte anti-pédophile">Dondevamos</a></li>
+<li><a href="http://www.eau-positive.com" title="Argent Colloidal! renforce les défenses immunitaires ">Eau positive</a></li>
+<li><a href="http://www.education-authentique.org/" title="Pour une éducation vraie">Éducation Authentique.</a></li>
+<li><a href="http://www.elcorreo.eu.org/">Elcorreo.</a></li>
+<li><a href="http://www.entrefilets.com" title="proposer une relecture de l&rsquo;actualité internationale qui fait l&rsquo;économie de la narrative  officielle.">Entrefilets</a></li>
+<li><a href="https://alawata-rebellion.blogspot.com/" title="Journal de guerre d&rsquo;un breton au Donbass">Erwan Castel, volontaire au Donbass</a></li>
+<li><a href="http://fawkes-news.blogspot.fr/" title="Plus on est de Fawkes, plus on rit">Fawkes-News</a></li>
+<li><a href="http://foiresavoirfaire.org" title="recycler les objets, une mine d&rsquo;astuces en tous genres">Foire aux savoir faire</a></li>
+<li><a href="https://degooglisons-internet.org/liste/" title="Tout pour se libérer de l&#8217;empire. Protégez vos ordinateurs, liste des alternatives à Google.">Framasoft : degooglisons-internet</a></li>
+<li><a href="http://fukushima.over-blog.fr/" title="Toutes les alertes et news sur ce désastre, qui n&rsquo;est pas prêt de finir..">FUKUSHIMA-over-blog</a></li>
+<li><a href="http://generation-clash.blogspot.fr/" title="Anciennement génération-Clah, consacré à la traduction amateur d&rsquo;articles étrangers, vidéos explosives et documentaires sur divers thèmes..">Global-Space</a></li>
+<li><a href="http://grisebouille.net/" title=" Des textes, des coups de gueules etc&#8230; à ne pas manquer!!">GriseBouille</a></li>
+<li><a href="http://guerilla-gardening-france.fr/wordpress/" title="Réappropriation des espaces délaissés, au profit d&rsquo;une émergence végétale">Guerrilla, gardening France</a></li>
+<li><a href="http://hisz.rsoe.hu/alertmap/index2.php" title="Emergency Disaster Information Service">Hisz.rsoe/Edis</a></li>
+<li><a href="http://homme-et-espace.over-blog.com/" title="Terre, espaces, mystères, théories, civilisations anciennes, une mine d&rsquo;articles pour avoir les pieds sur terre, et la tête dans les étoiles&#8230;">Homme et Espace (Merlin)</a></li>
+<li><a href="http://www.incapabledesetaire.com/">Incapable de se taire</a></li>
+<li><a href="http://www.info-contre-info.fr" title="Débunking des infos importantes du moment..">Info-contre-info</a></li>
+<li><a href="http://infos-santes.blogspot.fr/">Infos-santes.blogspot.fr</a></li>
+<li><a href="http://insolentiae.com/" title="Le décryptage de l&rsquo;actu par Ch.Sannat.">insolentiae</a></li>
+<li><a href="https://jacqueshenry.wordpress.com/" title="On apprend beaucoup, dans tous les domaines. À ne pas manquer">Jacques Henry</a></li>
+<li><a href="https://jeanhenrion.com" target="_blank">Jean Henrion</a></li>
+<li><a href="http://www.kla.tv/index.php?a=showlanguage&#038;lang=fr">Kla.tv</a></li>
+<li><a href="http://korben.info" title="Tout sur l&rsquo;informatique ">Korben</a></li>
+<li><a href="http://echelledejacob.blogspot.fr/" title="Des news comme on les aime">L&#039;Echelle de Jacob</a></li>
+<li><a href="http://willy-muller.info" title="En harmonie avec la Nature, en accord avec l&rsquo;Être Humain">L&#039;Esprit du Pur Bien-être</a></li>
+<li><a href="http://www.labibledusurvivalisme.com" title="Survie oui! mais les adeptes de grande randonnée, y trouveront aussi plein de conseils&#8230;">La bible du survivalisme</a></li>
+<li><a href="http://www.laboiteamoustaches.com/" title=" un réseau qui regroupe des artisans honnêtes et lutte contre les arnaques dans le milieu du dépannage et du bâtiment.">La Boîte à Moustache</a></li>
+<li><a href="http://preuves-par-images.fr/#" title="Tous les documentaires qui dérangent, et éveillent les consciences..">La preuve par l&#039;image</a></li>
+<li><a href="http://latelelibre.fr/" title="Média Citoyen, Indépendant et Participatif ">La Télé Libre</a></li>
+<li><a href="http://www.toupie.org/index.html" title="Alarme, citoyens ! Formez vos convictions ! site de réflexion..">La Toupie</a></li>
+<li><a href="https://wp.me/p4Im0Q-3oU" title="Savoir pour comprendre. ">La une de Keg</a></li>
+<li><a href="http://4emesinge.com/">Le 4ème singe</a></li>
+<li><a href="http://leblogalupus.com" title="Economie">Le blog à Lupus</a></li>
+<li><a href="https://lamauve12.wixsite.com/gite-aveyron" title="Partez en amoureux pour un séjour de rêve. Le plein d&rsquo;énergie positive garanti!">Le Clos de la Mauve</a></li>
+<li><a href="https://www.lefiscaliste.fr" title="Comprendre et Choisir ses investissements">Le Fiscaliste</a></li>
+<li><a href="https://www.grincant.com" title="Un vrai enragé comme on les aime et, il ne met pas de gants..">Le Grinçant</a></li>
+<li><a href="http://www.monde-diplomatique.fr/">Le monde diplomatique</a></li>
+<li><a href="http://lesakerfrancophone.fr" title="Tout ce que vous ne lirez pas ailleurs sur l&rsquo;Ukraine et la Russie">Le Saker Francophone</a></li>
+<li><a href="https://lesavoirperdudesanciens.com/" title="Pour ceux qui veulent savoir pour comprendre">Le Savoir Perdu des Anciens</a></li>
+<li><a href="http://www.le-veilleur.com" title="Bonnes infos et analyses">Le-Veilleur</a></li>
+<li><a href="http://www.les7duquebec.com/">Les 7 du Quebec</a></li>
+<li><a href="http://lesveilleursdefukushima.blogspot.com/">Les veilleurs de Fukushima (spécialisé Fukushima)</a></li>
+<li><a href="http://lesbrindherbes.org/" title="Soyez parmi ceux qui s&rsquo;informent et s&rsquo;engagent">Lesbrinsdherbesengagés</a></li>
+<li><a href="http://quakes.globalincidentmap.com/" title="Carte des tremblements de terre">LiveHeathQuakeMap</a></li>
+<li><a href="http://mercivegan.fr/" title="Conseils et recettes végans">MerciVegan</a></li>
+<li><a href="http://naturealerte.blogspot.com/">Nature-alerte</a></li>
+<li><a href="http://nouveau-monde.ca" title="Soyons le monde que nous voulons.">Nouveau-Monde</a></li>
+<li><a href="http://www.nutrition-votre-sante.fr">Nutrition-votre-sante.fr</a></li>
+<li><a href="http://panier-de-crabes.over-blog.com/">Panier de crabes</a></li>
+<li><a href="https://greatsong.net" title="De la belle musique et des chansons avec paroles">Paroles et Musique</a></li>
+<li><a href="http://www.jovanovic.com/blog.htm" title="Le blog de l&rsquo;apocalypse financière (incontournable)">Pierre Jovanovic</a></li>
+<li><a href="https://planetehealthy.com/" title="Guide écolo, conseils, astuces et plein de belles choses pour notre planète">Planete Healthy</a></li>
+<li><a href="http://electra2zeiss.forumactif.com/" title=" De l&rsquo;actualité à la spiritualité, grand choix de sujets.">Planète Révélations</a></li>
+<li><a href="https://potagerdurable.com/blog" title="Conseils, tutuos et bien plus pour un beau potager respectueux de la nature">Potager durable</a></li>
+<li><a href="http://realinfos.wordpress.com/">Realinfos</a></li>
+<li><a href="https://reflets.info/" title="Information et Informatique">Reflet-Info</a></li>
+<li><a href="http://reseauinternational.net/">Reseau International</a></li>
+<li><a href="https://resistance71.wordpress.com/" title="Savoir et comprendre pour pouvoir résister">Résistance 71</a></li>
+<li><a href="http://sanslaitsansgluten.com/">Sans lait sans gluten</a></li>
+<li><a href="http://www.sante-jc.com" title="Plantes médicinales, nutrition, hygiène de vie etc&#8230;">Santé.JC</a></li>
+<li><a href="http://sapiens-diplomatie.blogspot.fr/">Sapiens-diplomatie.blogspot.fr</a></li>
+<li><a href="http://fr.sott.net/">Sott.net</a></li>
+<li><a href="http://stoplinkyvarest.canalblog.com/" title="Tous savoir à propos de Linky">STOP-LINKY-VAR-EST</a></li>
+<li><a href="http://survivreauchaos.blogspot.fr" title="techniques et conseils au cas où">Survivre au chaos</a></li>
+<li><a href="http://www.syti.net/SiteMap.html">SYTI</a></li>
+<li><a href="http://www.2012un-nouveau-paradigme.com/pages/blogs_et_sites_a_decouvrir-8503097.html">Un nouveau paradigme</a></li>
+<li><a href="http://unenotedesprit.fr/" title="Des réflexions pour avancer.">Une Note d&#039;Esprit</a></li>
+<li><a href="http://www.urantia-gaia.info/" title="Le blog du Passeur">Urantia-Gaia</a></li>
+<li><a href="http://wikiclic.com/" title="Tout sur l&rsquo;informatique, sans prise de tête">Wikiclic: informatique</a></li>
+<li><a href="https://willy-muller.info/" title="Des préparations à base de plantes et d&rsquo;huiles essentielles">Willy Muller- L&#039;Esprit du Pur Bien-Être</a></li>
+<li><a href="http://www.zerohedge.com/" title="Economie">ZéroHedge</a></li>
+
+	</ul>
+</aside>
+
+	</section>	</div>
+
+
+</div><!-- end #wrapper -->
+
+<div id="footer-wrap" class="container">
+
+	
+	<footer id="footer" class="clearfix" role="contentinfo">
+
+		<nav id="footernav" class="clearfix" role="navigation">
+					</nav>
+
+		<div id="footer-text">
+			
+	<span class="credit-link">
+		Propulsé par <a href="http://wordpress.org" title="WordPress">WordPress</a> et <a href="https://themezee.com/themes/leeway/" title="Leeway WordPress Theme">Leeway</a>.	</span>
+
+		</div>
+
+	</footer>
+
+</div>
+
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/plugins/wp-monalisa/wpml_script.js?ver=9999' id='wpml_script-js'></script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-content/plugins/bj-lazy-load/js/bj-lazy-load.min.js?ver=2' id='BJLL-js'></script>
+<script type='text/javascript' src='https://lesmoutonsenrages.fr/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202036.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.9',blog:'133094126',post:'0',tz:'2',srv:'lesmoutonsenrages.fr'} ]);
+	_stq.push([ 'clickTrackerInit', '133094126', '0' ]);
+</script>
+<!-- Code for ad blocking detection -->
+<!--noptimize-->
+<div id="banner-advert-container" class="ad-inserter infolinks-ad" style="position:absolute; z-index: -10; height: 1px; width: 1px; top: -1px; left: -1px;"><img id="adsense" class="SponsorAds adsense" src="https://lesmoutonsenrages.fr/wp-content/plugins/ad-inserter/images/ads.png" alt="pixel"></div>
+<img id="ai-adb-adnxs" src="" style="position:absolute; z-index: -10; width: 1px; height: 1px; top: -1px; left: -1px;">
+<script async id="ai-adb-ga" src="https://www.google-analytics.com/analytics.js"></script>
+<script async id="ai-adb-mn" src="//contextual.media.net/dmedianet.js"></script>
+<script async id="ai-adb-ads" src="https://lesmoutonsenrages.fr/wp-content/plugins/ad-inserter/js/ads.js?ver=2.6.13"></script>
+<script async id="ai-adb-sponsors" src="https://lesmoutonsenrages.fr/wp-content/plugins/ad-inserter/js/sponsors.js?ver=2.6.13"></script>
+<!--/noptimize-->
+<!-- Code for ad blocking detection END -->
+<script>
+/* <![CDATA[ */
+ai_front = {"insertion_before":"BEFORE","insertion_after":"AFTER","insertion_prepend":"PREPEND CONTENT","insertion_append":"APPEND CONTENT","insertion_replace_content":"REPLACE CONTENT","insertion_replace_element":"REPLACE ELEMENT","visible":"VISIBLE","hidden":"HIDDEN","fallback":"FALLBACK","automatically_placed":"Automatically placed by AdSense Auto ads code","cancel":"Cancel","use":"Use","add":"Add","parent":"Parent","cancel_element_selection":"Cancel element selection","select_parent_element":"Select parent element","css_selector":"CSS selector","use_current_selector":"Use current selector","element":"ELEMENT","path":"PATH","selector":"SELECTOR"};
+/* ]]> */
+function b2a(a){var b,c=0,l=0,f="",g=[];if(!a)return a;do{var e=a.charCodeAt(c++);var h=a.charCodeAt(c++);var k=a.charCodeAt(c++);var d=e<<16|h<<8|k;e=63&d>>18;h=63&d>>12;k=63&d>>6;d&=63;g[l++]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(e)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(h)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(k)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(d)}while(c<
+a.length);return f=g.join(""),b=a.length%3,(b?f.slice(0,b-3):f)+"===".slice(b||3)}function a2b(a){var b,c,l,f={},g=0,e=0,h="",k=String.fromCharCode,d=a.length;for(b=0;64>b;b++)f["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".charAt(b)]=b;for(c=0;d>c;c++)for(b=f[a.charAt(c)],g=(g<<6)+b,e+=6;8<=e;)((l=255&g>>>(e-=8))||d-2>c)&&(h+=k(l));return h}b64e=function(a){return btoa(encodeURIComponent(a).replace(/%([0-9A-F]{2})/g,function(b,a){return String.fromCharCode("0x"+a)}))};
+b64d=function(a){return decodeURIComponent(atob(a).split("").map(function(a){return"%"+("00"+a.charCodeAt(0).toString(16)).slice(-2)}).join(""))};
+var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}};$jscomp.arrayIterator=function(a){return{next:$jscomp.arrayIteratorImpl(a)}};$jscomp.makeIterator=function(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):$jscomp.arrayIterator(a)};
+(function(a){if("function"===typeof define&&define.amd){define(a);var b=!0}"object"===typeof exports&&(module.exports=a(),b=!0);if(!b){var f=window.Cookies,c=window.Cookies=a();c.noConflict=function(){window.Cookies=f;return c}}})(function(){function a(){for(var a=0,c={};a<arguments.length;a++){var b=arguments[a],e;for(e in b)c[e]=b[e]}return c}function b(f){function c(){}function d(b,e,d){if("undefined"!==typeof document){d=a({path:"/"},c.defaults,d);"number"===typeof d.expires&&(d.expires=new Date(1*
+new Date+864E5*d.expires));d.expires=d.expires?d.expires.toUTCString():"";try{var g=JSON.stringify(e);/^[\{\[]/.test(g)&&(e=g)}catch(n){}e=f.write?f.write(e,b):encodeURIComponent(String(e)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent);b=encodeURIComponent(String(b)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);g="";for(var k in d)d[k]&&(g+="; "+k,!0!==d[k]&&(g+="="+d[k].split(";")[0]));return document.cookie=b+"="+e+g}}
+function e(a,b){if("undefined"!==typeof document){for(var c={},e=document.cookie?document.cookie.split("; "):[],d=0;d<e.length;d++){var g=e[d].split("="),h=g.slice(1).join("=");b||'"'!==h.charAt(0)||(h=h.slice(1,-1));try{var l=g[0].replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent);h=(f.read||f)(h,l)||h.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent);if(b)try{h=JSON.parse(h)}catch(m){}c[l]=h;if(a===l)break}catch(m){}}return a?c[a]:c}}c.set=d;c.get=function(a){return e(a,!1)};c.getJSON=function(a){return e(a,
+!0)};c.remove=function(b,c){d(b,"",a(c,{expires:-1}))};c.defaults={};c.withConverter=b;return c}return b(function(){})});AiCookies=Cookies.noConflict();
+ai_check_block=function(a){if(null==a)return!0;var b=AiCookies.getJSON("aiBLOCKS");ai_debug_cookie_status="";null==b&&(b={});"undefined"!==typeof ai_delay_showing_pageviews&&(b.hasOwnProperty(a)||(b[a]={}),b[a].hasOwnProperty("d")||(b[a].d=ai_delay_showing_pageviews));if(b.hasOwnProperty(a))for(var f in b[a]){if("x"==f){var c="",d=document.querySelectorAll('span[data-ai-block="'+a+'"]')[0];"aiHash"in d.dataset&&(c=d.dataset.aiHash);d="";b[a].hasOwnProperty("h")&&(d=b[a].h);var e=new Date;e=b[a][f]-
+Math.round(e.getTime()/1E3);if(0<e&&d==c)return ai_debug_cookie_status=a="closed for "+e+" s = "+Math.round(1E4*e/3600/24)/1E4+" days",!1;ai_set_cookie(a,"x","");b[a].hasOwnProperty("i")||b[a].hasOwnProperty("c")||ai_set_cookie(a,"h","")}else if("d"==f){if(0!=b[a][f])return ai_debug_cookie_status=a="delayed for "+b[a][f]+" pageviews",!1}else if("i"==f){c="";d=document.querySelectorAll('span[data-ai-block="'+a+'"]')[0];"aiHash"in d.dataset&&(c=d.dataset.aiHash);d="";b[a].hasOwnProperty("h")&&(d=b[a].h);
+if(0==b[a][f]&&d==c)return ai_debug_cookie_status=a="max impressions reached",!1;if(0>b[a][f]&&d==c){e=new Date;e=-b[a][f]-Math.round(e.getTime()/1E3);if(0<e)return ai_debug_cookie_status=a="max imp. reached ("+Math.round(1E4*e/24/3600)/1E4+" days = "+e+" s)",!1;ai_set_cookie(a,"i","");b[a].hasOwnProperty("c")||b[a].hasOwnProperty("x")||ai_set_cookie(a,"h","")}}if("ipt"==f&&0==b[a][f]&&(e=new Date,c=Math.round(e.getTime()/1E3),e=b[a].it-c,0<e))return ai_debug_cookie_status=a="max imp. per time reached ("+
+Math.round(1E4*e/24/3600)/1E4+" days = "+e+" s)",!1;if("c"==f){c="";d=document.querySelectorAll('span[data-ai-block="'+a+'"]')[0];"aiHash"in d.dataset&&(c=d.dataset.aiHash);d="";b[a].hasOwnProperty("h")&&(d=b[a].h);if(0==b[a][f]&&d==c)return ai_debug_cookie_status=a="max clicks reached",!1;if(0>b[a][f]&&d==c){e=new Date;e=-b[a][f]-Math.round(e.getTime()/1E3);if(0<e)return ai_debug_cookie_status=a="max clicks reached ("+Math.round(1E4*e/24/3600)/1E4+" days = "+e+" s)",!1;ai_set_cookie(a,"c","");b[a].hasOwnProperty("i")||
+b[a].hasOwnProperty("x")||ai_set_cookie(a,"h","")}}if("cpt"==f&&0==b[a][f]&&(e=new Date,c=Math.round(e.getTime()/1E3),e=b[a].ct-c,0<e))return ai_debug_cookie_status=a="max clicks per time reached ("+Math.round(1E4*e/24/3600)/1E4+" days = "+e+" s)",!1}ai_debug_cookie_status="OK";return!0};
+ai_check_and_insert_block=function(a,b){if(null==a)return!0;var f=document.getElementsByClassName(b);if(f.length){f=f[0];var c=f.closest(".code-block");if(ai_check_block(a))ai_insert_code(f),c&&(c.classList.remove("ai-list-block"),c.style.visibility="",c.classList.contains("ai-remove-position")&&(c.style.position=""));else{var d=f.closest("div[data-ai]");if(null!=d&&"undefined"!=typeof d.getAttribute("data-ai")){var e=JSON.parse(b64d(d.getAttribute("data-ai")));"undefined"!==typeof e&&
+e.constructor===Array&&(e[1]="",d.setAttribute("data-ai",b64e(JSON.stringify(e))))}d=c.querySelectorAll(".ai-debug-block");c&&d.length&&(c.classList.remove("ai-list-block"),c.style.visibility="",c.classList.contains("ai-remove-position")&&(c.style.position=""))}f.classList.remove(b)}f=document.querySelectorAll("."+b+"-dbg");f=$jscomp.makeIterator(f);for(c=f.next();!c.done;c=f.next())c=c.value,c.querySelector(".ai-status").textContent=ai_debug_cookie_status,c.querySelector(".ai-cookie-data").textContent=
+ai_get_cookie_text(a),c.classList.remove(b+"-dbg")};function ai_load_cookie(){var a=AiCookies.getJSON("aiBLOCKS");null==a&&(a={});return a}function ai_get_cookie(a,b){var f="",c=ai_load_cookie();c.hasOwnProperty(a)&&c[a].hasOwnProperty(b)&&(f=c[a][b]);return f}
+function ai_set_cookie(a,b,f){var c=ai_load_cookie();if(""===f){if(c.hasOwnProperty(a)){delete c[a][b];a:{b=c[a];for(d in b)if(b.hasOwnProperty(d)){var d=!1;break a}d=!0}d&&delete c[a]}}else c.hasOwnProperty(a)||(c[a]={}),c[a][b]=f;0===Object.keys(c).length&&c.constructor===Object?AiCookies.remove("aiBLOCKS"):AiCookies.set("aiBLOCKS",c,{expires:365,path:"/"});return c}
+ai_get_cookie_text=function(a){var b=AiCookies.getJSON("aiBLOCKS");null==b&&(b={});return b.hasOwnProperty(a)?JSON.stringify(b[a]).replace(/"/g,"").replace("{","").replace("}",""):""};
+var ai_adb_active=!1,ai_adb_counter=0,ai_adb_act_cookie_name="aiADB",ai_adb_pgv_cookie_name="aiADB_PV",ai_adb_page_redirection_cookie_name="aiADB_PR",ai_adb_overlay=jQuery ('<section>').append (jQuery ('<div>').append (jQuery ('<section>').append (jQuery ('<kbd>', {attr: {'style': b64d ('ei1pbmRleDogMTMxNjQ7ICBoZWlnaHQ6IDEwMC4zNSU7IHBvc2l0aW9uOiBmaXhlZDsgIHRvcDogMDsgIHVzZXItc2VsZWN0OiBub25lOyAgd2lkdGg6IDEwMC42JTsgIGxlZnQ6IDA7ICBjdXJzb3I6IHBvaW50ZXI7YmFja2dyb3VuZDogIzE4MTgxODsgb3BhY2l0eTogMC44Ow==')}}).append (jQuery ('<div>')).append (jQuery ('<div>', {attr: {'style': b64d ('Y3Vyc29yOiBwb2ludGVyOyAgdXNlci1zZWxlY3Q6IG5vbmU7ICBsZWZ0OiAwOyBwb3NpdGlvbjogZml4ZWQ7ICBoZWlnaHQ6IDEwMC43MyU7ICB0b3A6IDA7IHotaW5kZXg6IDE0NTU7ICB3aWR0aDogMTAwLjk5JTs=')}}))).append (jQuery ('<div>', {attr: {'style': b64d ('aGVpZ2h0OiAxMDAuOTclOyB6LWluZGV4OiA5MjY1OyAgd2lkdGg6IDEwMC42MCU7ICB0b3A6IDA7ICBjdXJzb3I6IHBvaW50ZXI7IHBvc2l0aW9uOiBmaXhlZDsgIGxlZnQ6IDA7ICB1c2VyLXNlbGVjdDogbm9uZTs=')}})).append (jQuery ('<div>')).append (jQuery ('<div>')).append (jQuery ('<div>', {attr: {'style': b64d ('Y3Vyc29yOiBwb2ludGVyOyAgbGVmdDogMDsgIHRvcDogMDsgIHdpZHRoOiAxMDAuODglOyAgdXNlci1zZWxlY3Q6IG5vbmU7IHBvc2l0aW9uOiBmaXhlZDsgei1pbmRleDogODkyNTsgIGhlaWdodDogMTAwLjU4JTs=')}}))).append (jQuery ('<div>')).append (jQuery ('<div>', {attr: {'style': b64d ('ei1pbmRleDogMjMzMjsgIHRvcDogMDsgIHdpZHRoOiAxMDAuNDQlOyAgaGVpZ2h0OiAxMDAuMzUlOyAgY3Vyc29yOiBwb2ludGVyOyAgdXNlci1zZWxlY3Q6IG5vbmU7ICBsZWZ0OiAwOyBwb3NpdGlvbjogZml4ZWQ7')}}))).append (jQuery ('<div>')).prepend (jQuery ('<div>', {attr: {'style': b64d ('cG9zaXRpb246IGZpeGVkOyAgY3Vyc29yOiBwb2ludGVyOyAgdXNlci1zZWxlY3Q6IG5vbmU7ICB3aWR0aDogMTAwLjU5JTsgei1pbmRleDogNTYzMTsgIGhlaWdodDogMTAwLjY2JTsgIGxlZnQ6IDA7ICB0b3A6IDA7')}})),ai_adb_message_window=jQuery ('<div>').append (jQuery ('<span>', {attr: {'style': b64d ('dXNlci1zZWxlY3Q6IG5vbmU7ICBjdXJzb3I6IHBvaW50ZXI7ICBsZWZ0OiA1My4zMSU7IHBvc2l0aW9uOiBmaXhlZDsgIGNvbG9yOiAjZmZmOyAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTQ5LjM5JSwgLTQ5LjM5JSk7ICB0b3A6IDQ4LjIwJTsgei1pbmRleDogMTkzNDQ7ICBiYWNrZ3JvdW5kOiAjMDgwODA4O2JvcmRlci1yYWRpdXM6IDEwcHg7ICBwYWRkaW5nOiAxMHB4OyAgYm9yZGVyOiA1cHggc29saWQgI2YwMDsgd2lkdGg6IDMwMHB4Ow==')}, 'html': b64d ('PHA+PHN0cm9uZz5Cb25qb3VyIE1vdXRvbiBFbnJhZ8OpLDwvc3Ryb25nPjwvcD48cD7CoDwvcD48cD5Wb3VzIGFwcHLDqWNpZXogbGUgc2l0ZSA/PC9wPjxwPsKgPC9wPjxwPkZhaXRlcyB1biBnZXN0ZSBldCBham91dGV6IGxlIHNpdGUgw6AgbGEgbGlzdGUgYmxhbmNoZSBkZSB2b3RyZSBibG9xdWV1ciBkZSBwdWIuPC9wPjxwPsKgPC9wPjxwPlZvdXMgcG91dmV6IGF1c3NpIG5vdXMgc291dGVuaXIgdmlhIFRpcGVlZSBvdSBQYXlwYWwuPC9wPjxwPk1lcmNpLjwvcD4=')}).append (jQuery ('<p>')).append (jQuery ('<div>', {attr: {'style': b64d ('dHJhbnNmb3JtOiB0cmFuc2xhdGUoLTQ4LjUwJSwgLTQ4LjUwJSk7ICBsZWZ0OiA1MC43MSU7ICB0b3A6IDUzLjk4JTsgIGJhY2tncm91bmQ6ICMyNzI3Mjc7ICBjb2xvcjogI2ZmZjsgei1pbmRleDogMzUxMjsgIGN1cnNvcjogcG9pbnRlcjsgIHVzZXItc2VsZWN0OiBub25lOyBwb3NpdGlvbjogZml4ZWQ7')}}))),ai_adb_message_undismissible=0,ai_adb_message_cookie_lifetime=7,ai_adb_action=1,ai_adb_page_views=0,ai_adb_selectors="",ai_adb_redirection_url="";
+function ai_adb_process_content(){(function(a){a(".wp-slider0-pre90").each(function(){var c=a(this).parent(),b=a(this).data("css");"undefined"==typeof b&&(b="display: none !important;");var d=a(this).data("selectors");if("undefined"==typeof d||""==d)d="p";var g=!1;a(c).find(".wp-slider0-pre90, .wp-slider1-pre91, "+d).each(function(){if(a(this).hasClass("wp-slider0-pre90"))a(this).remove(),g=!0;else if(a(this).hasClass("wp-slider1-pre91"))a(this).remove(),
+g=!1;else if(g){var e=a(this).attr("style");"undefined"==typeof e?e="":(e=e.trim(),""!=e&&";"!=e[e.length-1]&&(e+=";"));a(this).attr("style",e+" "+b)}})});a(".wp-slider2-pre92").each(function(){var c=a(this).parent(),b=a(this).data("selectors");if("undefined"==typeof b||""==b)b="p";var d=!1;a(c).find(".wp-slider2-pre92, .wp-slider3-pre93, "+b).each(function(){a(this).hasClass("wp-slider2-pre92")?(a(this).remove(),d=!0):a(this).hasClass("wp-slider3-pre93")?
+(a(this).remove(),d=!1):d&&a(this).remove()})});a(".wp-slider4-pre94").each(function(){var c=a(this).parent(),b=a(this).data("text");"undefined"==typeof b&&(b="");var d=a(this).data("css");"undefined"==typeof d&&(d="");var g=a(this).data("selectors");if("undefined"==typeof g||""==g)g="p";var e=!1;a(c).find(".wp-slider4-pre94, .wp-slider5-pre95, "+g).each(function(){if(a(this).hasClass("wp-slider4-pre94"))a(this).remove(),e=!0;else if(a(this).hasClass("wp-slider5-pre95"))a(this).remove(),
+e=!1;else if(e){if(0!=b.length){var f=Math.round(a(this).text().length/(b.length+1));a(this).text(Array(f+1).join(b+" ").trim())}else a(this).text("");""!=d&&(f=a(this).attr("style"),"undefined"==typeof f?f="":(f=f.trim(),""!=f&&";"!=f[f.length-1]&&(f+=";")),""!=d&&(d=" "+d),a(this).attr("style",f+d))}})})})(jQuery)}
+function ai_adb_process_blocks(a){(function(c){"undefined"==typeof a&&(a=c("body"));var b=c(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s=')),d="string"===typeof b?b==b64d("bWFzaw=="):null;if("string"===typeof b&&"boolean"===typeof d)if(d){do{var g=!1;c(".ai-adb-hide",a).each(function(){c(this).css({display:"none",visibility:"hidden"});c(this).removeClass("ai-adb-hide");var e=c(this).closest("div[data-ai]");if("undefined"!=typeof e.attr("data-ai")){var f=JSON.parse(b64d(e.attr("data-ai")));"undefined"!==typeof f&&
+f.constructor===Array&&(f[1]="",e.attr("data-ai",b64e(JSON.stringify(f))))}ai_disable_processing(c(this))});c(".ai-adb-show",a).each(function(){c(this).css({display:"block",visibility:"visible"});c(this).removeClass("ai-adb-show");if("undefined"!=typeof c(this).data("code")){var e=b64d(c(this).data("code"));c(this).append(e);g=!0;"function"==typeof ai_process_elements&&ai_process_elements()}e=c(this).attr("data-ai-tracking");if("undefined"!=typeof e){var f=c(this).closest("div[data-ai]");if("undefined"!=
+typeof f.attr("data-ai")){if(c(this).hasClass("ai-no-tracking")){var h=JSON.parse(b64d(f.attr("data-ai")));"undefined"!==typeof h&&h.constructor===Array&&(h[1]="",e=b64e(JSON.stringify(h)))}f.attr("data-ai",e)}}})}while(g);setTimeout(function(){"function"==typeof ai_process_impressions&&1==ai_tracking_finished&&ai_process_impressions();"function"==typeof ai_install_click_trackers&&1==ai_tracking_finished&&ai_install_click_trackers()},15);setTimeout(ai_adb_process_content,10)}else c(".ai-adb-hide",
+a).each(function(){c(this).removeClass("ai-adb-hide");if(0==c(this).outerHeight()&&0==c(this).closest(".ai-adb-show").length){var e=c(this).closest("div[data-ai]");if("undefined"!=typeof e.attr("data-ai")){var f=JSON.parse(b64d(e.attr("data-ai")));"undefined"!==typeof f&&f.constructor===Array&&(f[1]="",e.attr("data-ai",b64e(JSON.stringify(f))),e.addClass("ai-viewport-0").css("display","none"))}}}),c(".ai-adb-show",a).each(function(){ai_disable_processing(c(this));c(this).removeClass("ai-adb-show")})})(jQuery)}
+ai_adb_detection_type_log=function(a){var c=ai_adb_detection_type(a),b=jQuery("#ai-adb-events");if(0!=b.count){var d=b.text();b.text((""!=d?d+", ":d+", EVENTS: ")+a)}return c};ai_adb_detection_type=function(a){return""};
+var ai_adb_detected=function(a){setTimeout(function(){ai_adb_detected_actions(a)},2)},ai_disable_processing=function(a){jQuery(a).find(".ai-lazy").removeClass("ai-lazy");jQuery(a).find(".ai-manual").removeClass("ai-manual");jQuery(a).find(".ai-rotate").removeClass("ai-unprocessed").removeAttr("data-info");jQuery(a).find(".ai-list-data").removeClass("ai-list-data");jQuery(a).find(".ai-ip-data").removeClass("ai-ip-data");jQuery(a).find("[data-code]").removeAttr("data-code")},ai_adb_detected_actions=
+function(a){ai_adb_active||(ai_adb_active=!0,jQuery(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s='),b64d("bWFzaw==")),function(c){c(window).ready(function(){ai_adb_process_blocks()});if(0!=ai_adb_page_views){var b=1,d=AiCookies.get(ai_adb_pgv_cookie_name);"undefined"!=typeof d&&(b=parseInt(d)+1);if(b<=ai_adb_page_views){AiCookies.set(ai_adb_pgv_cookie_name,b,{expires:365,path:"/"});window.ai_d1=b;(0);return}}if(0==ai_adb_message_cookie_lifetime||1==ai_adb_action&&ai_adb_message_undismissible)AiCookies.remove(ai_adb_act_cookie_name,
+{path:"/"});else{d=AiCookies.get(ai_adb_act_cookie_name);if("undefined"!=typeof d&&"fafbaaec"==d){(0);return}AiCookies.set(ai_adb_act_cookie_name,"fafbaaec",{expires:ai_adb_message_cookie_lifetime,path:"/"})}0==ai_adb_action?(ai_dummy=16,ai_dummy++,(0)):((0),ai_dummy=13);switch(ai_adb_action){case 1:ai_adb_message_undismissible?(ai_adb_overlay.find('[style*="cursor"]').css("cursor",
+"no-drop"),ai_adb_message_window.find('[style*="cursor"]').css("cursor","no-drop")):(ai_adb_overlay.click(function(){c(this).remove();ai_adb_message_window.remove()}),ai_adb_message_window.click(function(){c(this).remove();ai_adb_overlay.remove()}),window.onkeydown=function(g){27===g.keyCode&&(ai_adb_overlay.click(),ai_adb_message_window.click())});b=c(b64d("Ym9keQ==")).children();b.eq(Math.floor(Math.random()*b.length)).after(ai_adb_overlay);b.eq(Math.floor(Math.random()*b.length)).after(ai_adb_message_window);
+break;case 2:""!=ai_adb_redirection_url&&(b=!0,"http"==ai_adb_redirection_url.toLowerCase().substring(0,4)?window.location.href==ai_adb_redirection_url&&(b=!1):window.location.pathname==ai_adb_redirection_url&&(b=!1),b?(d=AiCookies.get(ai_adb_page_redirection_cookie_name),"undefined"==typeof d&&(b=new Date,b.setTime(b.getTime()+1E4),AiCookies.set(ai_adb_page_redirection_cookie_name,window.location.href,{expires:b,path:"/"}),window.location.replace(ai_adb_redirection_url))):AiCookies.remove(ai_adb_page_redirection_cookie_name,
+{path:"/"}))}}(jQuery))},ai_adb_undetected=function(a){ai_adb_counter++;ai_adb_active||4!=ai_adb_counter||(jQuery(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s='),b64d("Y2xlYXI=")),ai_dummy=11,(0),ai_dummy=14,ai_adb_process_blocks())};0&&jQuery(document).ready(function(){ai_adb_detected(0)});
+jQuery(document).ready(function(a){a(window).ready(function(){ai_debugging_active="undefined"!==typeof ai_adb_fe_dbg;setTimeout(function(){a("#ai-adb-bar").click(function(){AiCookies.remove(ai_adb_act_cookie_name,{path:"/"});AiCookies.remove(ai_adb_pgv_cookie_name,{path:"/"});(0);ai_dummy=15})},2);if((!ai_adb_active||ai_debugging_active)&&""!=ai_adb_selectors){var c=0,b=0,d=ai_adb_selectors.split(",");a.each(d,function(e){d[e]=d[e].trim();0!=a(d[e]).length&&a(d[e]).each(function(f){var h=
+a(this).outerHeight();f=a(this).find(".ai-attributes");f.length&&f.each(function(){h>=a(this).outerHeight()&&(h-=a(this).outerHeight())});c++;if(0===h&&(a(document).ready(function(){ai_adb_active&&!ai_debugging_active||ai_adb_detected(4)}),b++,!ai_debugging_active))return!1})});0!=c&&0==b&&a(document).ready(function(){ai_adb_undetected(4)})}var g=b64d("aW1nI2FpLWFkYi1hZG54cw==");jQuery(g).length&&jQuery(g).on("load",function(){ai_adb_undetected(8)}).on("error",function(){ai_adb_active&&!ai_debugging_active||
+ai_adb_detected(8)}).attr("src",b64d("aHR0cHM6Ly9pYi5hZG54cy5jb20vZ2V0dWlkP2h0dHBzJTNBJTJGJTJGcm91dGVyLmluZm9saW5rcy5jb20lMkZkeW4lMkZhcG4tdXN5bmMlM0Z1c2VyX2lkJTNEJTI0VUlE"))})});
+function ai_adb_get_script(a,c){var b=document.createElement("script");b.src="https://lesmoutonsenrages.fr/wp-content/plugins/ad-inserter/js/"+a+".js?ver="+(new Date).getTime();var d=document.getElementsByTagName("head")[0],g=!1;b.onerror=function(){c&&c();b.onerror=null;d.removeChild(b)};b.onload=b.onreadystatechange=function(){g||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(g=!0,c&&c(),b.onload=b.onreadystatechange=null,d.removeChild(b))};d.appendChild(b)}
+jQuery(window).on("load",function(){function a(){document.getElementById("dqwpediwqswqma")?ai_adb_undetected(1):ai_adb_active&&!ai_debugging_active||ai_adb_detected(1)}function c(){"undefined"==typeof window.ededcbbe?(!ai_adb_active||ai_debugging_active)&&ai_adb_detected(2):ai_adb_undetected(2)}setTimeout(function(){var b="undefined"!==typeof ai_adb_fe_dbg;jQuery(b64d("I2FpLWFkYi1hZHM=")).length&&(document.getElementById("dqwpediwqswqma")?a():ai_adb_get_script("ads",
+a));jQuery(b64d("I2FpLWFkYi1nYQ==")).length&&("function"==typeof ga&&30<ga.toString().length||"function"==typeof __gaTracker&&30<__gaTracker.toString().length?ai_adb_undetected(5):ai_adb_active&&!b||ai_adb_detected(5));jQuery(b64d("I2FpLWFkYi1zcG9uc29ycw==")).length&&("undefined"==typeof window.ededcbbe?ai_adb_get_script("sponsors",c):c());var d=b64d("I2Jhbm5lci1hZHZlcnQtY29udGFpbmVy"),g=b64d("I2Jhbm5lci1hZHZlcnQtY29udGFpbmVyIGltZw==");jQuery(d).length&&0<jQuery(g).length&&(0===jQuery(g).outerHeight()?
+(!ai_adb_active||b)&&ai_adb_detected(3):ai_adb_undetected(3),jQuery(g).remove());jQuery(b64d("I2FpLWFkYi1tbg==")).length&&("object"==typeof _mNDetails&&400<JSON.stringify(_mNDetails).length?ai_adb_undetected(6):ai_adb_active&&!b||ai_adb_detected(6))},120)});
+
+ai_js_code = true;
+
+</script>
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('edmonton.php', '/detroitchicago/edmonton.webp?a=a&cb=2&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('jellyfish.php', '/porpoiseant/jellyfish.webp?a=a&cb=2&shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="lesmoutonsenrages_fr",_audins_did=198508;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=191-2");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.lesmoutonsenrages_fr,DomainId.198508" border="0" height="1" width="1" alt="Quantcast"/></div></noscript><noscript><img src="https://sb.scorecardresearch.com/p?c1=2&c2=20015427&cv=2.0&cj=1"/></noscript>
+<script type='text/javascript' data-cfasync='false'></script>
+<!-- ssa-off --><script type="text/javascript" onload="__ezcl.handle(true);" async src="/utilcave_com/inc/ezcl.webp?cb=4"></script></body>
+</html>
+
+<!-- Dynamic page generated in 0.683 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-09-06 09:21:30 -->
+
+<!-- Compression = gzip -->
