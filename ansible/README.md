@@ -103,6 +103,13 @@ https://askubuntu.com/questions/1188970/e-the-repository-http-old-releases-ubunt
 16. Install pip3 whereever pip3 is not installed. (VPS + query machine)
 Sol: apt install python3-pip
 
+17. Mannual building and running of docker container:
+Run the following command in respective order in effected VPS:
+1. docker build -t worker /src/worker
+2. docker run -p 42075:42075 workers &
+3. docker ps (helps to check if docker container is up and running)
+<br>
+
 ## Sahil: In case 3.6 is installed from source code
 A. To set python3.6 as default python3 interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2
