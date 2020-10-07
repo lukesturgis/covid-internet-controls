@@ -6,19 +6,19 @@ IFS=$'\n' read -d '' -r -a websites < /home/sg5414/covid-internet-controls/websi
 for i in "${websites[@]}"
 do
 echo $i
-ranNum=$[RANDOM%10+1]
+ranNum=$[RANDOM%5+1]
 sudo python3.6 query_workers.py -t $i -v
 sleep $ranNum
 done
 
-sleep 10800
+sleep 108
 
 IFS=$'\n' read -d '' -r -a websites < /home/sg5414/covid-internet-controls/trigger_terms_website.txt ; echo ${websites[*]}
 touch sahiltest.txt
 for i in "${websites[@]}"
 do
 echo $i
-ranNum=$[RANDOM%10+1]
+ranNum=$[RANDOM%5+1]
 sudo python3.6 query_workers.py -t $i -v
 sleep $ranNum
 done

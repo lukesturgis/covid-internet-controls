@@ -11,14 +11,14 @@ from multiprocessing.pool import Pool
 import coloredlogs
 import mysql.connector
 import requests
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from workers import workers
 from datetime import datetime
 import time
 from random import randrange
 
 
-load_dotenv()
+#load_dotenv()
 log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO", fmt="%(message)s")
 

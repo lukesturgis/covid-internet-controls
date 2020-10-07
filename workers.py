@@ -299,7 +299,7 @@ workers = [
         "country_code": "DE",
         "continent": "Europe",
         "city": "NA",
-        "ip": "168.119.125.66",
+        "ip": "158.255.215.175",
     },
     {
         "country_name": "Egypt3",
