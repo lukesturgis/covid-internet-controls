@@ -69,7 +69,7 @@ def send_target_to_worker(worker: dict, target: str):
     address = f"http://{worker['ip']}:42075/new_target"
 
     try:
-        response = requests.post(address, data=data, timeout=25).json()
+        response = requests.post(address, data=data, timeout=50).json()
 
     except requests.RequestException as e:
         response = {"target": target, "success": False, "data": str(e)}
@@ -128,7 +128,7 @@ def setup_db():
 #        database="covid_internet_controls",
         host="127.0.0.1",
         user= "sahilgupta221",
-        passwd="easypass123",
+        passwd="easypass321!",
         database="covid_internet_controls",
 
     )
