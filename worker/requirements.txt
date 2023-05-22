@@ -1,5 +1,5 @@
 pytest==5.3.5
-requests==2.22.0
+requests==2.31.0
 Flask==1.1.1
 fake_useragent==0.1.11
 python-dotenv==0.13.0
